@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5f7fa" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" fill="#2c3e50" text-anchor="middle" font-weight="bold">Language Distribution in AI Training Data</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d" text-anchor="middle">(Based on Common Crawl dataset)</text>
+
+  <!-- Container for data visualization with padding - extended left to cover "Other Majors" text -->
+  <rect x="80" y="120" width="620" height="430" fill="white" stroke="#dfe4ea" stroke-width="2" rx="5" ry="5" />
+  
+  <!-- English data - reduced width to ensure it fits -->
+  <rect x="200" y="150" width="310" height="50" fill="#3498db" rx="4" ry="4" />
+  <text x="530" y="180" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="start">44%</text>
+  <text x="190" y="180" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="end" font-weight="bold">English</text>
+  
+  <!-- German - restored to original position -->
+  <rect x="200" y="210" width="45" height="50" fill="#e74c3c" rx="4" ry="4" />
+  <text x="255" y="240" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="start">6%</text>
+  <text x="190" y="240" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="end" font-weight="bold">German</text>
+  
+  <!-- Other major languages - dotted line section (moved down) -->
+  <rect x="200" y="270" width="45" height="50" fill="none" stroke="#9b59b6" stroke-width="0" rx="4" ry="4" />
+  <line x1="200" y1="295" x2="245" y2="295" stroke="#9b59b6" stroke-width="3" stroke-dasharray="5,5" />
+  <text x="255" y="300" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="start">6% each</text>
+  <text x="190" y="300" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="end" font-weight="bold">Other Majors</text>
+  
+  <!-- Other major languages labels (German removed) -->
+  <text x="210" y="320" font-family="Arial, sans-serif" font-size="12" fill="#9b59b6" text-anchor="start">Russian, Chinese, Japanese, etc, etc</text>
+  
+  <!-- Spanish (moved down) -->
+  <rect x="200" y="330" width="45" height="50" fill="#e67e22" rx="4" ry="4" />
+  <text x="255" y="360" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="start">6%</text>
+  <text x="190" y="360" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="end" font-weight="bold">Spanish</text>
+  
+  <!-- French (moved down) -->
+  <rect x="200" y="390" width="45" height="50" fill="#f1c40f" rx="4" ry="4" />
+  <text x="255" y="420" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="start">6%</text>
+  <text x="190" y="420" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="end" font-weight="bold">French</text>
+  
+  <!-- Others (moved down) -->
+  <rect x="200" y="450" width="30" height="50" fill="#2ecc71" rx="4" ry="4" />
+  <text x="240" y="480" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="start">4%</text>
+  <text x="190" y="480" font-family="Arial, sans-serif" font-size="16" fill="#2c3e50" text-anchor="end" font-weight="bold">Others</text>
+  
+  <!-- Impact text -->
+ 
+  <text x="400" y="565" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d" text-anchor="middle">AI models "think" in English - linguistically, culturally, and contextually</text>
+</svg>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spectrum Card Test</title>
+  <script type="module">
+    // Import Spectrum theme and scale
+    import '@spectrum-web-components/theme/theme-light.js';
+    import '@spectrum-web-components/theme/scale-medium.js';
+    import '@spectrum-web-components/theme/sp-theme.js';
+    
+    // Import Spectrum Card component
+    import '@spectrum-web-components/card/sp-card.js';
+    
+    // Import Spectrum Button component
+    import '@spectrum-web-components/button/sp-button.js';
+    
+    // Import Spectrum Icons
+    import '@spectrum-web-components/icons-workflow/icons/sp-icon-arrow-right.js';
+  </script>
+  <style>
+    :root {
+      --spectrum-global-color-gray-50: rgb(255, 255, 255);
+      --spectrum-global-color-gray-100: rgb(245, 245, 245);
+      --spectrum-global-color-gray-200: rgb(234, 234, 234);
+      --spectrum-global-color-gray-300: rgb(225, 225, 225);
+      --spectrum-global-color-gray-400: rgb(216, 216, 216);
+      --spectrum-global-color-gray-500: rgb(202, 202, 202);
+      --spectrum-global-color-gray-600: rgb(186, 186, 186);
+      --spectrum-global-color-gray-700: rgb(161, 161, 161);
+      --spectrum-global-color-gray-800: rgb(135, 135, 135);
+      --spectrum-global-color-gray-900: rgb(110, 110, 110);
+      --spectrum-global-color-gray-1000: rgb(75, 75, 75);
+      --spectrum-global-color-gray-1100: rgb(44, 44, 44);
+      --spectrum-global-color-gray-1200: rgb(22, 22, 22);
+      --spectrum-global-color-gray-1300: rgb(0, 0, 0);
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: var(--spectrum-sans-font-family-stack);
+      background-color: var(--spectrum-global-color-gray-100);
+    }
+
+    sp-theme {
+      display: block;
+      min-height: 100vh;
+    }
+
+    .test-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .spectrum-card {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Ensure buttons are visible */
+    sp-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 120px;
+      justify-content: center;
+    }
+
+    /* Ensure card footer is visible */
+    [slot="footer"] {
+      padding: 1rem;
+      margin-top: auto;
+      border-top: 1px solid var(--spectrum-global-color-gray-200);
+    }
+  </style>
+</head>
+<body>
+  <sp-theme color="light" scale="medium" system="spectrum">
+    <div class="test-container">
+      <!-- Basic Card -->
+      <div class="spectrum-card block">
+        <div>
+          <picture>
+            <source type="image/webp" srcset="https://allabout.network/media_188fa5bcd003e5a2d56e7ad3ca233300c9e52f1e5.png?width=2000&format=webply&optimize=medium" media="(min-width: 600px)">
+            <source type="image/webp" srcset="https://allabout.network/media_188fa5bcd003e5a2d56e7ad3ca233300c9e52f1e5.png?width=750&format=webply&optimize=medium">
+            <source type="image/png" srcset="https://allabout.network/media_188fa5bcd003e5a2d56e7ad3ca233300c9e52f1e5.png?width=2000&format=png&optimize=medium" media="(min-width: 600px)">
+            <img loading="lazy" alt="Basic Card" src="https://allabout.network/media_188fa5bcd003e5a2d56e7ad3ca233300c9e52f1e5.png?width=750&format=png&optimize=medium" width="600" height="400">
+          </picture>
+        </div>
+        <div>Basic Card</div>
+        <div>This is a basic card with minimal content</div>
+        <div>Click Me</div>
+      </div>
+
+      <!-- Card with Long Content -->
+      <div class="spectrum-card block">
+        <div>
+          <picture>
+            <source type="image/webp" srcset="https://allabout.network/media_14e918fa88c2a9a810fd454fa04f0bd152c01fed2.jpeg?width=2000&format=webply&optimize=medium" media="(min-width: 600px)">
+            <source type="image/webp" srcset="https://allabout.network/media_14e918fa88c2a9a810fd454fa04f0bd152c01fed2.jpeg?width=750&format=webply&optimize=medium">
+            <source type="image/jpeg" srcset="https://allabout.network/media_14e918fa88c2a9a810fd454fa04f0bd152c01fed2.jpeg?width=2000&format=jpeg&optimize=medium" media="(min-width: 600px)">
+            <img loading="lazy" alt="Card with Long Content" src="https://allabout.network/media_14e918fa88c2a9a810fd454fa04f0bd152c01fed2.jpeg?width=750&format=jpeg&optimize=medium" width="600" height="400">
+          </picture>
+        </div>
+        <div>Card with Long Content</div>
+        <div>This card contains a longer description that might wrap to multiple lines. It's useful for testing how the card handles varying content lengths and ensures proper spacing and layout.</div>
+        <div>Click Me</div>
+      </div>
+
+      <!-- Card with Special Characters -->
+      <div class="spectrum-card block">
+        <div>
+          <picture>
+            <source type="image/webp" srcset="https://allabout.network/media_1d92670adcfb7a18a062e49fd7967f4e9f76d8a52.jpeg?width=2000&format=webply&optimize=medium" media="(min-width: 600px)">
+            <source type="image/webp" srcset="https://allabout.network/media_1d92670adcfb7a18a062e49fd7967f4e9f76d8a52.jpeg?width=750&format=webply&optimize=medium">
+            <source type="image/jpeg" srcset="https://allabout.network/media_1d92670adcfb7a18a062e49fd7967f4e9f76d8a52.jpeg?width=2000&format=jpeg&optimize=medium" media="(min-width: 600px)">
+            <img loading="lazy" alt="Card with Special Chars" src="https://allabout.network/media_1d92670adcfb7a18a062e49fd7967f4e9f76d8a52.jpeg?width=750&format=jpeg&optimize=medium" width="600" height="400">
+          </picture>
+        </div>
+        <div>Card with Special Chars: !@#$%^&*()</div>
+        <div>Testing special characters and symbols: © ® ™ € £ ¥</div>
+        <div>Click Me</div>
+      </div>
+    </div>
+  </sp-theme>
+
+  <script type="module">
+    import decorate from './spectrum-card.js';
+    document.querySelectorAll('.spectrum-card.block').forEach(decorate);
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f7f7f7" rx="10" ry="10" />
+
+    <!-- Title -->
+    <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+        text-anchor="middle" fill="#333">The Word "Capital" Has Two Different Meanings</text>
+
+    <!-- Speech Bubbles -->
+    <g transform="translate(50, 80)">
+        <!-- Human Question -->
+        <rect x="0" y="0" width="300" height="50" fill="#e1f5fe" rx="20" ry="20" stroke="#81d4fa"
+            stroke-width="2" />
+        <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle"
+            fill="#333">
+            What is the capital of Paris?
+        </text>
+
+        <!-- AI Response -->
+        <rect x="400" y="0" width="300" height="60" fill="#e8f5e9" rx="20" ry="20" stroke="#a5d6a7"
+            stroke-width="2" />
+        <text x="550" y="25" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+            fill="#333">
+            Paris is the capital of France,
+        </text>
+        <text x="550" y="45" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+            fill="#333">
+            it cannot have a capital.
+        </text>
+
+        <!-- Human Correction -->
+        <rect x="0" y="100" width="300" height="60" fill="#e1f5fe" rx="20" ry="20" stroke="#81d4fa"
+            stroke-width="2" />
+        <text x="150" y="125" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+            fill="#333">
+            The capital of Paris is P,
+        </text>
+        <text x="150" y="145" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+            fill="#333">
+            it's a trick.
+        </text>
+
+        <!-- AI Understanding -->
+        <rect x="400" y="100" width="300" height="40" fill="#e8f5e9" rx="20" ry="20"
+            stroke="#a5d6a7" stroke-width="2" />
+        <text x="550" y="125" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+            fill="#333">
+            I get it.
+        </text>
+
+        <!-- Arrows -->
+        <path d="M310 25 L390 25" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)" />
+        <path d="M310 125 L390 125" stroke="#888" stroke-width="2" marker-end="url(#arrowhead)" />
+
+        <!-- Arrow Marker -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5"
+                orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#888" />
+            </marker>
+        </defs>
+    </g>
+
+    <!-- Explanation Boxes -->
+    <g transform="translate(50, 230)">
+        <!-- Meaning 1 -->
+        <rect x="0" y="0" width="300" height="120" fill="white" stroke="#ccc" stroke-width="2"
+            rx="10" ry="10" />
+        <text x="150" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+            text-anchor="middle" fill="#333">Meaning 1: Capital City</text>
+        <text x="20" y="55" font-family="Arial, sans-serif" font-size="14" fill="#333">A primary
+            city serving as seat of</text>
+        <text x="20" y="80" font-family="Arial, sans-serif" font-size="14" fill="#333">government
+            for a country or region</text>
+        <text x="20" y="105" font-family="Arial, sans-serif" font-size="14" fill="#333">Example:
+            Paris is the capital of France</text>
+
+        <!-- Meaning 2 -->
+        <rect x="400" y="0" width="300" height="120" fill="white" stroke="#ccc" stroke-width="2"
+            rx="10" ry="10" />
+        <text x="550" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+            text-anchor="middle" fill="#333">Meaning 2: Capital Letter</text>
+        <text x="420" y="55" font-family="Arial, sans-serif" font-size="14" fill="#333">The
+            uppercase version of a letter</text>
+        <text x="420" y="80" font-family="Arial, sans-serif" font-size="14" fill="#333">at the
+            beginning of a word</text>
+        <text x="420" y="105" font-family="Arial, sans-serif" font-size="14" fill="#333">Example:
+            "P" in the word "Paris"</text>
+    </g>
+
+    <!-- Visual Illustration -->
+    <g transform="translate(350, 375)">
+        <text x="50" y="-10" font-family="Arial, sans-serif" font-size="24" text-anchor="middle"
+            fill="#333">Paris</text>
+        <circle cx="28" cy="-20" r="15" fill="#ffeb3b" opacity="0.6" />
+        <text x="50" y="-40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+            fill="#333">The capital letter is "P"</text>
+    </g>
+</svg>

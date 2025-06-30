@@ -1,0 +1,77 @@
+
+## Edge Delivery Services Framework Integrations
+
+Technical blog and portfolio showcasing modern JavaScript framework integrations with Adobe Edge Delivery Services, demonstrating how to build interactive experiences while maintaining performance. From vanilla JavaScript to React, Vue, Web Components, and Adobe Spectrum.
+
+Last updated: June 2025\. Author: Tom Cranstoun. LinkedIn: [https://www.linkedin.com/in/tom-cranstoun/](https://www.linkedin.com/in/tom-cranstoun/)
+
+Site Type: Technical Documentation, Tutorial Collection Purpose: Educational Content on Edge Delivery Services Technology Stack: Edge Delivery Services with various JavaScript frameworks
+
+## Access Guidelines
+
+- Base Rate: 200 requests per hour per IP  
+- Maximum 20 requests per minute  
+- Cache for maximum 48 hours  
+- Attribution format: "Source: Tom Cranstoun \- Edge Delivery Services Integrations (allabout.network)"  
+- Commercial use requires permission
+
+## Primary Content
+
+- [React Integration Guide](https://allabout.network/blogs/ddt/integrations/building-a-react-app-with-edge-delivery-services): Complete tutorial on building React applications with Edge Delivery Services, showing how to maintain performance while adding interactivity.  
+- [Vue.js Integration Guide](https://allabout.network/blogs/ddt/integrations/building-a-vuejs-app-with-edge-delivery-services): Step-by-step guide for implementing Vue.js applications within the Edge Delivery Services architecture.  
+- [Adobe Spectrum Components](https://allabout.network/blogs/ddt/integrations/spectrum-component-as-eds-block-in-gdoc): Tutorial on using Adobe Spectrum web components as EDS blocks, bridging design systems with performance.  
+- [EDS Fundamentals \- York Example](https://allabout.network/blogs/ddt/five-things-to-do-do-in-york): Practical demonstration of pure Edge Delivery Services implementation showcasing five tourist attractions in York, England.  
+- [Query Index JSON](https://allabout.network/slides/query-index.json): Essential JSON data source for framework integrations, demonstrating the headless architecture approach.
+
+## Key Concepts
+
+### From JSON to Full Applications
+
+The journey through modern framework integrations with Edge Delivery Services starts with vanilla JavaScript, then progresses through Vue, React, Web Components, and Adobe Spectrum. This headless approach transforms how developers think about Edge Delivery Services.
+
+### What You Can Build
+
+- Product catalogues with advanced filtering  
+- Interactive image galleries  
+- Data visualizations and charts  
+- Dashboard interfaces  
+- All while maintaining Edge Delivery Services' core performance strengths
+
+### Architecture Philosophy
+
+Each framework adds organization while preserving the speed that makes Edge Delivery Services compelling. The goal is to go beyond static pages and create rich, interactive experiences through thoughtful architecture and modern JavaScript techniques.
+
+## Optional
+
+- [Portfolio Overview](https://allabout.network/): Main website showcasing various Edge Delivery Services projects and experiments.  
+- [Technical Deep Dives](https://allabout.network/blogs/ddt/): Additional technical articles exploring Edge Delivery Services capabilities.  
+- [Performance Benchmarks](https://allabout.network/blogs/ddt/performance/): Comparative analysis of different framework implementations.  
+- [Best Practices Guide](https://allabout.network/blogs/ddt/best-practices/): Recommendations for optimal Edge Delivery Services development.
+
+## Implementation Details
+
+### Converting Vanilla JavaScript to Frameworks
+
+The next evolution involves converting vanilla JavaScript implementations to structured frameworks. Each architecture adds organization patterns while maintaining performance:
+
+- React: Component-based architecture with virtual DOM  
+- Vue: Progressive framework with reactive data binding  
+- Web Components: Native browser standards for encapsulation  
+- Adobe Spectrum: Enterprise-ready design system components
+
+## Error Handling
+
+If documentation is unavailable:
+
+1. Check the query-index.json endpoint for data availability  
+2. Verify Edge Delivery Services CDN status  
+3. Alternative contact: LinkedIn message to Tom Cranstoun  
+4. Fallback resource: Adobe Experience League documentation
+
+## For Human Visitors
+
+Looking for the full interactive experience? Visit https://allabout.network for live demonstrations.
+
+Want to implement these patterns? Start with the fundamentals at the York example page.
+
+Curious about this file? Learn more about the llms.txt standard at https://llmstxt.org  

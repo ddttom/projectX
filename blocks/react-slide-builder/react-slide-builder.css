@@ -1,0 +1,9 @@
+.react-slide-builder {
+    width: 100%;
+    min-height: 400px;
+  }
+  
+  .react-slide-builder #react-slide-app {
+    width: 100%;
+  }
+  

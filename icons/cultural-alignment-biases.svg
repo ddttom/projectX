@@ -1,0 +1,37 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f5f7fa"/>
+        <stop offset="100%" stop-color="#c3cfe2"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="800" height="400" fill="url(#bgGradient)" rx="15" ry="15"/>
+    
+    <!-- Simplified world map -->
+    <g transform="translate(400, 180)">
+      <path d="M-240 -80 Q-180 -100, -100 -90 Q0 -80, 100 -90 Q180 -100, 240 -80 Q260 -50, 220 0 Q180 40, 100 30 Q0 20, -100 30 Q-180 40, -220 0 Q-260 -50, -240 -80" 
+            fill="#BBDEFB" stroke="#3498db" stroke-width="4"/>
+      
+      <!-- Cultural alignment regions -->
+      <circle cx="-160" cy="-40" r="50" fill="#3498db" opacity="0.7" stroke="#3498db" stroke-width="2"/>
+      <text x="-160" y="-53" text-anchor="middle" fill="white" font-size="18" font-weight="bold">WEST</text>
+      
+      <circle cx="0" cy="-20" r="30" fill="#f39c12" opacity="0.6" stroke="#f39c12" stroke-width="2"/>
+      <text x="0" cy="-15" text-anchor="middle" fill="#34495e" font-size="14" font-weight="bold">EAST</text>
+      
+      <circle cx="160" cy="-40" r="30" fill="#27ae60" opacity="0.6" stroke="#27ae60" stroke-width="2"/>
+      <text x="160" cy="-35" text-anchor="middle" fill="#34495e" font-size="14" font-weight="bold">SOUTH</text>
+      
+      <!-- Cultural perspective lines -->
+      <line x1="-160" y1="-40" x2="0" y2="80" stroke="#3498db" stroke-width="2" stroke-dasharray="5 3"/>
+      <line x1="0" y1="-20" x2="0" y2="80" stroke="#f39c12" stroke-width="2" stroke-dasharray="5 3"/>
+      <line x1="160" y1="-40" x2="0" y2="80" stroke="#27ae60" stroke-width="2" stroke-dasharray="5 3"/>
+      
+      <!-- AI Model representation -->
+      <circle cx="0" cy="80" r="20" fill="#3498db"/>
+      <text x="0" y="85" text-anchor="middle" fill="white" font-size="14" font-weight="bold">AI</text>
+    </g>
+    
+    <text x="400" y="340" text-anchor="middle" fill="#333" font-size="32" font-weight="bold">CULTURAL ALIGNMENT BIASES</text>
+  </svg>

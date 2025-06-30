@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f5f7fa"/>
+        <stop offset="100%" stop-color="#c3cfe2"/>
+      </linearGradient>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#3498db"/>
+      </marker>
+    </defs>
+    
+    <rect width="800" height="400" fill="url(#bgGradient)" rx="15" ry="15"/>
+    
+    <!-- Server rack representation -->
+    <g transform="translate(400, 200)">
+      <rect x="-160" y="-120" width="320" height="240" rx="10" fill="#ECF0F1" stroke="#3498db" stroke-width="4"/>
+      
+      <!-- Server units -->
+      <rect x="-140" y="-100" width="280" height="40" rx="5" fill="#BBDEFB" stroke="#3498db" stroke-width="2"/>
+      <rect x="-140" y="-40" width="280" height="40" rx="5" fill="#BBDEFB" stroke="#3498db" stroke-width="2"/>
+      <rect x="-140" y="20" width="280" height="40" rx="5" fill="#BBDEFB" stroke="#3498db" stroke-width="2"/>
+      <rect x="-140" y="80" width="280" height="40" rx="5" fill="#BBDEFB" stroke="#3498db" stroke-width="2"/>
+      
+      <!-- Status lights -->
+      <circle cx="-120" cy="-80" r="6" fill="#27ae60"/>
+      <circle cx="-120" cy="-20" r="6" fill="#27ae60"/>
+      <circle cx="-120" cy="40" r="6" fill="#27ae60"/>
+      <circle cx="-120" cy="100" r="6" fill="#27ae60"/>
+      
+      <!-- Server details -->
+      <text x="0" y="-80" text-anchor="middle" fill="#34495e" font-size="16">AI MODEL</text>
+      <text x="0" y="-20" text-anchor="middle" fill="#34495e" font-size="16">PROPRIETARY DATA</text>
+      <text x="0" y="40" text-anchor="middle" fill="#34495e" font-size="16">VERSION CONTROL</text>
+      <text x="0" y="100" text-anchor="middle" fill="#34495e" font-size="16">SECURITY LAYER</text>
+    </g>
+    
+    <!-- Data flow -->
+    <g transform="translate(400, 340)">
+      <line x1="-200" y1="0" x2="-50" y2="0" stroke="#3498db" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <line x1="50" y1="0" x2="200" y2="0" stroke="#3498db" stroke-width="3" marker-end="url(#arrowhead)"/>
+      
+      <circle cx="0" cy="0" r="30" fill="#3498db" opacity="0.6"/>
+      <text x="0" y="5" text-anchor="middle" fill="white" font-size="14" font-weight="bold">LOCAL</text>
+      
+      <text x="-230" y="5" text-anchor="end" fill="#34495e" font-size="16" font-weight="bold">INPUT</text>
+      <text x="230" y="5" text-anchor="start" fill="#34495e" font-size="16" font-weight="bold">OUTPUT</text>
+    </g>
+    
+    <text x="400" y="50" text-anchor="middle" fill="#333" font-size="32" font-weight="bold">LOCAL DEPLOYMENT</text>
+  </svg>

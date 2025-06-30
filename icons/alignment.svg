@@ -1,0 +1,114 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10" />
+
+    <!-- Title -->
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold"
+        text-anchor="middle" fill="#333">Knowledge Cutoff Limitations</text>
+
+    <!-- Subtitle -->
+    <text x="400" y="85" font-family="Arial, sans-serif" font-size="18" font-style="italic"
+        text-anchor="middle" fill="#555">
+        Binary knowledge boundaries create false certainty
+    </text>
+
+    <!-- Timeline -->
+    <g transform="translate(400, 270)">
+        <!-- Timeline line with gradient -->
+        <defs>
+            <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#9b59b6" />
+                <stop offset="50%" stop-color="#3498db" />
+                <stop offset="100%" stop-color="#e74c3c" />
+            </linearGradient>
+        </defs>
+
+        <!-- Main timeline -->
+        <line x1="-300" y1="0" x2="300" y2="0" stroke="url(#timelineGradient)" stroke-width="8" />
+
+        <!-- Knowledge cutoff vertical line -->
+        <line x1="180" y1="-80" x2="180" y2="80" stroke="#e74c3c" stroke-width="3"
+            stroke-dasharray="10,5" />
+        <text x="160" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+            text-anchor="middle" fill="#e74c3c">KNOWLEDGE CUTOFF</text>
+
+        <!-- Time markers -->
+        <g font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+            <!-- Past -->
+            <line x1="-250" y1="-10" x2="-250" y2="10" stroke="#333" stroke-width="2" />
+            <text x="-250" y="30">2020</text>
+
+            <line x1="-150" y1="-10" x2="-150" y2="10" stroke="#333" stroke-width="2" />
+            <text x="-150" y="30">2021</text>
+
+            <line x1="-50" y1="-10" x2="-50" y2="10" stroke="#333" stroke-width="2" />
+            <text x="-50" y="30">2022</text>
+
+            <line x1="50" y1="-10" x2="50" y2="10" stroke="#333" stroke-width="2" />
+            <text x="50" y="30">2023</text>
+
+            <!-- Training cutoff -->
+            <line x1="150" y1="-10" x2="150" y2="10" stroke="#333" stroke-width="2" />
+            <text x="150" y="30">2024</text>
+            <line x1="180" y1="-10" x2="180" y2="10" stroke="#e74c3c" stroke-width="2" />
+
+            <!-- Future (unknown to AI) -->
+            <line x1="250" y1="-10" x2="250" y2="10" stroke="#333" stroke-width="2" />
+            <text x="250" y="30">2025</text>
+        </g>
+
+        <!-- Knowledge state representations -->
+
+        <!-- Known/training data region -->
+        <rect x="-300" y="-70" width="480" height="70" fill="#3498db" opacity="0.2" rx="5" ry="5" />
+        <text x="-60" y="-30" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+            text-anchor="middle" fill="#3498db">KNOWN INFORMATION</text>
+
+        <!-- Unknown/post-cutoff region -->
+        <rect x="180" y="-70" width="120" height="70" fill="#e74c3c" opacity="0.2" rx="5" ry="5" />
+        <text x="240" y="-30" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+            text-anchor="middle" fill="#e74c3c">UNKNOWN</text>
+    </g>
+
+    <!-- Diagrams of knowledge issues -->
+    <g transform="translate(400, 400)">
+        <!-- Left side: Confident but wrong answers -->
+        <g transform="translate(-200, 0)">
+            <circle cx="0" cy="0" r="60" fill="#e74c3c" opacity="0.1" />
+            <circle cx="0" cy="0" r="60" fill="none" stroke="#e74c3c" stroke-width="2" />
+
+            <!-- AI icon with false certainty -->
+            <circle cx="0" cy="-20" r="25" fill="#e74c3c" opacity="0.7" />
+            <text x="0" y="-15" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+                text-anchor="middle" fill="white">AI</text>
+
+            <!-- Exclamation mark for certainty -->
+            <text x="0" y="30" font-family="Arial, sans-serif" font-size="40" font-weight="bold"
+                text-anchor="middle" fill="#e74c3c">!</text>
+
+            <text x="0" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle"
+                fill="#333">Confidence higher</text>
+             
+        </g>
+
+        <!-- Right side: Binary knowledge boundary -->
+        <g transform="translate(200, 0)">
+            <circle cx="0" cy="0" r="60" fill="#3498db" opacity="0.1" />
+            <circle cx="0" cy="0" r="60" fill="none" stroke="#3498db" stroke-width="2" />
+
+            <!-- Question mark instead of binary -->
+            <text x="0" y="25" font-family="Arial, sans-serif" font-size="70" font-weight="bold"
+                text-anchor="middle" fill="#e74c3c">?</text>
+
+            <text x="0" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle"
+                fill="#333">Confidence low </text>
+           
+        </g>
+    </g>
+
+    <!-- Bottom message -->
+    <text x="400" y="560" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+        fill="#555">
+        Unlike humans who update continuously, AI systems have hard knowledge cutoffs
+    </text>
+</svg>

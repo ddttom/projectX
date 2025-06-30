@@ -1,0 +1,145 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">The Rise of Agentic AI</text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#555">Autonomous Systems Require Greater Control</text>
+  
+  <!-- Central AI Agent -->
+  <g transform="translate(400, 250)">
+    <!-- Agent circle -->
+    <circle cx="0" cy="0" r="70" fill="#4dabf7" opacity="0.9"/>
+    
+    <!-- AI text -->
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white" font-weight="bold">Agentic</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white" font-weight="bold">AI</text>
+    
+    </g>
+  
+  <!-- Action nodes around center -->
+  <g>
+    <!-- Decision -->
+    <circle cx="580" cy="250" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    <text x="580" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Decision</text>
+    <line x1="470" y1="250" x2="540" y2="250" stroke="#333" stroke-width="2"/>
+    <polygon points="540,250 530,245 530,255" fill="#333"/>
+    
+    <!-- Plan (new) -->
+    <circle cx="220" cy="250" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    <text x="220" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Plan</text>
+    <line x1="330" y1="250" x2="260" y2="250" stroke="#333" stroke-width="2"/>
+    <polygon points="260,250 270,245 270,255" fill="#333"/>
+    
+    <!-- Reason -->
+    <circle cx="520" cy="150" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    <text x="520" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Reason</text>
+    <line x1="450" y1="200" x2="495" y2="170" stroke="#333" stroke-width="2"/>
+    <polygon points="495,170 485,175 490,185" fill="#333"/>
+    
+    <!-- Execute -->
+    <circle cx="520" cy="350" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    <text x="520" y="355" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Execute</text>
+    <line x1="450" y1="300" x2="495" y2="330" stroke="#333" stroke-width="2"/>
+    <polygon points="495,330 485,325 490,315" fill="#333"/>
+    
+    <!-- Observe -->
+    <circle cx="280" cy="150" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    <text x="280" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Observe</text>
+    <line x1="350" y1="200" x2="305" y2="170" stroke="#333" stroke-width="2"/>
+    <polygon points="305,170 315,175 310,185" fill="#333"/>
+    
+    <!-- Action -->
+    <circle cx="280" cy="350" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    <text x="280" y="355" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Action</text>
+    <line x1="350" y1="300" x2="305" y2="330" stroke="#333" stroke-width="2"/>
+    <polygon points="305,330 315,325 310,315" fill="#333"/>
+  </g>
+  
+  <!-- Human Oversight -->
+  <g transform="translate(400, 120)">
+    <circle cx="0" cy="0" r="40" fill="#e9ecef" stroke="#adb5bd" stroke-width="2"/>
+    
+    <!-- Simplified human figure -->
+    <circle cx="0" cy="-15" r="12" fill="#adb5bd"/>
+    <path d="M-15,5 C-15,20 15,20 15,5 Z" fill="#adb5bd"/>
+    <line x1="0" y1="-3" x2="0" y2="15" stroke="#adb5bd" stroke-width="6"/>
+    
+    <text x="0" y="60" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Human Oversight</text>
+    
+    <!-- Connection to AI -->
+    <line x1="0" y1="40" x2="0" y2="90" stroke="#adb5bd" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Bottom boxes -->
+  <g>
+    <!-- A2A Architecture -->
+    <g transform="translate(185, 450)">
+      <rect x="-125" y="-40" width="250" height="80" rx="10" ry="10" fill="#e7f5ff" stroke="#4dabf7" stroke-width="2"/>
+      
+      <text x="0" y="-15" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333" font-weight="bold">A2A Architecture</text>
+      <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">Agent-to-Agent</text>
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">Communication</text>
+      
+      <!-- Agent icons -->
+      <circle cx="-80" cy="0" r="20" fill="#4dabf7" opacity="0.7"/>
+      <text x="-80" y="5" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">AI</text>
+      
+      <circle cx="80" cy="0" r="20" fill="#4dabf7" opacity="0.7"/>
+      <text x="80" y="5" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">AI</text>
+      
+      <!-- Connection arrows -->
+      <line x1="-60" y1="0" x2="60" y2="0" stroke="#333" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <polygon points="60,0 50,-5 50,5" fill="#333"/>
+      <polygon points="-60,0 -50,-5 -50,5" fill="#333"/>
+    </g>
+    
+    <!-- MCP -->
+    <g transform="translate(400, 450)">
+      <rect x="-90" y="-40" width="180" height="80" rx="10" ry="10" fill="#fff9db" stroke="#fcc419" stroke-width="2"/>
+      
+      <text x="0" y="-15" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333" font-weight="bold">MCP</text>
+      <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">Model Context</text>
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">Protocol</text>
+      
+      <!-- Code symbols -->
+      <text x="-50" y="5" font-family="monospace" font-size="16" text-anchor="middle" fill="#fcc419">{}</text>
+      <text x="50" y="5" font-family="monospace" font-size="16" text-anchor="middle" fill="#fcc419">()</text>
+    </g>
+    
+    <!-- Control Required -->
+    <g transform="translate(615, 450)">
+      <rect x="-125" y="-40" width="250" height="80" rx="10" ry="10" fill="#ebfbee" stroke="#40c057" stroke-width="2"/>
+      
+      <text x="0" y="-15" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333" font-weight="bold">Control Required</text>
+      <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">Guardrails and</text>
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">Governance</text>
+      
+      <!-- Control symbols -->
+      <g transform="translate(-60, 0)">
+        <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="#40c057" stroke-width="2"/>
+        <line x1="-10" y1="0" x2="10" y2="0" stroke="#40c057" stroke-width="2"/>
+        <line x1="0" y1="-10" x2="0" y2="10" stroke="#40c057" stroke-width="2"/>
+      </g>
+      
+      <g transform="translate(60, 0)">
+        <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="#40c057" stroke-width="2"/>
+        <line x1="-10" y1="0" x2="10" y2="0" stroke="#40c057" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Business Systems Box at bottom -->
+  <g transform="translate(400, 550)">
+    <rect x="-350" y="-30" width="700" height="60" rx="10" ry="10" fill="#f1f3f5" stroke="#868e96" stroke-width="2"/>
+    
+    <text x="0" y="5" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#333" font-weight="bold">Business Systems and Infrastructure</text>
+    
+    <!-- Connection lines from components to business systems -->
+    <line x1="-215" y1="-60" x2="-215" y2="-30" stroke="#868e96" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <line x1="0" y1="-60" x2="0" y2="-30" stroke="#868e96" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <line x1="215" y1="-60" x2="215" y2="-30" stroke="#868e96" stroke-width="1.5" stroke-dasharray="4,2"/>
+  </g>
+</svg>

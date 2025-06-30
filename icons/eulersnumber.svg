@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+    <!-- Background -->
+    <rect width="500" height="300" fill="#f8f9fa" rx="10" ry="10" />
+
+    <!-- Grid lines -->
+    <!-- Vertical grid lines -->
+    <line x1="150" y1="50" x2="150" y2="250" stroke="#ddd" stroke-width="1" />
+    <line x1="250" y1="50" x2="250" y2="250" stroke="#ddd" stroke-width="1" />
+    <line x1="350" y1="50" x2="350" y2="250" stroke="#ddd" stroke-width="1" />
+    <line x1="450" y1="50" x2="450" y2="250" stroke="#ddd" stroke-width="1" />
+
+    <!-- Horizontal grid lines -->
+    <line x1="50" y1="210" x2="450" y2="210" stroke="#ddd" stroke-width="1" />
+    <line x1="50" y1="170" x2="450" y2="170" stroke="#ddd" stroke-width="1" />
+    <line x1="50" y1="130" x2="450" y2="130" stroke="#ddd" stroke-width="1" />
+    <line x1="50" y1="90" x2="450" y2="90" stroke="#ddd" stroke-width="1" />
+    <line x1="50" y1="50" x2="450" y2="50" stroke="#ddd" stroke-width="1" />
+
+    <!-- Axes -->
+    <line x1="50" y1="250" x2="450" y2="250" stroke="black" stroke-width="2" />
+    <line x1="50" y1="250" x2="50" y2="50" stroke="black" stroke-width="2" />
+
+    <!-- X-axis labels -->
+    <text x="250" y="295" text-anchor="middle" font-family="Arial" font-size="16">x</text>
+    <text x="50" y="280" text-anchor="middle" font-family="Arial" font-size="12">0</text>
+    <text x="150" y="280" text-anchor="middle" font-family="Arial" font-size="12">1</text>
+    <text x="250" y="280" text-anchor="middle" font-family="Arial" font-size="12">2</text>
+    <text x="350" y="280" text-anchor="middle" font-family="Arial" font-size="12">3</text>
+    <text x="450" y="280" text-anchor="middle" font-family="Arial" font-size="12">4</text>
+
+    <!-- Y-axis label -->
+    <text x="25" y="150" text-anchor="middle" font-family="Arial" font-size="16"
+        transform="rotate(-90 25 150)">f(x)</text>
+    <text x="40" y="250" text-anchor="end" font-family="Arial" font-size="12">0</text>
+    <text x="40" y="210" text-anchor="end" font-family="Arial" font-size="12">5</text>
+    <text x="40" y="170" text-anchor="end" font-family="Arial" font-size="12">10</text>
+    <text x="40" y="130" text-anchor="end" font-family="Arial" font-size="12">15</text>
+    <text x="40" y="90" text-anchor="end" font-family="Arial" font-size="12">20</text>
+    <text x="40" y="50" text-anchor="end" font-family="Arial" font-size="12">25</text>
+
+    <!-- e^x curve -->
+    <path d="M50,250 Q100,240 150,210 Q200,180 250,130 Q300,80 350,10" stroke="#1E88E5"
+        stroke-width="3" fill="none" />
+
+    <!-- Point on curve (at x=2) -->
+    <circle cx="250" cy="130" r="6" fill="#E91E63" />
+
+    <!-- Tangent line at x=2 -->
+    <line x1="200" y1="180" x2="300" y2="80" stroke="#4CAF50" stroke-width="2.5"
+        stroke-dasharray="5,0" />
+
+    <!-- Function label -->
+    <text x="120" y="70" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold"
+        fill="#1E88E5">f(x) = e^x</text>
+
+    <!-- Special property annotation -->
+    <path d="M320,90 L400,50" stroke="#FF9800" stroke-width="1.5" marker-end="url(#arrow)" />
+    <text x="380" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#FF9800">Slope
+        = Height = 7.4</text>
+
+    <!-- Explanation text -->
+    <rect x="280" y="200" width="180" height="50" fill="white" opacity="0.8" rx="5" />
+    <text x="370" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">
+        The exponential function e^x is unique:
+    </text>
+    <text x="370" y="240" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">
+        its slope equals its height at any point
+    </text>
+
+    <!-- Arrow marker definition -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#FF9800" />
+        </marker>
+    </defs>
+</svg>

@@ -1,0 +1,54 @@
+# ProjectX - Adobe Edge Delivery Services
+
+**Author:** Tom Cranstoun (@ddttom)  
+**Repository:** https://github.com/ddttom/projectX  
+**License:** Apache License 2.0
+
+## Usage Guidelines
+
+- Training Usage: Permitted for public documentation only
+- Attribution Format: "Source: Tom Cranstoun - ProjectX (github.com/ddttom/projectX)"
+
+## Documentation Links
+
+- [EDS Development Guide](docs/eds.md): Complete EDS development reference
+- [Block Development](docs/blog.md): Component creation and customization
+- [Development Server Guide](docs/Server-README.md): Local development setup
+- [Best Practices](docs/eds-appendix.md): Advanced patterns and techniques
+
+## AI Development Context
+
+- [AI Development Guide](docs/debug.md): AI integration basics
+- [Block Architecture Standards](docs/for-ai/block-architecture-standards.md): Development standards
+- [EDS Architecture Guide](docs/for-ai/EDS-Architecture-and-Testing-Guide.md): Testing and architecture
+
+## Project Overview
+
+ProjectX is an Adobe Edge Delivery Services project focused on:
+- Modern JavaScript (ES modules) without TypeScript
+- Pure CSS without preprocessors
+- No build-heavy frameworks
+- Simplicity and performance
+- Clear code organization
+- Minimal dependencies
+
+## Development Philosophy
+
+The project maintains EDS best practices while prioritizing developer experience and AI-assisted development workflows.
+
+## Contact
+
+- GitHub: [@ddttom](https://github.com/ddttom)
+- Repository: [ProjectX](https://github.com/ddttom/projectX)
+- About llms.txt: [https://llmstxt.org](https://llmstxt.org)
+
+## Technical Standards
+
+- ES modules for all JavaScript
+- Mobile-first responsive CSS
+- Standard breakpoints (600px, 900px, 1200px)
+- Block-scoped CSS classes
+- Comprehensive documentation
+- Local development server included
+
+Looking for the full interactive experience? Visit the repository for live demonstrations and complete documentation.

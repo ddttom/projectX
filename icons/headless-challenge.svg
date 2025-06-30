@@ -1,0 +1,77 @@
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background that resembles a code editor -->
+    <rect x="0" y="0" width="1000" height="400" fill="#ffffff" />
+    
+    <!-- Line numbers column -->
+    <rect x="0" y="0" width="60" height="400" fill="#f5f5f5" />
+    
+    <!-- Line numbers -->
+    <text x="30" y="30" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">1</text>
+    <text x="30" y="60" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">2</text>
+    <text x="30" y="90" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">3</text>
+    <text x="30" y="120" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">4</text>
+    <text x="30" y="150" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">5</text>
+    <text x="30" y="180" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">6</text>
+    <text x="30" y="210" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">7</text>
+    <text x="30" y="240" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">8</text>
+    <text x="30" y="270" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">9</text>
+    <text x="30" y="300" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">10</text>
+    <text x="30" y="330" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">11</text>
+    <text x="30" y="360" font-size="14" text-anchor="middle" fill="#888888" font-family="monospace">12</text>
+    
+    <!-- Code content with improved spacing -->
+    <!-- Line 1: <!DOCTYPE html> -->
+    <text x="80" y="30" font-size="14" fill="#000000" font-family="monospace">&lt;!DOCTYPE html&gt;</text>
+    
+    <!-- Line 2: <html lang="en"> -->
+    <text x="80" y="60" font-size="14" fill="#000000" font-family="monospace">&lt;html</text>
+    <text x="132" y="60" font-size="14" fill="#000000" font-family="monospace">lang=</text>
+    <text x="182" y="60" font-size="14" fill="#000000" font-family="monospace">"en"</text>
+    <text x="217" y="60" font-size="14" fill="#000000" font-family="monospace">&gt;</text>
+    
+    <!-- Line 3: <head> -->
+    <text x="100" y="90" font-size="14" fill="#000000" font-family="monospace">&lt;head&gt;</text>
+    
+    <!-- Line 4: <meta charset="UTF-8"> -->
+    <text x="120" y="120" font-size="14" fill="#000000" font-family="monospace">&lt;meta</text>
+    <text x="172" y="120" font-size="14" fill="#000000" font-family="monospace">charset=</text>
+    <text x="247" y="120" font-size="14" fill="#000000" font-family="monospace">"UTF-8"</text>
+    <text x="310" y="120" font-size="14" fill="#000000" font-family="monospace">&gt;</text>
+    
+    <!-- Line 5: <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <text x="120" y="150" font-size="14" fill="#000000" font-family="monospace">&lt;meta</text>
+    <text x="172" y="150" font-size="14" fill="#000000" font-family="monospace">name=</text>
+    <text x="224" y="150" font-size="14" fill="#000000" font-family="monospace">"viewport"</text>
+    <text x="310" y="150" font-size="14" fill="#000000" font-family="monospace">content=</text>
+    <text x="392" y="150" font-size="14" fill="#000000" font-family="monospace">"width=device-width, initial-scale=1.0"</text>
+    <text x="700" y="150" font-size="14" fill="#000000" font-family="monospace">&gt;</text>
+    
+    <!-- Line 6: <title>Super Shop</title> -->
+    <text x="120" y="180" font-size="14" fill="#000000" font-family="monospace">&lt;title&gt;</text>
+    <text x="182" y="180" font-size="14" fill="#000000" font-family="monospace">Super Shop</text>
+    <text x="280" y="180" font-size="14" fill="#000000" font-family="monospace">&lt;/title&gt;</text>
+    
+    <!-- Line 7: </head> -->
+    <text x="100" y="210" font-size="14" fill="#000000" font-family="monospace">&lt;/head&gt;</text>
+    
+    <!-- Line 8: <body> -->
+    <text x="100" y="240" font-size="14" fill="#000000" font-family="monospace">&lt;body&gt;</text>
+    
+    <!-- Line 9: <div id="root"></div> -->
+    <text x="120" y="270" font-size="14" fill="#000000" font-family="monospace">&lt;div</text>
+    <text x="162" y="270" font-size="14" fill="#000000" font-family="monospace">id=</text>
+    <text x="190" y="270" font-size="14" fill="#000000" font-family="monospace">"root"</text>
+    <text x="246" y="270" font-size="14" fill="#000000" font-family="monospace">&gt;&lt;/div&gt;</text>
+    
+    <!-- Line 10: <script src="app.js"></script> -->
+    <text x="120" y="300" font-size="14" fill="#000000" font-family="monospace">&lt;script</text>
+    <text x="182" y="300" font-size="14" fill="#000000" font-family="monospace">src=</text>
+    <text x="220" y="300" font-size="14" fill="#000000" font-family="monospace">"app.js"</text>
+    <text x="282" y="300" font-size="14" fill="#000000" font-family="monospace">&gt;&lt;/script&gt;</text>
+    
+    <!-- Line 11: </body> -->
+    <text x="100" y="330" font-size="14" fill="#000000" font-family="monospace">&lt;/body&gt;</text>
+    
+    <!-- Line 12: </html> -->
+    <text x="80" y="360" font-size="14" fill="#000000" font-family="monospace">&lt;/html&gt;</text>
+  </svg>

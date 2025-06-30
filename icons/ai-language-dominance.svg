@@ -1,0 +1,110 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="englishGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="germanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="otherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#95a5a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7f8c8d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- White Background -->
+  <rect width="800" height="600" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="28" font-weight="bold">AI Language Hierarchy</text>
+  <text x="400" y="65" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="16">English-First Development and Training</text>
+  
+  <!-- Tier 1: English Dominance -->
+  <rect x="170" y="100" width="450" height="80" rx="10" fill="url(#englishGrad)" filter="url(#shadow)"/>
+  <text x="395" y="130" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">ENGLISH</text>
+  <text x="395" y="155" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">44% of Training Data • Advanced Prompting • First-Class Features</text>
+  
+  <!-- Advanced Prompting Box -->
+  <rect x="630" y="105" width="140" height="70" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="700" y="125" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Enhanced Prompts</text>
+  <text x="700" y="140" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10">"ultrathink" → 31,999 tokens</text>
+  <text x="700" y="152" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10">"think hard" → 10,000 tokens</text>
+  <text x="700" y="164" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="10">"think" → 4,000 tokens</text>
+  
+  <!-- Arrow from English to Advanced Prompts -->
+  <path d="M 620 140 L 630 140" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Tier 2: Major Languages -->
+  <rect x="100" y="220" width="150" height="60" rx="8" fill="url(#germanGrad)" filter="url(#shadow)"/>
+  <text x="175" y="245" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">German</text>
+  <text x="175" y="263" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">Standard &lt; 6% Data</text>
+  
+  <rect x="270" y="220" width="120" height="60" rx="8" fill="url(#otherGrad)" filter="url(#shadow)"/>
+  <text x="330" y="245" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">中文</text>
+  <text x="330" y="263" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">&lt; 6% Data</text>
+  
+  <rect x="410" y="220" width="120" height="60" rx="8" fill="url(#otherGrad)" filter="url(#shadow)"/>
+  <text x="470" y="245" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Español</text>
+  <text x="470" y="263" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">&lt;6% Data</text>
+  
+  <rect x="550" y="220" width="120" height="60" rx="8" fill="url(#otherGrad)" filter="url(#shadow)"/>
+  <text x="610" y="245" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Français</text>
+  <text x="610" y="263" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11">&lt; 6% Data</text>
+  
+  <!-- Tier 3: German Variants -->
+  <rect x="50" y="320" width="100" height="50" rx="6" fill="#f8c471" stroke="#f39c12" stroke-width="2"/>
+  <text x="100" y="340" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Austrian</text>
+  <text x="100" y="355" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">German</text>
+  
+  <rect x="170" y="320" width="100" height="50" rx="6" fill="#bdc3c7" stroke="#-95a5a6" stroke-width="2"/>
+  <text x="220" y="340" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Swiss</text>
+  <text x="220" y="355" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="10">German</text>
+  
+  <!-- Connection Lines -->
+  <line x1="175" y1="280" x2="100" y2="320" stroke="#f39c12" stroke-width="2" opacity="0.6"/>
+  <line x1="175" y1="280" x2="220" y2="320" stroke="#95a5a6" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Tier 4: Struggling Languages -->
+  <rect x="100" y="410" width="600" height="50" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="400" y="430" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="14">Regional Dialects • Low-Resource Languages • Oral Traditions</text>
+  <text x="400" y="448" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="12">Limited Training Data • No Advanced Features • Translation Required</text>
+  
+  <!-- Data Visualization Bar -->
+  <text x="50" y="510" fill="#2c3e50" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Training Data Distribution:</text>
+  
+  <rect x="50" y="520" width="330" height="20" fill="#e74c3c"/>
+  <rect x="380" y="520" width="45" height="20" fill="#f39c12"/>
+  <rect x="425" y="520" width="40" height="20" fill="#f39c12" />
+  <rect x="465" y="520" width="35" height="20" fill="#f39c12"/>
+  <rect x="500" y="520" width="30" height="20" fill="#f39c12"/>
+  <rect x="530" y="520" width="220" height="20" fill="#ecf0f1" stroke="#bdc3c7"/>
+  
+  <text x="215" y="555" text-anchor="middle" fill="#e74c3c" font-family="Arial, sans-serif" font-size="12" font-weight="bold">English (44%)</text>
+  <text x="402" y="555" text-anchor="middle" fill="#3498db" font-family="Arial, sans-serif" font-size="11">German</text>
+  <text x="447" y="555" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="11">中文</text>
+  <text x="482" y="555" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="11">Es</text>
+  <text x="515" y="555" text-anchor="middle" fill="#7f8c8d" font-family="Arial, sans-serif" font-size="11">Fr</text>
+  <text x="640" y="555" text-anchor="middle" fill="#bdc3c7" font-family="Arial, sans-serif" font-size="11">All Others Combined</text>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Status indicators -->
+  <circle cx="130" cy="200" r="8" fill="#e74c3c"/>
+  <text x="150" y="205" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">First-class support</text>
+  
+  <circle cx="280" cy="200" r="8" fill="#f39c12"/>
+  <text x="300" y="205" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Limited support</text>
+  
+  <circle cx="450" cy="200" r="8" fill="#95a5a6"/>
+  <text x="470" y="205" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Minimal support</text>
+</svg>

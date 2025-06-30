@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Content positioned without border box -->
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4169e1">GDPR   CCPA</text>
+    <text x="100" y="100" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4169e1">SECTOR-SPECIFIC</text>
+    <text x="100" y="130" font-family="Arial, sans-serif" font-size="6" text-anchor="middle" fill="#4169e1">FINANCIAL   HEALTHCARE   LEGAL</text>
+    <text x="100" y="160" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#4169e1">AI REGULATIONS</text>
+  </svg>

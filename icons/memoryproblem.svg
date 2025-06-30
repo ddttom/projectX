@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10" />
+
+    <!-- Title -->
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold"
+        text-anchor="middle" fill="#333">The Memory Problem</text>
+
+    <!-- Subtitle -->
+    <text x="400" y="85" font-family="Arial, sans-serif" font-size="18" font-style="italic"
+        text-anchor="middle" fill="#555">
+        "Groundhog Day: No Persistent Knowledge Retention"
+    </text>
+
+    <!-- Circular time loop with days -->
+    <g transform="translate(400, 300)">
+        <!-- Outer time loop circle -->
+        <circle cx="0" cy="0" r="180" fill="none" stroke="#6666cc" stroke-width="4"
+            stroke-dasharray="15,5" />
+
+        <!-- Arrow on the loop -->
+        <path d="M160,90 L175,75 L190,95 L155,110 Z" fill="#6666cc" />
+
+        <!-- "DAY 1" Session -->
+        <g transform="translate(-110, -110)">
+            <rect x="-60" y="-50" width="120" height="100" rx="10" ry="10" fill="#e6e6ff"
+                stroke="#6666cc" stroke-width="2" />
+
+            <!-- AI Brain Icon -->
+            <circle cx="0" cy="-20" r="20" fill="#6666cc" opacity="0.8" />
+            <path d="M-15,-15 L-5,-25 L5,-25 L15,-15 L15,0 L-15,0 Z" fill="none" stroke="white"
+                stroke-width="2" />
+            <path d="M-10,-5 L0,-15 L10,-5" fill="none" stroke="white" stroke-width="2" />
+
+            <!-- Text -->
+            <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                text-anchor="middle" fill="#333">DAY 1</text>
+            <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Initial</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Conversation</text>
+        </g>
+
+        <!-- "DAY 2" Session -->
+        <g transform="translate(110, -110)">
+            <rect x="-60" y="-50" width="120" height="100" rx="10" ry="10" fill="#e6e6ff"
+                stroke="#6666cc" stroke-width="2" />
+
+            <!-- AI Brain Icon -->
+            <circle cx="0" cy="-20" r="20" fill="#6666cc" opacity="0.8" />
+            <path d="M-15,-15 L-5,-25 L5,-25 L15,-15 L15,0 L-15,0 Z" fill="none" stroke="white"
+                stroke-width="2" />
+            <path d="M-10,-5 L0,-15 L10,-5" fill="none" stroke="white" stroke-width="2" />
+
+            <!-- Text -->
+            <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                text-anchor="middle" fill="#333">DAY 2</text>
+            <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">No Memory of</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Yesterday</text>
+        </g>
+
+        <!-- "DAY 3" Session -->
+        <g transform="translate(110, 110)">
+            <rect x="-60" y="-50" width="120" height="100" rx="10" ry="10" fill="#e6e6ff"
+                stroke="#6666cc" stroke-width="2" />
+
+            <!-- AI Brain Icon -->
+            <circle cx="0" cy="-20" r="20" fill="#6666cc" opacity="0.8" />
+            <path d="M-15,-15 L-5,-25 L5,-25 L15,-15 L15,0 L-15,0 Z" fill="none" stroke="white"
+                stroke-width="2" />
+            <path d="M-10,-5 L0,-15 L10,-5" fill="none" stroke="white" stroke-width="2" />
+
+            <!-- Text -->
+            <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                text-anchor="middle" fill="#333">DAY 3</text>
+            <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Starting</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Fresh Again</text>
+        </g>
+
+        <!-- "DAY N" Session -->
+        <g transform="translate(-110, 110)">
+            <rect x="-60" y="-50" width="120" height="100" rx="10" ry="10" fill="#e6e6ff"
+                stroke="#6666cc" stroke-width="2" />
+
+            <!-- AI Brain Icon -->
+            <circle cx="0" cy="-20" r="20" fill="#6666cc" opacity="0.8" />
+            <path d="M-15,-15 L-5,-25 L5,-25 L15,-15 L15,0 L-15,0 Z" fill="none" stroke="white"
+                stroke-width="2" />
+            <path d="M-10,-5 L0,-15 L10,-5" fill="none" stroke="white" stroke-width="2" />
+
+            <!-- Text -->
+            <text x="0" y="10" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+                text-anchor="middle" fill="#333">DAY N</text>
+            <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Always</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+                fill="#333">Repeating</text>
+        </g>
+
+        <!-- Missing Connection Lines -->
+        <line x1="-30" y1="-30" x2="30" y2="-30" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="5,3" />
+        <line x1="30" y1="30" x2="-30" y2="30" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="5,3" />
+        <line x1="-30" y1="-30" x2="-30" y2="30" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="5,3" />
+        <line x1="30" y1="-30" x2="30" y2="30" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="5,3" />
+
+        <!-- Memory Reset Icon in Center -->
+        <circle cx="0" cy="0" r="40" fill="#fff" stroke="#e74c3c" stroke-width="3" />
+        <g transform="translate(0, 0)">
+            <path d="M-20,0 A20,20 0 1,1 20,0 A20,20 0 1,1 -20,0" fill="none" stroke="#e74c3c"
+                stroke-width="3" />
+            <path d="M-20,0 L-25,-5 L-25,5 Z" fill="#e74c3c" />
+            <line x1="-15" y1="-15" x2="15" y2="15" stroke="#e74c3c" stroke-width="3" />
+            <line x1="-15" y1="15" x2="15" y2="-15" stroke="#e74c3c" stroke-width="3" />
+        </g>
+    </g>
+
+    <!-- Explanatory Text -->
+    <g font-family="Arial, sans-serif" fill="#333">
+        <g transform="translate(400, 520)">
+            <text x="0" y="0" font-size="16" text-anchor="middle" font-weight="bold">Implications:</text>
+            <text x="0" y="25" font-size="14" text-anchor="middle">• No relationship building or
+                continuity across sessions</text>
+            <text x="0" y="45" font-size="14" text-anchor="middle">• Self-contradictions between
+                interactions</text>
+            <text x="0" y="65" font-size="14" text-anchor="middle">• Cannot develop institutional
+                knowledge over time</text>
+        </g>
+    </g>
+</svg>

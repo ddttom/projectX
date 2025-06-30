@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Alert Test - EDS Structure</title>
+    <link rel="stylesheet" href="floating-alert.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .test-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-content">
+        <h1>Floating Alert Test Page - EDS Structure</h1>
+        <p>This page tests the floating alert modal functionality using the same block structure as EDS (Edge Delivery Services).</p>
+        
+        <div class="floating-alert block" data-block-name="floating-alert" data-block-status="initialized">
+            <div>
+                <div>
+                    <h2>Important Notice</h2>
+                    <p>🎉 Welcome to our website! Please take a moment to review our <a href="#privacy">updated privacy policy</a>. This is a test of the floating alert modal with multiple lines of content to ensure it displays properly.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Test Instructions</h2>
+        <ol>
+            <li><strong>Modal Appearance:</strong> The modal should appear immediately when the page loads</li>
+            <li><strong>Close Button:</strong> Click the × button in the top-right corner</li>
+            <li><strong>ESC Key:</strong> Press the Escape key to close the modal</li>
+            <li><strong>Click Outside:</strong> Click anywhere outside the modal to close it</li>
+            <li><strong>Persistence:</strong> Once closed, refresh the page - the modal should not appear again</li>
+        </ol>
+
+        <h2>Reset Test</h2>
+        <button class="test-button" onclick="resetAlert()">Reset Alert (Clear localStorage)</button>
+        <button class="test-button" onclick="location.reload()">Reload Page</button>
+
+        <h2>Expected Behavior</h2>
+        <ul>
+            <li>Modal appears with glassmorphic styling and sparkle effects</li>
+            <li>Modal is centered on screen with semi-transparent overlay</li>
+            <li>All three dismissal methods work (X button, ESC key, click outside)</li>
+            <li>Modal fades out smoothly when dismissed</li>
+            <li>Links within the modal are clickable</li>
+            <li>Modal is accessible via keyboard navigation</li>
+        </ul>
+    </div>
+
+    <script type="module">
+        import decorate from './floating-alert.js';
+        
+        // Initialize the floating alert
+        document.addEventListener('DOMContentLoaded', () => {
+            const block = document.querySelector('.floating-alert.block');
+            if (block) {
+                decorate(block);
+            }
+        });
+
+        // Reset function for testing
+        window.resetAlert = function() {
+            localStorage.removeItem('floating-alert-dismissed');
+            alert('Alert reset! Reload the page to see the modal again.');
+        };
+    </script>
+</body>
+</html>

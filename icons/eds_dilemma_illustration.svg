@@ -1,0 +1,153 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d2d2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect for unified environment -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Pattern for fragmented data -->
+    <pattern id="fragmentPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#444"/>
+      <rect x="1" y="1" width="8" height="8" fill="#666"/>
+      <rect x="11" y="11" width="8" height="8" fill="#666"/>
+    </pattern>
+  </defs>
+  
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold">
+    The EDS Developer's Dilemma
+  </text>
+  
+  <!-- Dividing line -->
+  <line x1="600" y1="60" x2="600" y2="560" stroke="#555" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- LEFT SIDE - BEFORE (Problem) -->
+  <text x="300" y="90" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    BEFORE: Fragmented Chaos
+  </text>
+  
+  <!-- Scattered systems -->
+  <!-- Google Docs -->
+  <rect x="50" y="120" width="120" height="80" rx="8" fill="#4285f4" opacity="0.8"/>
+  <text x="110" y="155" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Google Docs</text>
+  <text x="110" y="170" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Content</text>
+  
+  <!-- SharePoint -->
+  <rect x="200" y="140" width="120" height="80" rx="8" fill="#106ebe" opacity="0.8"/>
+  <text x="260" y="175" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SharePoint</text>
+  <text x="260" y="190" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Assets</text>
+  
+  <!-- Code Repository -->
+  <rect x="80" y="240" width="120" height="80" rx="8" fill="#333" stroke="#555" stroke-width="2"/>
+  <text x="140" y="275" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Code Repo</text>
+  <text x="140" y="290" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Logic</text>
+  
+  <!-- Staging/Production -->
+  <rect x="250" y="260" width="120" height="80" rx="8" fill="#8b5a3c" opacity="0.8"/>
+  <text x="310" y="295" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Staging</text>
+  <text x="310" y="310" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Testing</text>
+  
+  <!-- Confused AI Assistant -->
+  <circle cx="180" cy="400" r="40" fill="#ff6b6b" opacity="0.6"/>
+  <text x="180" y="395" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">🤖</text>
+  <text x="180" y="410" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Blind AI</text>
+  
+  <!-- Disconnected lines showing fragmentation -->
+  <line x1="170" y1="160" x2="200" y2="180" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+  <line x1="200" y1="200" x2="140" y2="240" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+  <line x1="200" y1="280" x2="250" y2="300" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3,3" opacity="0.6"/>
+  
+  <!-- Developer struggling -->
+  <text x="300" y="480" text-anchor="middle" fill="#ff6b6b" font-family="Arial, sans-serif" font-size="14">
+    😫 Developer Working Alone
+  </text>
+  <text x="300" y="500" text-anchor="middle" fill="#ccc" font-family="Arial, sans-serif" font-size="10">
+    "AI can't see anything!"
+  </text>
+  
+  <!-- RIGHT SIDE - AFTER (Solution) -->
+  <text x="900" y="90" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="20" font-weight="bold">
+    AFTER: Unified Environment
+  </text>
+  
+  <!-- Unified development environment -->
+  <rect x="700" y="120" width="400" height="300" rx="15" fill="#2d4a22" stroke="#4ecdc4" stroke-width="3" filter="url(#glow)"/>
+  
+  <!-- Local-first development server -->
+  <rect x="720" y="140" width="360" height="40" rx="8" fill="#4ecdc4" opacity="0.2"/>
+  <text x="900" y="165" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    npm run debug - Unified Environment
+  </text>
+  
+  <!-- Dual directory structure -->
+  <rect x="730" y="200" width="160" height="100" rx="8" fill="#333" stroke="#4ecdc4" stroke-width="2"/>
+  <text x="810" y="220" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="12" font-weight="bold">/blocks/</text>
+  <text x="810" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Simple Components</text>
+  <text x="810" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Vanilla JS</text>
+  <text x="810" y="265" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">&lt;10KB</text>
+  
+  <rect x="910" y="200" width="160" height="100" rx="8" fill="#333" stroke="#4ecdc4" stroke-width="2"/>
+  <text x="990" y="220" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="12" font-weight="bold">/build/</text>
+  <text x="990" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Complex Components</text>
+  <text x="990" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Modern Tools</text>
+  <text x="990" y="265" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">~130KB</text>
+  
+  <!-- Data flow arrows -->
+  <polygon points="810,320 820,330 810,340 790,330" fill="#4ecdc4"/>
+  <polygon points="990,320 1010,330 990,340 970,330" fill="#4ecdc4"/>
+  
+  <!-- Connected data sources -->
+  <text x="900" y="360" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">
+    📄 Docs + 💾 Code + 🔧 Assets + 🧪 Testing
+  </text>
+  <text x="900" y="380" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="10">
+    All visible to AI in unified environment
+  </text>
+  
+  <!-- Empowered AI Assistant -->
+  <circle cx="900" cy="450" r="40" fill="#4ecdc4" filter="url(#glow)"/>
+  <text x="900" y="445" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">🤖</text>
+  <text x="900" y="460" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">AI Sees All</text>
+  
+  <!-- Connected lines showing unity -->
+  <line x1="810" y1="300" x2="870" y2="420" stroke="#4ecdc4" stroke-width="2"/>
+  <line x1="990" y1="300" x2="930" y2="420" stroke="#4ecdc4" stroke-width="2"/>
+  <line x1="900" y1="380" x2="900" y2="410" stroke="#4ecdc4" stroke-width="2"/>
+  
+  <!-- Happy developer -->
+  <text x="900" y="540" text-anchor="middle" fill="#4ecdc4" font-family="Arial, sans-serif" font-size="14">
+    😊 AI-Assisted Development
+  </text>
+  <text x="900" y="560" text-anchor="middle" fill="#ccc" font-family="Arial, sans-serif" font-size="10">
+    "AI can help with everything!"
+  </text>
+  
+  <!-- Arrow showing transformation -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fff"/>
+    </marker>
+  </defs>
+  <line x1="520" y1="300" x2="580" y2="300" stroke="#fff" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="550" y="290" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">
+    webcomponents-with-eds
+  </text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="585" text-anchor="middle" fill="#ccc" font-family="Arial, sans-serif" font-size="12" font-style="italic">
+    From fragmented workflows to unified AI-assisted development
+  </text>
+</svg>

@@ -1,0 +1,132 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Definitions must come first -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-size="28" font-weight="bold" fill="#333">
+    React + Adobe Edge Delivery Services Integration
+  </text>
+  
+  <!-- React Section -->
+  <g id="react-section">
+    <!-- React Logo Area -->
+    <rect x="50" y="80" width="500" height="280" rx="10" fill="#282c34" stroke="#61dafb" stroke-width="3"/>
+    
+    <!-- React Logo -->
+    <g transform="translate(300, 180)">
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#61dafb" stroke-width="3"/>
+      <ellipse cx="0" cy="0" rx="50" ry="20" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(60)"/>
+      <ellipse cx="0" cy="0" rx="50" ry="20" fill="none" stroke="#61dafb" stroke-width="3" transform="rotate(-60)"/>
+      <ellipse cx="0" cy="0" rx="50" ry="20" fill="none" stroke="#61dafb" stroke-width="3"/>
+      <circle cx="0" cy="0" r="7" fill="#61dafb"/>
+    </g>
+    
+    <text x="300" y="260" text-anchor="middle" font-size="20" fill="#61dafb" font-weight="bold">React Application</text>
+    
+    <!-- Component Structure -->
+    <rect x="70" y="290" width="140" height="50" rx="5" fill="#1e90ff" opacity="0.8"/>
+    <text x="140" y="320" text-anchor="middle" font-size="14" fill="white">App.jsx</text>
+    
+    <rect x="220" y="290" width="140" height="50" rx="5" fill="#32cd32" opacity="0.8"/>
+    <text x="290" y="320" text-anchor="middle" font-size="14" fill="white">SlideBuilder</text>
+    
+    <rect x="370" y="290" width="160" height="50" rx="5" fill="#ff6347" opacity="0.8"/>
+    <text x="450" y="320" text-anchor="middle" font-size="14" fill="white">SlideItem/Panel</text>
+  </g>
+  
+  <!-- Edge Delivery Services Section -->
+  <g id="eds-section">
+    <rect x="650" y="80" width="500" height="280" rx="10" fill="#ff0000" fill-opacity="0.1" stroke="#ff0000" stroke-width="3"/>
+    
+    <!-- Adobe Logo representation -->
+    <path d="M 750 220 L 800 120 L 800 220 Z" fill="#ff0000"/>
+    <path d="M 850 220 L 850 120 L 800 120 Z" fill="#ff0000"/>
+    <line x1="775" y1="180" x2="825" y2="180" stroke="#ff0000" stroke-width="8"/>
+    
+    <text x="900" y="180" font-size="24" fill="#ff0000" font-weight="bold">Edge Delivery</text>
+    <text x="900" y="205" font-size="20" fill="#ff0000">Services</text>
+    
+    <!-- EDS Features -->
+    <rect x="670" y="240" width="460" height="100" rx="5" fill="#fff" stroke="#ff0000" stroke-width="2"/>
+    
+    <text x="690" y="265" font-size="14" fill="#333">Content Sources:</text>
+    <rect x="690" y="275" width="120" height="30" rx="3" fill="#ffa500" opacity="0.7"/>
+    <text x="750" y="295" text-anchor="middle" font-size="12" fill="#333">Google Docs</text>
+    
+    <rect x="820" y="275" width="120" height="30" rx="3" fill="#4169e1" opacity="0.7"/>
+    <text x="880" y="295" text-anchor="middle" font-size="12" fill="#333">SharePoint</text>
+    
+    <rect x="950" y="275" width="160" height="30" rx="3" fill="#32cd32" opacity="0.7"/>
+    <text x="1030" y="295" text-anchor="middle" font-size="12" fill="#333">query-index.json</text>
+    
+    <text x="690" y="325" font-size="14" fill="#333">Output: slides.html</text>
+  </g>
+  
+  <!-- React to Process -->
+  <path d="M 300 365 L 300 390" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- EDS to Process -->
+  <path d="M 900 365 L 900 390" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Key Features Row -->
+  <g id="features">
+    <circle cx="150" cy="420" r="25" fill="#4CAF50"/>
+    <text x="150" y="426" text-anchor="middle" font-size="16" fill="white" font-weight="bold">JSX</text>
+    
+    <circle cx="270" cy="420" r="25" fill="#2196F3"/>
+    <text x="270" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Hooks</text>
+    
+    <circle cx="390" cy="420" r="25" fill="#FF9800"/>
+    <text x="390" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Props</text>
+    
+    <circle cx="510" cy="420" r="25" fill="#9C27B0"/>
+    <text x="510" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">State</text>
+    
+    <circle cx="690" cy="420" r="25" fill="#F44336"/>
+    <text x="690" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Build</text>
+    
+    <circle cx="810" cy="420" r="25" fill="#795548"/>
+    <text x="810" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Deploy</text>
+    
+    <circle cx="930" cy="420" r="25" fill="#607D8B"/>
+    <text x="930" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">CORS</text>
+    
+    <circle cx="1050" cy="420" r="25" fill="#E91E63"/>
+    <text x="1050" y="426" text-anchor="middle" font-size="14" fill="white" font-weight="bold">API</text>
+  </g>
+  
+  <!-- Build Process -->
+  <rect x="250" y="470" width="700" height="60" rx="10" fill="#f0f0f0" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="600" y="495" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Build &amp; Integration Process</text>
+  <text x="600" y="515" text-anchor="middle" font-size="14" fill="#666">npm run build → Copy to EDS repo → Deploy</text>
+  
+  <!-- Process to Deployment -->
+  <path d="M 600 540 L 600 570" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Deployment Options -->
+  <g id="deployment">
+    <text x="600" y="600" text-anchor="middle" font-size="20" font-weight="bold" fill="#333">Deployment Options</text>
+    
+    <!-- Standalone Page -->
+    <rect x="150" y="620" width="350" height="150" rx="10" fill="#e6f3ff" stroke="#1e90ff" stroke-width="2"/>
+    <text x="325" y="650" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e90ff">Standalone Page</text>
+    <text x="175" y="675" font-size="14" fill="#333">• Complete React app at /slides.html</text>
+    <text x="175" y="700" font-size="14" fill="#333">• Independent page deployment</text>
+    <text x="175" y="725" font-size="14" fill="#333">• Full React control</text>
+    <rect x="200" y="735" width="250" height="25" rx="3" fill="#1e90ff" opacity="0.2"/>
+    <text x="325" y="752" text-anchor="middle" font-size="12" fill="#1e90ff">your-domain.com/slides.html</text>
+    
+    <!-- Block Integration -->
+    <rect x="700" y="620" width="350" height="150" rx="10" fill="#ffe6e6" stroke="#ff6347" stroke-width="2"/>
+    <text x="875" y="650" text-anchor="middle" font-size="16" font-weight="bold" fill="#ff6347">Block Integration</text>
+    <text x="725" y="675" font-size="14" fill="#333">• React as EDS block</text>
+    <text x="725" y="700" font-size="14" fill="#333">• Embed in content pages</text>
+    <text x="725" y="725" font-size="14" fill="#333">• Uses react-slide-builder block</text>
+    <rect x="750" y="735" width="250" height="25" rx="3" fill="#ff6347" opacity="0.2"/>
+    <text x="875" y="752" text-anchor="middle" font-size="12" fill="#ff6347">react-slide-builder</text>
+  </g>
+</svg>

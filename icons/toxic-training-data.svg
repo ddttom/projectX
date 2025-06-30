@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f5f7fa"/>
+        <stop offset="100%" stop-color="#c3cfe2"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="800" height="400" fill="url(#bgGradient)" rx="15" ry="15"/>
+    
+    <!-- Data funnel -->
+    <g transform="translate(400, 200)">
+      <!-- Funnel levels -->
+      <path d="M-200 -150 L200 -150 L150 -50 L-150 -50 Z" fill="#BBDEFB" stroke="#3498db" stroke-width="4"/>
+      <path d="M-150 -50 L150 -50 L100 50 L-100 50 Z" fill="#AED6F1" stroke="#3498db" stroke-width="4"/>
+      <path d="M-100 50 L100 50 L60 120 L-60 120 Z" fill="#85C1E9" stroke="#3498db" stroke-width="4"/>
+      
+      <!-- AI model -->
+      <circle cx="0" cy="180" r="50" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="4"/>
+      <path d="M-40 120 L-20 160 M40 120 L20 160" stroke="#3498db" stroke-width="4"/>
+      
+      <!-- Toxic data elements -->
+      <g transform="translate(-120, -120)">
+        <rect width="60" height="30" rx="5" fill="#e74c3c" opacity="0.7"/>
+        <text x="30" y="20" text-anchor="middle" fill="white" font-size="14" font-weight="bold">FAKE</text>
+      </g>
+      
+      <g transform="translate(20, -110)">
+        <rect width="80" height="30" rx="5" fill="#e67e22" opacity="0.7"/>
+        <text x="40" y="20" text-anchor="middle" fill="white" font-size="14" font-weight="bold">BIASED</text>
+      </g>
+      
+      <g transform="translate(120, -130)">
+        <rect width="100" height="30" rx="5" fill="#f39c12" opacity="0.7"/>
+        <text x="50" y="20" text-anchor="middle" fill="white" font-size="14" font-weight="bold">FICTIONAL</text>
+      </g>
+      
+      <g transform="translate(-40, 0)">
+        <rect width="120" height="30" rx="5" fill="#c0392b" opacity="0.7"/>
+        <text x="60" y="20" text-anchor="middle" fill="white" font-size="14" font-weight="bold">PROPAGANDA</text>
+      </g>
+  
+      <g transform="translate(-150, -30)">
+        <rect width="140" height="30" rx="5" fill="#8e44ad" opacity="0.7"/>
+        <text x="70" y="20" text-anchor="middle" fill="white" font-size="14" font-weight="bold">MISINFORMATION</text>
+      </g>
+    </g>
+    
+    <text x="400" y="50" text-anchor="middle" fill="#333" font-size="32" font-weight="bold">TOXIC TRAINING DATA</text>
+  </svg>

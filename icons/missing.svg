@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Light gray background -->
+    <rect width="800" height="800" fill="#e0e0e0" />
+
+    <!-- Puzzle grid - rotated 45 degrees with straight outer edges -->
+    <g transform="translate(400, 400) rotate(45) translate(-400, -300)">
+        <!-- Row 1, from left to right -->
+        <path
+            d="M100,100 L180,100 C190,80 210,80 220,100 L300,100 L300,180 C320,190 320,210 300,220 L300,300 L220,300 C210,320 190,320 180,300 L100,300 L100,100 Z"
+            fill="#e0e0e0" stroke="#999" stroke-width="1.5" />
+        <path
+            d="M300,100 L380,100 C390,80 410,80 420,100 L500,100 L500,180 C520,190 520,210 500,220 L500,300 L420,300 C410,320 390,320 380,300 L300,300 L300,100 Z"
+            fill="#e0e0e0" stroke="#999" stroke-width="1.5" />
+        <path
+            d="M500,100 L700,100 L700,180 C720,190 720,210 700,220 L700,300 L620,300 C610,320 590,320 580,300 L500,300 L500,100 Z"
+            fill="#e0e0e0" stroke="#999" stroke-width="1.5" />
+
+        <!-- Row 2, from left to right -->
+        <path
+            d="M100,300 L180,300 C190,280 210,280 220,300 L300,300 L300,380 C320,390 320,410 300,420 L300,500 L100,500 L100,300 Z"
+            fill="#e0e0e0" stroke="#999" stroke-width="1.5" />
+
+        <!-- Black missing piece -->
+        <path
+            d="M300,300 L380,300 C390,280 410,280 420,300 L500,300 L500,380 C520,390 520,410 500,420 L500,500 L300,500 L300,300 Z"
+            fill="#222222" stroke="#555" stroke-width="1.5" />
+
+        <path d="M500,300 L580,300 C590,280 610,280 620,300 L700,300 L700,500 L500,500 L500,300 Z"
+            fill="#e0e0e0" stroke="#999" stroke-width="1.5" />
+    </g>
+
+    <!-- Subtle highlights for depth - also rotated -->
+    <g transform="translate(400, 400) rotate(45) translate(-400, -300)" opacity="0.3" fill="#ffffff">
+        <path d="M105,105 L180,105 C187,90 213,90 220,105 L220,105 L105,105 Z" />
+        <path d="M305,105 L380,105 C387,90 413,90 420,105 L420,105 L305,105 Z" />
+        <path d="M505,105 L580,105 C587,90 613,90 620,105 L620,105 L505,105 Z" />
+        <path d="M105,305 L180,305 C187,290 213,290 220,305 L220,305 L105,305 Z" />
+        <path d="M505,305 L580,305 C587,290 613,290 620,305 L620,305 L505,305 Z" />
+    </g>
+
+    <!-- Subtle shadows for depth - also rotated -->
+    <g transform="translate(400, 400) rotate(45) translate(-400, -300)" opacity="0.1" fill="#000000">
+        <path d="M180,295 L220,295 C213,310 187,310 180,295 L180,295 Z" />
+        <path d="M380,295 L420,295 C413,310 387,310 380,295 L380,295 Z" />
+        <path d="M580,295 L620,295 C613,310 587,310 580,295 L580,295 Z" />
+        <path d="M180,495 L220,495 C213,510 187,510 180,495 L180,495 Z" />
+        <path d="M380,495 L420,495 C413,510 387,510 380,495 L380,495 Z" />
+        <path d="M580,495 L620,495 C613,510 587,510 580,495 L580,495 Z" />
+    </g>
+</svg>

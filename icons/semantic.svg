@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <!-- Background grid -->
+    <rect width="800" height="500" fill="white" />
+
+    <!-- TOP ROW -->
+
+    
+    <!-- Second cluster: grapes, cherries, purple, red -->
+    <!-- Connection lines first -->
+    <line x1="320" y1="75" x2="420" y2="50" stroke="red" stroke-width="3" />
+    <line x1="320" y1="75" x2="320" y2="150" stroke="orange" stroke-width="3" />
+    <line x1="320" y1="150" x2="420" y2="150" stroke="red" stroke-width="3" />
+    <line x1="420" y1="50" x2="420" y2="150" stroke="orange" stroke-width="3" />
+
+    <!-- Boxes on top of lines -->
+    <rect x="290" y="55" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="320" y="80" font-family="Arial" font-size="14" text-anchor="middle">grapes</text>
+
+    <rect x="290" y="135" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="320" y="160" font-family="Arial" font-size="14" text-anchor="middle">cherries</text>
+
+    <rect x="390" y="25" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="420" y="50" font-family="Arial" font-size="14" text-anchor="middle">purple</text>
+
+    <rect x="390" y="135" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="420" y="160" font-family="Arial" font-size="14" text-anchor="middle">red</text>
+
+    <!-- Third cluster: eye, ear, see, hear -->
+    <!-- Connection lines first -->
+    <line x1="560" y1="75" x2="660" y2="50" stroke="red" stroke-width="3" />
+    <line x1="560" y1="75" x2="560" y2="150" stroke="orange" stroke-width="3" />
+    <line x1="560" y1="150" x2="660" y2="150" stroke="red" stroke-width="3" />
+    <line x1="660" y1="50" x2="660" y2="150" stroke="orange" stroke-width="3" />
+
+    <!-- Boxes on top of lines -->
+    <rect x="530" y="55" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="560" y="80" font-family="Arial" font-size="14" text-anchor="middle">eye</text>
+
+    <rect x="530" y="135" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="560" y="160" font-family="Arial" font-size="14" text-anchor="middle">ear</text>
+
+    <rect x="630" y="25" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="660" y="50" font-family="Arial" font-size="14" text-anchor="middle">see</text>
+
+    <rect x="630" y="135" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="660" y="160" font-family="Arial" font-size="14" text-anchor="middle">hear</text>
+
+    <!-- BOTTOM ROW -->
+
+    <!-- Second cluster: child, adult, cat, kitten -->
+    <!-- Connection lines first -->
+    <line x1="320" y1="250" x2="320" y2="325" stroke="red" stroke-width="3" />
+    <line x1="320" y1="250" x2="420" y2="325" stroke="orange" stroke-width="3" />
+    <line x1="320" y1="325" x2="420" y2="250" stroke="orange" stroke-width="3" />
+    <line x1="420" y1="250" x2="420" y2="325" stroke="red" stroke-width="3" />
+
+    <!-- Boxes on top of lines -->
+    <rect x="290" y="230" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="320" y="255" font-family="Arial" font-size="14" text-anchor="middle">child</text>
+
+    <rect x="290" y="305" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="320" y="330" font-family="Arial" font-size="14" text-anchor="middle">adult</text>
+
+    <rect x="390" y="230" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="420" y="255" font-family="Arial" font-size="14" text-anchor="middle">cat</text>
+
+    <rect x="390" y="305" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="420" y="330" font-family="Arial" font-size="14" text-anchor="middle">kitten</text>
+
+    <!-- Third cluster: foot, hand, sock, glove -->
+    <!-- Connection lines first -->
+    <line x1="560" y1="250" x2="660" y2="250" stroke="red" stroke-width="3" />
+    <line x1="560" y1="250" x2="560" y2="325" stroke="orange" stroke-width="3" />
+    <line x1="560" y1="325" x2="660" y2="325" stroke="red" stroke-width="3" />
+    <line x1="660" y1="250" x2="660" y2="325" stroke="orange" stroke-width="3" />
+
+    <!-- Boxes on top of lines -->
+    <rect x="530" y="230" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="560" y="255" font-family="Arial" font-size="14" text-anchor="middle">foot</text>
+
+    <rect x="530" y="305" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="560" y="330" font-family="Arial" font-size="14" text-anchor="middle">hand</text>
+
+    <rect x="630" y="230" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="660" y="255" font-family="Arial" font-size="14" text-anchor="middle">sock</text>
+
+    <rect x="630" y="305" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="660" y="330" font-family="Arial" font-size="14" text-anchor="middle">glove</text>
+
+    <!-- Fourth cluster: green, red, stop, go -->
+    <!-- Connection lines first -->
+    <line x1="320" y1="400" x2="420" y2="400" stroke="orange" stroke-width="3" />
+    <line x1="320" y1="400" x2="420" y2="475" stroke="red" stroke-width="3" />
+    <line x1="320" y1="475" x2="420" y2="400" stroke="red" stroke-width="3" />
+    <line x1="320" y1="475" x2="420" y2="475" stroke="orange" stroke-width="3" />
+
+    <!-- Boxes on top of lines -->
+    <rect x="290" y="380" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="320" y="405" font-family="Arial" font-size="14" text-anchor="middle">green</text>
+
+    <rect x="290" y="455" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="320" y="480" font-family="Arial" font-size="14" text-anchor="middle">red</text>
+
+    <rect x="390" y="380" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="420" y="405" font-family="Arial" font-size="14" text-anchor="middle">stop</text>
+
+    <rect x="390" y="455" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="420" y="480" font-family="Arial" font-size="14" text-anchor="middle">go</text>
+
+    <!-- Fifth cluster: toe, foot, hand, finger -->
+    <!-- Connection lines first -->
+    <line x1="560" y1="400" x2="660" y2="400" stroke="orange" stroke-width="3" />
+    <line x1="560" y1="400" x2="560" y2="475" stroke="red" stroke-width="3" />
+    <line x1="560" y1="475" x2="660" y2="475" stroke="orange" stroke-width="3" />
+    <line x1="660" y1="400" x2="660" y2="475" stroke="red" stroke-width="3" />
+
+    <!-- Boxes on top of lines -->
+    <rect x="530" y="380" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="560" y="405" font-family="Arial" font-size="14" text-anchor="middle">toe</text>
+
+    <rect x="530" y="455" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="560" y="480" font-family="Arial" font-size="14" text-anchor="middle">foot</text>
+
+    <rect x="630" y="380" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="660" y="405" font-family="Arial" font-size="14" text-anchor="middle">finger</text>
+
+    <rect x="630" y="455" width="60" height="40" fill="white" stroke="#aabbcc" stroke-width="2" />
+    <text x="660" y="480" font-family="Arial" font-size="14" text-anchor="middle">hand</text>
+</svg>

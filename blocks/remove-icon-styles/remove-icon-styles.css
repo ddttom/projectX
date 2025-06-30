@@ -1,0 +1,35 @@
+/**
+ * CSS to override the default icon styles in EDS
+ * 
+ * These styles use higher specificity to override the default icon styling
+ * defined in styles.css without modifying core files.
+ */
+
+/* Reset the icon container styles with higher specificity */
+body .icon,
+main .icon,
+.section .icon {
+  display: inline; /* Override display: inline-block */
+  height: auto;    /* Override fixed height */
+  width: auto;     /* Override fixed width */
+}
+
+/* Reset icon image styles with higher specificity */
+body .icon img,
+main .icon img,
+.section .icon img {
+  height: auto;    /* Override height: 100% */
+  width: auto;     /* Override width: 100% */
+  max-width: none; /* Override any max-width constraints */
+}
+
+/* Ensure SVG content isn't constrained */
+.icon svg {
+  height: auto;
+  width: auto;
+}
+
+/* Ensure the block itself doesn't take up space */
+.remove-icon-styles {
+  display: none;
+}

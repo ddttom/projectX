@@ -1,0 +1,23 @@
+<svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Training process visualization -->
+              <rect x="80" y="40" width="240" height="40" rx="5" fill="#BBDEFB" stroke="#3498db" stroke-width="1" />
+              <text x="200" y="65" text-anchor="middle" fill="#34495e" font-size="14">PRE-TRAINING</text>
+
+              <path d="M200 80 L200 100" stroke="#3498db" stroke-width="1" marker-end="url(#arrow)" />
+
+              <!-- Prediction examples -->
+              <rect x="60" y="100" width="130" height="60" rx="5" fill="#90CAF9" stroke="#3498db" stroke-width="1" />
+              <text x="125" y="120" text-anchor="middle" fill="#34495e" font-size="10">Input: "The capital of</text>
+              <text x="125" y="135" text-anchor="middle" fill="#34495e" font-size="10">France is"</text>
+              <text x="125" y="150" text-anchor="middle" fill="#34495e" font-size="10">Predict: "Paris"</text>
+
+              <rect x="210" y="100" width="130" height="60" rx="5" fill="#90CAF9" stroke="#3498db" stroke-width="1" />
+              <text x="275" y="120" text-anchor="middle" fill="#34495e" font-size="10">Input: "To be or not</text>
+              <text x="275" y="135" text-anchor="middle" fill="#34495e" font-size="10">to"</text>
+              <text x="275" y="150" text-anchor="middle" fill="#34495e" font-size="10">Predict: "be"</text>
+
+              <!-- Gradient descent arrow -->
+              <path d="M125 160 Q200 200, 275 160" stroke="#3498db" stroke-width="2" stroke-dasharray="4 2"
+                marker-end="url(#arrow)" />
+              <text x="200" y="190" text-anchor="middle" fill="#34495e" font-size="12">Gradient Descent</text>
+            </svg>

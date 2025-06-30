@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Query -->
+    <rect x="50" y="30" width="300" height="30" rx="5" fill="#ECF0F1" stroke="#3498db"
+        stroke-width="1" />
+    <text x="200" y="50" text-anchor="middle" fill="#34495e" font-size="12">"Who wrote Romeo and
+        Juliet?"</text>
+
+    <!-- Process flow -->
+    <path d="M200 60 L200 75" stroke="#3498db" stroke-width="1" marker-end="url(#arrow)" />
+
+    <!-- Neural network visualization (simplified) -->
+    <rect x="100" y="75" width="200" height="50" rx="5" fill="#BBDEFB" stroke="#3498db"
+        stroke-width="1" />
+
+    <!-- Nodes and connections -->
+    <circle cx="130" cy="85" r="5" fill="#3498db" />
+    <circle cx="170" cy="85" r="5" fill="#3498db" />
+    <circle cx="210" cy="85" r="5" fill="#3498db" />
+    <circle cx="250" cy="85" r="5" fill="#3498db" />
+    <circle cx="270" cy="85" r="5" fill="#3498db" />
+
+    <circle cx="150" cy="100" r="5" fill="#3498db" />
+    <circle cx="190" cy="100" r="5" fill="#3498db" />
+    <circle cx="230" cy="100" r="5" fill="#3498db" />
+    <circle cx="250" cy="100" r="5" fill="#3498db" />
+
+    <circle cx="170" cy="115" r="5" fill="#3498db" />
+    <circle cx="210" cy="115" r="5" fill="#3498db" />
+    <circle cx="230" cy="115" r="5" fill="#3498db" />
+
+    <!-- Some connecting lines -->
+    <path d="M130 85 L150 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M130 85 L190 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M170 85 L150 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M170 85 L190 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M210 85 L190 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M210 85 L230 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M250 85 L230 100" stroke="#3498db" stroke-width="0.5" />
+    <path d="M270 85 L250 100" stroke="#3498db" stroke-width="0.5" />
+
+    <path d="M150 100 L170 115" stroke="#3498db" stroke-width="0.5" />
+    <path d="M190 100 L170 115" stroke="#3498db" stroke-width="0.5" />
+    <path d="M190 100 L210 115" stroke="#3498db" stroke-width="0.5" />
+    <path d="M230 100 L210 115" stroke="#3498db" stroke-width="0.5" />
+    <path d="M230 100 L230 115" stroke="#3498db" stroke-width="0.5" />
+    <path d="M250 100 L230 115" stroke="#3498db" stroke-width="0.5" />
+
+    <text x="200" y="135" text-anchor="middle" fill="#34495e" font-size="10">NEURAL NETWORK
+        PARAMETERS</text>
+
+    <!-- Output generation -->
+    <path d="M200 125 L200 145" stroke="#3498db" stroke-width="1" marker-end="url(#arrow)" />
+
+    <rect x="100" y="145" width="200" height="40" rx="5" fill="#90CAF9" stroke="#3498db"
+        stroke-width="1" />
+    <text x="200" y="170" text-anchor="middle" fill="#34495e" font-size="14">"William Shakespeare"</text>
+</svg>

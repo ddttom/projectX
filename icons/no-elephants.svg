@@ -1,0 +1,66 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Smooth gradient -->
+      <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#334155;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+      </linearGradient>
+      
+      <!-- Text shadow -->
+      <filter id="textShadow">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+      </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="600" fill="url(#fadeGradient)"/>
+    
+    <!-- Title Section -->
+    <g transform="translate(400, 100)">
+      <text x="0" y="0" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="400" fill="#f8fafc" filter="url(#textShadow)">
+        The Negation Paradox
+      </text>
+    </g>
+    
+    <!-- Visual metaphor -->
+    <g transform="translate(400, 300)">
+      <!-- Speech bubble with command -->
+      <path d="M -200 -50 Q -200 -80 -170 -80 L -30 -80 Q 0 -80 0 -50 L 0 -10 Q 0 20 -30 20 L -150 20 L -170 40 L -160 20 L -170 20 Q -200 20 -200 -10 Z" 
+            fill="#ffffff" stroke="none" opacity="0.95"/>
+      <text x="-100" y="-40" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1e293b">
+        "Draw a picture
+      </text>
+      <text x="-100" y="-15" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1e293b">
+        with <tspan fill="#dc2626" font-weight="700">NO</tspan> elephants"
+      </text>
+      
+      <!-- The twist: NO becomes invisible, elephants becomes prominent -->
+      <g transform="translate(100, 0)">
+        <!-- Fading NO -->
+        <text x="-50" y="0" font-family="Arial, sans-serif" font-size="24" fill="#dc2626" opacity="0.2" font-weight="700">
+          NO
+        </text>
+        
+        <!-- Growing ELEPHANTS -->
+        <text x="20" y="0" font-family="Arial, sans-serif" font-size="36" fill="#f8fafc" font-weight="700" filter="url(#textShadow)">
+          ELEPHANTS
+        </text>
+        
+        <!-- Actual elephants appearing -->
+        <text x="-30" y="60" font-size="40" opacity="0.7">🐘</text>
+        <text x="20" y="65" font-size="48">🐘</text>
+        <text x="80" y="62" font-size="44" opacity="0.8">🐘</text>
+      </g>
+    </g>
+    
+    <!-- Explanation -->
+    <g transform="translate(400, 480)">
+      <text x="0" y="0" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#cbd5e1" style="font-style: italic;">
+        "What the mind focuses on, expands"
+      </text>
+      <text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">
+        AI attention mechanisms amplify nouns, diminish negations
+      </text>
+    </g>
+  </svg>

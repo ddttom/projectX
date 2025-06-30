@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+    <!-- Background -->
+    <rect width="600" height="400" fill="#f8f9fa" rx="10" ry="10" />
+
+    <!-- Title -->
+    <text x="300" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">Token
+        Vectorization</text>
+
+    <!-- Text processing flow -->
+    <rect x="20" y="70" width="140" height="50" rx="5" fill="#FFC107" stroke="#333" stroke-width="1" />
+    <text x="90" y="100" text-anchor="middle" font-family="Arial" font-size="16">Input Text</text>
+
+    <!-- Sample text -->
+    <rect x="20" y="130" width="140" height="70" rx="5" fill="#fff" stroke="#333" stroke-width="1" />
+    <text x="90" y="155" text-anchor="middle" font-family="Arial" font-size="14">"King is to Queen</text>
+    <text x="90" y="175" text-anchor="middle" font-family="Arial" font-size="14">as Man is to</text>
+    <text x="90" y="195" text-anchor="middle" font-family="Arial" font-size="14">Woman"</text>
+
+    <!-- Tokenization line (no arrow) -->
+    <line x1="160" y1="150" x2="200" y2="150" stroke="#333" stroke-width="2" />
+    <text x="180" y="140" text-anchor="middle" font-family="Arial" font-size="12">Tokenize</text>
+
+    <!-- Tokens -->
+    <rect x="200" y="70" width="120" height="50" rx="5" fill="#03A9F4" stroke="#333"
+        stroke-width="1" />
+    <text x="260" y="100" text-anchor="middle" font-family="Arial" font-size="16">Tokens</text>
+
+    <!-- Token list -->
+    <rect x="200" y="130" width="120" height="130" rx="5" fill="#fff" stroke="#333" stroke-width="1" />
+    <text x="260" y="155" text-anchor="middle" font-family="Arial" font-size="14">["King",</text>
+    <text x="260" y="175" text-anchor="middle" font-family="Arial" font-size="14">"Queen",</text>
+    <text x="260" y="195" text-anchor="middle" font-family="Arial" font-size="14">"Man",</text>
+    <text x="260" y="215" text-anchor="middle" font-family="Arial" font-size="14">"Woman",</text>
+    <text x="260" y="235" text-anchor="middle" font-family="Arial" font-size="14">...]</text>
+
+    <!-- Embedding line (no arrow) -->
+    <line x1="320" y1="150" x2="370" y2="150" stroke="#333" stroke-width="2" />
+    <text x="345" y="140" text-anchor="middle" font-family="Arial" font-size="12">Vectorize</text>
+
+    <!-- Vector space -->
+    <rect x="370" y="70" width="210" height="230" rx="5" fill="#E3F2FD" stroke="#2196F3"
+        stroke-width="1" />
+    <text x="475" y="100" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Vector
+        Space</text>
+
+    <!-- Origin point -->
+    <circle cx="475" cy="180" r="3" fill="#333" />
+    <text x="475" y="195" text-anchor="middle" font-family="Arial" font-size="10">Origin</text>
+
+    <!-- Vector lines (no arrows) -->
+    <line x1="475" y1="180" x2="430" y2="130" stroke="#E91E63" stroke-width="2" />
+    <text x="420" y="120" text-anchor="middle" font-family="Arial" font-size="12" fill="#E91E63">
+        King</text>
+    <text x="405" y="135" text-anchor="middle" font-family="Arial" font-size="10" fill="#E91E63">[0.1,
+        0.7, ...]</text>
+
+    <line x1="475" y1="180" x2="520" y2="130" stroke="#9C27B0" stroke-width="2" />
+    <text x="530" y="120" text-anchor="middle" font-family="Arial" font-size="12" fill="#9C27B0">
+        Queen</text>
+    <text x="545" y="135" text-anchor="middle" font-family="Arial" font-size="10" fill="#9C27B0">[0.2,
+        0.7, ...]</text>
+
+    <line x1="475" y1="180" x2="430" y2="230" stroke="#4CAF50" stroke-width="2" />
+    <text x="420" y="245" text-anchor="middle" font-family="Arial" font-size="12" fill="#4CAF50">Man</text>
+    <text x="405" y="260" text-anchor="middle" font-family="Arial" font-size="10" fill="#4CAF50">[0.1,
+        0.3, ...]</text>
+
+    <line x1="475" y1="180" x2="520" y2="230" stroke="#FF9800" stroke-width="2" />
+    <text x="530" y="245" text-anchor="middle" font-family="Arial" font-size="12" fill="#FF9800">
+        Woman</text>
+    <text x="545" y="260" text-anchor="middle" font-family="Arial" font-size="10" fill="#FF9800">[0.2,
+        0.3, ...]</text>
+
+    <!-- Relationship annotations -->
+    <path d="M430,130 Q475,100 520,130" stroke="#673AB7" stroke-width="1.5" stroke-dasharray="5,3"
+        fill="none" />
+    <text x="475" y="110" text-anchor="middle" font-family="Arial" font-size="10" fill="#673AB7">Gender-neutral
+        royalty</text>
+
+    <path d="M430,230 Q475,260 520,230" stroke="#673AB7" stroke-width="1.5" stroke-dasharray="5,3"
+        fill="none" />
+    <text x="475" y="270" text-anchor="middle" font-family="Arial" font-size="10" fill="#673AB7">Gender-neutral
+        person</text>
+
+    <path d="M430,130 Q400,180 430,230" stroke="#673AB7" stroke-width="1.5" stroke-dasharray="5,3"
+        fill="none" />
+    <text x="390" y="180" text-anchor="middle" font-family="Arial" font-size="10" fill="#673AB7">
+        Male</text>
+
+    <path d="M520,130 Q550,180 520,230" stroke="#673AB7" stroke-width="1.5" stroke-dasharray="5,3"
+        fill="none" />
+    <text x="555" y="180" text-anchor="middle" font-family="Arial" font-size="10" fill="#673AB7">
+        Female</text>
+
+    <!-- Vector math -->
+    <rect x="50" y="300" width="500" height="100" rx="5" fill="#FFECB3" stroke="#FFA000"
+        stroke-width="1" />
+    <text x="300" y="330" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">Vector
+        Math with Words</text>
+    <text x="300" y="360" text-anchor="middle" font-family="Arial" font-size="16">King - Man + Woman
+        ≈ Queen</text>
+    <text x="300" y="385" text-anchor="middle" font-family="Arial" font-size="14">[0.1, 0.7, ...] -
+        [0.1, 0.3, ...] + [0.2, 0.3, ...] ≈ [0.2, 0.7, ...]</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- 3D coordinate system -->
+    <path d="M150 150 L250 50" stroke="#34495e" stroke-width="1" stroke-dasharray="4 2" />
+    <path d="M150 150 L50 150" stroke="#34495e" stroke-width="1" />
+    <path d="M150 150 L150 50" stroke="#34495e" stroke-width="1" />
+
+    <!-- Axis labels -->
+    <text x="45" y="145" text-anchor="middle" fill="#34495e" font-size="10">X</text>
+    <text x="150" y="45" text-anchor="middle" fill="#34495e" font-size="10">Y</text>
+    <text x="255" y="45" text-anchor="middle" fill="#34495e" font-size="10">Z</text>
+
+    <!-- Points in 3D space -->
+    <circle cx="180" cy="110" r="5" fill="#3498db" />
+    <text x="190" y="110" fill="#3498db" font-size="10">the</text>
+
+    <circle cx="200" cy="130" r="5" fill="#e74c3c" />
+    <text x="210" y="130" fill="#e74c3c" font-size="10">fat</text>
+
+    <circle cx="120" cy="100" r="5" fill="#2ecc71" />
+    <text x="110" y="100" fill="#2ecc71" font-size="10">cat</text>
+
+    <circle cx="110" cy="110" r="5" fill="#f39c12" />
+    <text x="100" y="110" fill="#f39c12" font-size="10">dog</text>
+
+    <!-- Similarity indication -->
+    <path d="M120 100 L110 110" stroke="#27ae60" stroke-width="1" stroke-dasharray="2 2" />
+    <text x="100" y="130" fill="#27ae60" font-size="8">SIMILAR MEANINGS</text>
+
+    <!-- Note about real dimensions -->
+    <text x="200" y="180" text-anchor="middle" fill="#34495e" font-size="12" font-style="italic">Real
+        embeddings:
+        300-768+ dimensions</text>
+</svg>

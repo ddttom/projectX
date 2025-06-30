@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+    <!-- Background -->
+    <rect width="500" height="300" fill="#f8f9fa" rx="10" ry="10" />
+
+    <!-- Axes -->
+    <line x1="50" y1="150" x2="450" y2="150" stroke="black" stroke-width="2" />
+    <line x1="250" y1="50" x2="250" y2="250" stroke="black" stroke-width="2" />
+
+    <!-- X-axis labels -->
+    <text x="250" y="280" text-anchor="middle" font-family="Arial" font-size="16">x</text>
+    <text x="90" y="170" text-anchor="middle" font-family="Arial" font-size="12">-4</text>
+    <text x="170" y="170" text-anchor="middle" font-family="Arial" font-size="12">-2</text>
+    <text x="250" y="170" text-anchor="middle" font-family="Arial" font-size="12">0</text>
+    <text x="330" y="170" text-anchor="middle" font-family="Arial" font-size="12">2</text>
+    <text x="410" y="170" text-anchor="middle" font-family="Arial" font-size="12">4</text>
+
+    <!-- Y-axis label -->
+    <text x="20" y="150" text-anchor="middle" font-family="Arial" font-size="16"
+        transform="rotate(-90 20 150)">σ(x)</text>
+    <text x="235" y="250" text-anchor="end" font-family="Arial" font-size="12">0</text>
+    <text x="235" y="200" text-anchor="end" font-family="Arial" font-size="12">0.25</text>
+    <text x="235" y="150" text-anchor="end" font-family="Arial" font-size="12">0.5</text>
+    <text x="235" y="100" text-anchor="end" font-family="Arial" font-size="12">0.75</text>
+    <text x="235" y="50" text-anchor="end" font-family="Arial" font-size="12">1</text>
+
+    <!-- Sigmoid curve -->
+    <path
+        d="M50,240 Q110,235 150,220 Q190,205 220,190 Q235,175 250,150 Q265,125 280,110 Q310,95 350,80 Q390,65 450,60"
+        stroke="#E91E63" stroke-width="3" fill="none" />
+
+    <!-- Function label -->
+    <text x="150" y="80" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold"
+        fill="#E91E63">σ(x) = 1/(1+e^(-x))</text>
+
+    <!-- Horizontal asymptotes -->
+    <line x1="50" y1="50" x2="450" y2="50" stroke="#888" stroke-width="1.5" stroke-dasharray="5,5" />
+    <line x1="50" y1="250" x2="450" y2="250" stroke="#888" stroke-width="1.5" stroke-dasharray="5,5" />
+    <text x="470" y="50" text-anchor="start" font-family="Arial" font-size="12" fill="#888">y = 1</text>
+    <text x="470" y="250" text-anchor="start" font-family="Arial" font-size="12" fill="#888">y = 0</text>
+
+    <!-- Decision boundary -->
+    <circle cx="250" cy="150" r="6" fill="#4CAF50" />
+    <line x1="250" y1="50" x2="250" y2="250" stroke="#4CAF50" stroke-width="1"
+        stroke-dasharray="3,3" />
+    <text x="265" y="135" font-family="Arial" font-size="14" fill="#4CAF50">Decision boundary</text>
+
+    <!-- Regions -->
+    <text x="150" y="210" font-family="Arial" font-size="14" fill="#FF9800">Class 0</text>
+    <text x="350" y="90" font-family="Arial" font-size="14" fill="#FF9800">Class 1</text>
+</svg>

@@ -1,0 +1,140 @@
+<!-- 
+    The Mathematical Symphony of AI
+    
+    This SVG illustrates key mathematical functions used in AI:
+    1. Vectorization: Converting words into numerical vectors
+    2. ReLU: Rectified Linear Unit activation function
+    3. Softmax: Converting logits into probability distribution
+    
+    The neural network visualization shows:
+    - Input layer: Raw data processing
+    - Hidden layer: Feature extraction
+    - Output layer: Final predictions
+    - Backpropagation: Learning through error correction
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440">
+    <!-- Background canvas -->
+    <rect width="600" height="440" fill="white" />
+
+    <!-- Define arrow marker for backpropagation -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#FF1744"/>
+        </marker>
+    </defs>
+
+    <!-- Main title -->
+    <text x="300" y="40" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold">The
+        Mathematical Symphony of AI</text>
+
+    <!-- Mathematical function boxes showing key AI operations -->
+    <rect x="70" y="80" width="120" height="70" rx="5" fill="#FFC107" stroke="#333" stroke-width="2" />
+    <text x="130" y="110" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">
+        Vectorization</text>
+    <text x="130" y="130" text-anchor="middle" font-family="Arial" font-size="13">"king" → [0.1,
+        0.7]</text>
+
+    <rect x="240" y="80" width="120" height="70" rx="5" fill="#03A9F4" stroke="#333"
+        stroke-width="2" />
+    <text x="300" y="110" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">
+        ReLU</text>
+    <text x="300" y="130" text-anchor="middle" font-family="Arial" font-size="13">max(0, x)</text>
+
+    <rect x="410" y="80" width="120" height="70" rx="5" fill="#E91E63" stroke="#333"
+        stroke-width="2" />
+    <text x="470" y="110" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">
+        Softmax</text>
+    <text x="470" y="130" text-anchor="middle" font-family="Arial" font-size="13">e^x/Σe^x</text>
+
+    <!-- Flow indicators between mathematical functions -->
+    <text x="205" y="115" text-anchor="middle" font-family="Arial" font-size="16">→</text>
+    <text x="375" y="115" text-anchor="middle" font-family="Arial" font-size="16">→</text>
+
+    <!-- Neural network architecture container -->
+    <rect x="50" y="170" width="500" height="160" rx="8" fill="#f8f9fa" stroke="#333"
+        stroke-width="2.5" />
+
+    <!-- Input layer neurons with connections -->
+    <circle cx="130" cy="215" r="18" fill="#FFC107" stroke="#333" stroke-width="1.5" />
+    <text x="130" y="220" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        A</text>
+
+    <!-- Forward connections from input to hidden layer -->
+    <line x1="148" y1="215" x2="282" y2="215" stroke="#333" stroke-width="1.5" />
+    <line x1="148" y1="215" x2="282" y2="250" stroke="#333" stroke-width="1.5" />
+    <line x1="148" y1="215" x2="282" y2="285" stroke="#333" stroke-width="1.5" />
+
+    <circle cx="130" cy="250" r="18" fill="#FFC107" stroke="#333" stroke-width="1.5" />
+    <text x="130" y="255" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        B</text>
+
+    <!-- Forward connections from input to hidden layer -->
+    <line x1="148" y1="250" x2="282" y2="215" stroke="#333" stroke-width="1.5" />
+    <line x1="148" y1="250" x2="282" y2="250" stroke="#333" stroke-width="1.5" />
+    <line x1="148" y1="250" x2="282" y2="285" stroke="#333" stroke-width="1.5" />
+
+    <circle cx="130" cy="285" r="18" fill="#FFC107" stroke="#333" stroke-width="1.5" />
+    <text x="130" y="290" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        C</text>
+
+    <!-- Forward connections from input to hidden layer -->
+    <line x1="148" y1="285" x2="282" y2="215" stroke="#333" stroke-width="1.5" />
+    <line x1="148" y1="285" x2="282" y2="250" stroke="#333" stroke-width="1.5" />
+    <line x1="148" y1="285" x2="282" y2="285" stroke="#333" stroke-width="1.5" />
+
+    <text x="130" y="320" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        Input</text>
+
+    <!-- Hidden layer neurons with connections -->
+    <circle cx="300" cy="215" r="18" fill="#03A9F4" stroke="#333" stroke-width="1.5" />
+    <text x="300" y="220" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        D</text>
+
+    <!-- Forward connections from hidden to output layer -->
+    <line x1="318" y1="215" x2="452" y2="250" stroke="#333" stroke-width="1.5" />
+
+    <circle cx="300" cy="250" r="18" fill="#03A9F4" stroke="#333" stroke-width="1.5" />
+    <text x="300" y="255" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        E</text>
+
+    <!-- Forward connections from hidden to output layer -->
+    <line x1="318" y1="250" x2="452" y2="250" stroke="#333" stroke-width="1.5" />
+
+    <circle cx="300" cy="285" r="18" fill="#03A9F4" stroke="#333" stroke-width="1.5" />
+    <text x="300" y="290" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        F</text>
+
+    <!-- Forward connections from hidden to output layer -->
+    <line x1="318" y1="285" x2="452" y2="250" stroke="#333" stroke-width="1.5" />
+
+    <text x="300" y="320" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        Hidden</text>
+
+    <!-- Output layer neuron -->
+    <circle cx="470" cy="250" r="18" fill="#E91E63" stroke="#333" stroke-width="1.5" />
+    <text x="470" y="255" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        G</text>
+
+    <text x="470" y="320" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">
+        Output</text>
+
+    <!-- Backpropagation path showing learning direction -->
+    <path d="M 470 320 C 470 350, 300 350, 130 320" 
+          stroke="#FF1744" 
+          stroke-width="2" 
+          stroke-dasharray="5,5" 
+          fill="none"
+          marker-end="url(#arrowhead)" />
+
+    <!-- Backpropagation label -->
+    <text x="300" y="350" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold"
+        fill="#000000">Backpropagation</text>
+
+    <!-- Euler's number significance in AI -->
+    <rect x="175" y="380" width="250" height="45" rx="6" fill="#E8EAF6" stroke="#3F51B5"
+        stroke-width="2.5" />
+    <text x="210" y="410" font-family="Arial" font-size="22" font-weight="bold" fill="#3F51B5">e</text>
+    <text x="300" y="410" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold"
+        fill="#3F51B5">Powers AI math</text>
+</svg>

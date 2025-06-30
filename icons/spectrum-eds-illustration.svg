@@ -1,0 +1,219 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <style>
+    <![CDATA[
+    /* Base styles */
+    .svg-text { font-family: Adobe Clean, -apple-system, sans-serif; }
+    .svg-mono { font-family: monospace; }
+    
+    /* Responsive font sizes */
+    .title-text { font-size: 32px; font-weight: 600; fill: #2c2c2c; }
+    .subtitle-text { font-size: 18px; fill: #6e6e6e; }
+    .section-title { font-size: 14px; font-weight: 600; }
+    .body-text { font-size: 12px; }
+    .small-text { font-size: 10px; fill: #6e6e6e; }
+    .button-text { font-size: 12px; fill: white; }
+    .badge-text { font-size: 14px; font-weight: bold; fill: white; }
+    .modal-title { font-size: 16px; font-weight: 600; fill: #2c2c2c; }
+    .modal-content { font-size: 14px; fill: #2c2c2c; }
+    .close-button { font-size: 16px; fill: #6e6e6e; }
+    
+    /* Color classes */
+    .primary-color { fill: #0265DC; }
+    .secondary-color { fill: #6e6e6e; }
+    .text-color { fill: #2c2c2c; }
+    .adobe-color { fill: #e73c00; }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .title-text { font-size: 24px; }
+      .subtitle-text { font-size: 14px; }
+      .section-title { font-size: 12px; }
+      .body-text { font-size: 10px; }
+      .small-text { font-size: 8px; }
+      .button-text { font-size: 10px; }
+      .badge-text { font-size: 12px; }
+      .modal-title { font-size: 14px; }
+      .modal-content { font-size: 12px; }
+    }
+    
+    @media (max-width: 480px) {
+      .title-text { font-size: 20px; }
+      .subtitle-text { font-size: 12px; }
+      .section-title { font-size: 10px; }
+      .body-text { font-size: 9px; }
+      .small-text { font-size: 7px; }
+      .button-text { font-size: 9px; }
+      .badge-text { font-size: 10px; }
+      .modal-title { font-size: 12px; }
+      .modal-content { font-size: 10px; }
+    }
+    
+    /* Hover effects for interactive elements */
+    .interactive:hover { opacity: 0.8; cursor: pointer; }
+    
+    /* Stroke styles */
+    .border-light { stroke: #e0e0e0; stroke-width: 2; }
+    .border-primary { stroke: #0265DC; stroke-width: 2; }
+    .border-adobe { stroke: #e73c00; stroke-width: 2; }
+    .border-secondary { stroke: #6e6e6e; stroke-width: 2; }
+    
+    /* Fill styles */
+    .bg-white { fill: #ffffff; }
+    .bg-light { fill: #f5f5f5; }
+    .bg-primary { fill: #0265DC; }
+    .bg-blue-light { fill: #e3f2fd; }
+    .bg-pink-light { fill: #fce4ec; }
+    .bg-green-light { fill: #e8f5e9; }
+    .bg-gray-light { fill: #f8f8f8; }
+    .bg-gray { fill: #f0f0f0; }
+    .bg-overlay { fill: rgba(0,0,0,0.1); }
+    ]]>
+  </style>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" class="bg-light"/>
+  
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" class="svg-text title-text">
+    Spectrum Components + Adobe EDS
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="85" text-anchor="middle" class="svg-text subtitle-text">
+    Dynamic Content Architecture
+  </text>
+  
+  <!-- Data Source Section -->
+  <g transform="translate(100, 150)">
+    <!-- JSON Icon -->
+    <rect x="0" y="0" width="200" height="120" rx="8" class="bg-white border-light"/>
+    <text x="100" y="30" text-anchor="middle" class="svg-mono section-title primary-color">{JSON}</text>
+    <text x="100" y="55" text-anchor="middle" class="svg-text body-text text-color">query-index.json</text>
+    <text x="100" y="75" text-anchor="middle" class="svg-text small-text">/slides/</text>
+    <text x="100" y="95" text-anchor="middle" class="svg-text small-text">Dynamic Content</text>
+  </g>
+  
+  <!-- Arrow from JSON to Cards -->
+  <path d="M 300 210 L 380 210" stroke="#0265DC" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="340" y="200" text-anchor="middle" class="svg-text body-text primary-color">fetch</text>
+  
+  <!-- Card Components -->
+  <g transform="translate(400, 150)">
+    <!-- Card 1 -->
+    <g transform="translate(0, 0)" class="interactive">
+      <rect x="0" y="0" width="180" height="240" rx="8" class="bg-white border-light"/>
+      <!-- Image placeholder -->
+      <rect x="0" y="0" width="180" height="100" rx="8 8 0 0" class="bg-blue-light"/>
+      <!-- Number badge -->
+      <circle cx="20" cy="20" r="16" class="bg-primary"/>
+      <text x="20" y="25" text-anchor="middle" class="svg-text badge-text">1</text>
+      <!-- Title -->
+      <text x="90" y="125" text-anchor="middle" class="svg-text section-title text-color">York Minster</text>
+      <!-- Description -->
+      <text x="10" y="150" class="svg-text small-text secondary-color">A magnificent Gothic</text>
+      <text x="10" y="165" class="svg-text small-text secondary-color">cathedral with centuries</text>
+      <text x="10" y="180" class="svg-text small-text secondary-color">of history...</text>
+      <!-- Read More button -->
+      <rect x="60" y="200" width="100" height="28" rx="4" class="bg-primary interactive"/>
+      <text x="110" y="218" text-anchor="middle" class="svg-text button-text">Read More →</text>
+    </g>
+    
+    <!-- Card 2 -->
+    <g transform="translate(200, 0)" class="interactive">
+      <rect x="0" y="0" width="180" height="240" rx="8" class="bg-white border-light"/>
+      <!-- Image placeholder -->
+      <rect x="0" y="0" width="180" height="100" rx="8 8 0 0" class="bg-pink-light"/>
+      <!-- Number badge -->
+      <circle cx="20" cy="20" r="16" class="bg-primary"/>
+      <text x="20" y="25" text-anchor="middle" class="svg-text badge-text">2</text>
+      <!-- Title -->
+      <text x="90" y="125" text-anchor="middle" class="svg-text section-title text-color">The Shambles</text>
+      <!-- Description -->
+      <text x="10" y="150" class="svg-text small-text secondary-color">A picturesque medieval</text>
+      <text x="10" y="165" class="svg-text small-text secondary-color">street with overhanging</text>
+      <text x="10" y="180" class="svg-text small-text secondary-color">buildings...</text>
+      <!-- Read More button -->
+      <rect x="60" y="200" width="100" height="28" rx="4" class="bg-primary interactive"/>
+      <text x="110" y="218" text-anchor="middle" class="svg-text button-text">Read More →</text>
+    </g>
+    
+    <!-- Card 3 (partial) -->
+    <g transform="translate(400, 0)" class="interactive">
+      <rect x="0" y="0" width="120" height="240" rx="8" class="bg-white border-light"/>
+      <!-- Image placeholder -->
+      <rect x="0" y="0" width="120" height="100" rx="8 8 0 0" class="bg-green-light"/>
+      <!-- Number badge -->
+      <circle cx="20" cy="20" r="16" class="bg-primary"/>
+      <text x="20" y="25" text-anchor="middle" class="svg-text badge-text">3</text>
+    </g>
+  </g>
+  
+  <!-- Arrow from Card to Modal -->
+  <path d="M 510 380 L 510 440" stroke="#0265DC" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="530" y="415" class="svg-text body-text primary-color">onClick</text>
+  
+  <!-- Modal Overlay -->
+  <g transform="translate(250, 450)">
+    <!-- Background overlay -->
+    <rect x="-50" y="0" width="700" height="280" rx="12" class="bg-overlay"/>
+    <!-- Modal -->
+    <rect x="0" y="30" width="600" height="220" rx="8" class="bg-white border-light"/>
+    <!-- Modal Header -->
+    <rect x="0" y="30" width="600" height="50" rx="8 8 0 0" class="bg-gray-light" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="20" y="60" class="svg-text modal-title">1. York Minster</text>
+    <!-- Close button -->
+    <circle cx="570" cy="55" r="15" class="bg-gray interactive"/>
+    <text x="570" y="60" text-anchor="middle" class="svg-text close-button">×</text>
+    <!-- Content -->
+    <text x="20" y="110" class="svg-text modal-content">Full content from .plain.html</text>
+    <rect x="20" y="130" width="560" height="8" rx="4" class="bg-gray"/>
+    <rect x="20" y="148" width="480" height="8" rx="4" class="bg-gray"/>
+    <rect x="20" y="166" width="520" height="8" rx="4" class="bg-gray"/>
+    <rect x="20" y="184" width="440" height="8" rx="4" class="bg-gray"/>
+  </g>
+  
+  <!-- Tech Stack Labels -->
+  <g transform="translate(950, 150)">
+    <rect x="0" y="0" width="200" height="60" rx="8" class="bg-white border-primary"/>
+    <text x="100" y="25" text-anchor="middle" class="svg-text section-title primary-color">Spectrum Web</text>
+    <text x="100" y="45" text-anchor="middle" class="svg-text section-title primary-color">Components</text>
+  </g>
+  
+  <g transform="translate(950, 230)">
+    <rect x="0" y="0" width="200" height="60" rx="8" class="bg-white border-adobe"/>
+    <text x="100" y="25" text-anchor="middle" class="svg-text section-title adobe-color">Adobe Edge</text>
+    <text x="100" y="45" text-anchor="middle" class="svg-text section-title adobe-color">Delivery Services</text>
+  </g>
+  
+  <g transform="translate(950, 310)">
+    <rect x="0" y="0" width="200" height="60" rx="8" class="bg-white border-secondary"/>
+    <text x="100" y="35" text-anchor="middle" class="svg-text section-title secondary-color">ES Modules</text>
+  </g>
+  
+  <!-- Features list -->
+  <g transform="translate(950, 450)">
+    <text x="0" y="0" class="svg-text section-title text-color">Key Features:</text>
+    <circle cx="10" cy="25" r="4" class="bg-primary"/>
+    <text x="25" y="30" class="svg-text body-text text-color">Numbered badges</text>
+    <circle cx="10" cy="50" r="4" class="bg-primary"/>
+    <text x="25" y="55" class="svg-text body-text text-color">Modal overlays</text>
+    <circle cx="10" cy="75" r="4" class="bg-primary"/>
+    <text x="25" y="80" class="svg-text body-text text-color">Dynamic content</text>
+    <circle cx="10" cy="100" r="4" class="bg-primary"/>
+    <text x="25" y="105" class="svg-text body-text text-color">Responsive design</text>
+    <circle cx="10" cy="125" r="4" class="bg-primary"/>
+    <text x="25" y="130" class="svg-text body-text text-color">Accessibility</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0265DC"/>
+    </marker>
+  </defs>
+  
+  <!-- GitHub reference -->
+  <text x="600" y="770" text-anchor="middle" class="svg-text body-text secondary-color">
+    github.com/ddttom/spectrum-with-eds
+  </text>
+</svg>

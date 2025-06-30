@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a word</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 900px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .click-message {
+            text-align: center;
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .lottery-splash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            z-index: 10;
+            transition: opacity 0.5s ease;
+        }
+        
+        .lottery-splash h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Initial lottery splash screen -->
+    <div class="lottery-splash" id="lotterySplash">
+        <h1>Lottery</h1>
+    </div>
+    
+    <div class="container" id="animationContainer" style="display: none;">
+        <h1 style="text-align: center;">Choosing the next word</h1>
+        
+        <div id="svgContainer">
+            <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Arrow marker definition -->
+                <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
+                        orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3498db" />
+                    </marker>
+                </defs>
+
+                <!-- Tombola Machine Components -->
+                <!-- Main Body -->
+                <rect id="tombola-body" x="50" y="50" width="250" height="300" rx="20" fill="#2c3e50" />
+                
+                <!-- Glass Dome Effect -->
+                <path id="glass-dome" d="M70 70 L280 70 Q330 70 330 120 L330 350 L50 350 L50 120 Q50 70 90 70" 
+                      fill="#3498db" opacity="0.2" />
+                
+                <!-- Inner Frame -->
+                <rect id="inner-frame" x="70" y="90" width="220" height="240" rx="15" fill="#34495e" />
+                
+                <!-- Metal Frame Details -->
+                <path d="M70 90 L290 90" stroke="#95a5a6" stroke-width="2" />
+                <path d="M70 330 L290 330" stroke="#95a5a6" stroke-width="2" />
+                <path d="M70 90 L70 330" stroke="#95a5a6" stroke-width="2" />
+                <path d="M290 90 L290 330" stroke="#95a5a6" stroke-width="2" />
+                
+                <!-- Initial Name Text -->
+                <text id="normal-text" x="175" y="400" text-anchor="middle" fill="blue" font-size="16" font-family="Arial" opacity="1">
+                    <tspan>Arve Hjalmar Holmen</tspan>
+                </text>
+                
+                <!-- Name with "killed" Text -->
+                <text id="killed-text" x="175" y="400" text-anchor="middle" fill="blue" font-size="16" font-family="Arial" opacity="0">
+                    <tspan>Arve Hjalmar Holmen killed</tspan>
+                </text>
+                
+                <!-- Handle -->
+                <g id="handle">
+                    <path d="M300 150 Q350 150 350 200" stroke="#e74c3c" stroke-width="8" fill="none" />
+                    <circle cx="350" cy="200" r="15" fill="#e74c3c" />
+                </g>
+                
+                <!-- Ticket List Container -->
+                <g id="ticket-list" transform="translate(500, 50)">
+                    <!-- Regular Tickets (1, 3, 4) -->
+                    <g id="ticket-1" class="ticket">
+                        <rect x="0" y="0" width="100" height="25" rx="3" fill="#e74c3c" opacity="0.7" />
+                        <text x="50" y="15" text-anchor="middle" fill="white" font-size="8">LOVED</text>
+                    </g>
+                    
+                    <!-- Special Ticket (KILLED) -->
+                    <g id="ticket-2" class="ticket">
+                        <rect id="ticket-2-rect" x="0" y="30" width="100" height="25" rx="3" fill="#e74c3c" opacity="0.7" />
+                        <text x="50" y="45" text-anchor="middle" fill="white" font-size="8">KILLED</text>
+                    </g>
+                    
+                    <!-- Regular Tickets (continued) -->
+                    <g id="ticket-3" class="ticket">
+                        <rect x="0" y="60" width="100" height="25" rx="3" fill="#e74c3c" opacity="0.7" />
+                        <text x="50" y="75" text-anchor="middle" fill="white" font-size="8">ADORED</text>
+                    </g>
+                    
+                    <g id="ticket-4" class="ticket">
+                        <rect x="0" y="90" width="100" height="25" rx="3" fill="#e74c3c" opacity="0.7" />
+                        <text x="50" y="105" text-anchor="middle" fill="white" font-size="8">DROVE</text>
+                    </g>
+                </g>
+
+                <!-- Connecting Arrow -->
+                <path id="arrow-path" d="M500 110 L300 110" stroke="#3498db" stroke-width="2" marker-end="url(#arrow)" />
+            </svg>
+        </div>
+        
+        <div class="click-message" id="clickMessage">
+            Animation complete. Click anywhere to restart.
+        </div>
+    </div>
+
+    <script>
+        // Animation states
+        const INITIAL_STATE = 0;
+        const TICKETS_MOVING = 1;
+        const KILLED_DROPPING = 2;
+        const FINAL_STATE = 3;
+        
+        // Animation timing (in ms)
+        const SPLASH_DURATION = 3000;  // 3 second delay before showing SVG
+        const PHASE_1_START = 1000;  // Initial state duration before animation starts
+        const PHASE_1_DURATION = 1000;  // Time for tickets to move into tombola
+        const PHASE_2_START = PHASE_1_START + PHASE_1_DURATION + 2000;  // 2 second pause before the next phase
+        const PHASE_2_DURATION = 1000;  // Time for killed ticket to drop
+        const PHASE_3_START = PHASE_2_START + PHASE_2_DURATION + 2000;  // 2 second pause in final state
+        
+        // Element references
+        const ticket1 = document.getElementById('ticket-1');
+        const ticket2 = document.getElementById('ticket-2');
+        const ticket3 = document.getElementById('ticket-3');
+        const ticket4 = document.getElementById('ticket-4');
+        const ticket2Rect = document.getElementById('ticket-2-rect');
+        const arrowPath = document.getElementById('arrow-path');
+        const normalText = document.getElementById('normal-text');
+        const killedText = document.getElementById('killed-text');
+        const handle = document.getElementById('handle');
+        const container = document.getElementById('animationContainer');
+        const clickMessage = document.getElementById('clickMessage');
+        const lotterySplash = document.getElementById('lotterySplash');
+        
+        // Animation variables
+        let isAnimationComplete = false;
+        let isAnimationRunning = false;
+        
+        // Initialize
+        function init() {
+            // Hide click message initially
+            clickMessage.style.display = 'none';
+            
+            // Set up event listener for container click
+            container.addEventListener('click', function() {
+                if (isAnimationComplete && !isAnimationRunning) {
+                    // Reset and restart animation
+                    resetAnimation();
+                    runAnimation();
+                }
+            });
+            
+            // Show SVG container after splash screen
+            setTimeout(() => {
+                lotterySplash.style.opacity = '0';
+                container.style.display = 'block';
+                
+                // Remove splash screen from DOM after fade out
+                setTimeout(() => {
+                    lotterySplash.style.display = 'none';
+                }, 500);
+                
+                // Start animation
+                runAnimation();
+            }, SPLASH_DURATION);
+        }
+        
+        // Run full animation sequence
+        function runAnimation() {
+            isAnimationRunning = true;
+            isAnimationComplete = false;
+            clickMessage.style.display = 'none';
+            
+            // Phase 1: Move tickets into tombola (after initial delay)
+            setTimeout(() => {
+                moveTicketsIntoTombola();
+                hideArrow();
+                rotateHandle(180);
+            }, PHASE_1_START);
+            
+            // Phase 2: Drop killed ticket and change text
+            setTimeout(() => {
+                dropKilledTicket();
+                changeText();
+            }, PHASE_2_START);
+            
+            // Phase 3: Rotate handle back
+            setTimeout(() => {
+                rotateHandle(0);
+            }, PHASE_2_START + 1000);
+            
+            // Animation complete - show click message
+            setTimeout(() => {
+                isAnimationRunning = false;
+                isAnimationComplete = true;
+                clickMessage.style.display = 'block';
+            }, PHASE_3_START);
+        }
+        
+        // Animation functions
+        function resetAnimation() {
+            ticket1.style.transition = 'none';
+            ticket2.style.transition = 'none';
+            ticket3.style.transition = 'none';
+            ticket4.style.transition = 'none';
+            arrowPath.style.transition = 'none';
+            normalText.style.transition = 'none';
+            killedText.style.transition = 'none';
+            handle.style.transition = 'none';
+            ticket2Rect.style.transition = 'none';
+            
+            ticket1.style.transform = '';
+            ticket2.style.transform = '';
+            ticket3.style.transform = '';
+            ticket4.style.transform = '';
+            arrowPath.style.opacity = 1;
+            normalText.style.opacity = 1;
+            killedText.style.opacity = 0;
+            ticket2Rect.setAttribute('fill', '#e74c3c');
+            handle.style.transform = '';
+            
+            // Force reflow to ensure transitions work properly on next animation
+            void container.offsetWidth;
+        }
+        
+        function moveTicketsIntoTombola() {
+            ticket1.style.transition = 'transform 1s ease';
+            ticket2.style.transition = 'transform 1s ease';
+            ticket3.style.transition = 'transform 1s ease';
+            ticket4.style.transition = 'transform 1s ease';
+            
+            ticket1.style.transform = 'translate(-410px, 44px)';
+            ticket2.style.transform = 'translate(-410px, 74px)';
+            ticket3.style.transform = 'translate(-410px, 104px)';
+            ticket4.style.transform = 'translate(-410px, 134px)';
+        }
+        
+        function hideArrow() {
+            arrowPath.style.transition = 'opacity 0.3s ease';
+            arrowPath.style.opacity = 0;
+        }
+        
+        function dropKilledTicket() {
+            ticket2.style.transition = 'transform 1s ease';
+            ticket2.style.transform = 'translate(-410px, 350px)';
+            ticket2Rect.style.transition = 'fill 0.3s ease';
+            ticket2Rect.setAttribute('fill', '#1a5276');
+        }
+        
+        function changeText() {
+            normalText.style.transition = 'opacity 0.3s ease';
+            killedText.style.transition = 'opacity 0.3s ease';
+            normalText.style.opacity = 0;
+            killedText.style.opacity = 1;
+        }
+        
+        function rotateHandle(degrees) {
+            handle.style.transition = 'transform 1s ease';
+            handle.style.transformOrigin = '350px 200px';
+            handle.style.transform = `rotate(${degrees}deg)`;
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', init);
+        
+        // Start immediately if the page is already loaded
+        if (document.readyState === 'complete') {
+            init();
+        }
+    </script>
+</body>
+</html>

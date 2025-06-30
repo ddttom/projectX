@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f5f7fa"/>
+        <stop offset="100%" stop-color="#c3cfe2"/>
+      </linearGradient>
+    </defs>
+    
+    <rect width="800" height="400" fill="url(#bgGradient)" rx="15" ry="15"/>
+    
+    <!-- Building blocks structure -->
+    <g transform="translate(400, 200)">
+      <!-- Base layer -->
+      <rect x="-240" y="60" width="120" height="80" rx="10" fill="#3498db" opacity="0.8"/>
+      <rect x="-80" y="60" width="120" height="80" rx="10" fill="#3498db" opacity="0.8"/>
+      <rect x="80" y="60" width="120" height="80" rx="10" fill="#3498db" opacity="0.8"/>
+      
+      <!-- Domain layer -->
+      <rect x="-170" y="-40" width="120" height="80" rx="10" fill="#2ecc71" opacity="0.8"/>
+      <rect x="50" y="-40" width="120" height="80" rx="10" fill="#2ecc71" opacity="0.8"/>
+      
+      <!-- Organization layer -->
+      <rect x="-60" y="-140" width="120" height="80" rx="10" fill="#e74c3c" opacity="0.8"/>
+      
+      <!-- Labels -->
+      <text x="-180" y="100" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BASE</text>
+      <text x="-20" y="100" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BASE</text>
+      <text x="140" y="100" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BASE</text>
+      
+      <text x="-110" y="0" text-anchor="middle" fill="white" font-size="20" font-weight="bold">DOMAIN</text>
+      <text x="110" y="0" text-anchor="middle" fill="white" font-size="20" font-weight="bold">DOMAIN</text>
+      
+      <text x="0" y="-100" text-anchor="middle" fill="white" font-size="20" font-weight="bold">ORG</text>
+      
+      <!-- Connecting lines -->
+      <line x1="-180" y1="60" x2="-140" y2="40" stroke="#333" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+      <line x1="-20" y1="60" x2="-80" y2="40" stroke="#333" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+      <line x1="-20" y1="60" x2="50" y2="40" stroke="#333" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+      <line x1="140" y1="60" x2="110" y2="40" stroke="#333" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+      
+      <line x1="-110" y1="-40" x2="-30" y2="-60" stroke="#333" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+      <line x1="110" y1="-40" x2="30" y2="-60" stroke="#333" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+    </g>
+    
+    <text x="400" y="50" text-anchor="middle" fill="#333" font-size="32" font-weight="bold">FOUNDATION MODEL LAYERS</text>
+  </svg>

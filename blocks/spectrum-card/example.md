@@ -1,0 +1,4 @@
+# Spectrum card
+
+| spectrum-card |
+| :---- |

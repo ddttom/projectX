@@ -1,0 +1,40 @@
+<svg viewBox="0 0 500 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Arrow marker definition -->
+    <defs>
+        <marker id="arrowMarker" markerWidth="10" markerHeight="7" refX="10" refY="3.5"
+            orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+        </marker>
+    </defs>
+    <!-- AI Brain with question marks -->
+    <path
+        d="M200 50 Q240 45, 260 65 Q280 85, 260 110 Q240 130, 200 125 Q160 130, 140 110 Q120 85, 140 65 Q160 45, 200 50"
+        fill="#BBDEFB" stroke="#3498db" stroke-width="2" />
+    <!-- Output bubbles with some false info -->
+    <path d="M140 150 L120 140 L110 160 L120 170 L140 150" fill="#e74c3c" stroke="#c0392b"
+        stroke-width="1" />
+    <rect x="65" y="140" width="80" height="40" rx="5" fill="#e74c3c" opacity="0.8" />
+    <text x="105" y="165" text-anchor="middle" fill="white" font-size="8">FALSE INFO</text>
+    <path d="M260 150 L280 140 L290 160 L280 170 L260 150" fill="#2ecc71" stroke="#27ae60"
+        stroke-width="1" />
+    <rect x="255" y="140" width="80" height="40" rx="5" fill="#2ecc71" opacity="0.8" />
+    <text x="295" y="165" text-anchor="middle" fill="white" font-size="8">TRUE INFO</text>
+    <!-- Question marks inside brain -->
+    <text x="180" y="80" font-size="12" fill="#34495e">13.456?</text>
+    <text x="210" y="95" font-size="12" fill="#34495e">9.56?</text>
+    <text x="170" y="110" font-size="12" fill="#34495e">3.14159?</text>
+    <!-- Input arrow -->
+    <path d="M200 20 L200 45" stroke="#3498db" stroke-width="2" marker-end="url(#arrowMarker)" />
+    <text x="200" y="15" text-anchor="middle" fill="black" font-size="20">TELL ME ABOUT .......</text>
+    <!-- New arrows connecting the cloud to TRUE and FALSE -->
+    <path d="M170 115 L120 140" stroke="#34495e" stroke-width="2"
+        marker-end="url(#arrowMarker)" />
+    <path d="M230 115 L280 140" stroke="#34495e" stroke-width="2" marker-end="url(#arrowMarker)" />
+
+    <!-- New System Prompt Box -->
+    <rect x="370" y="80" width="100" height="40" rx="5" fill="#9b59b6" opacity="0.8" />
+    <text x="420" y="105" text-anchor="middle" fill="white" font-size="10">SYSTEM PROMPT</text>
+
+    <!-- Arrow from System Prompt to Brain -->
+    <path d="M370 100 L280 90" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrowMarker)" />
+</svg>

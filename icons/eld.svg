@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f8f9fa" rx="10" ry="10" />
+    
+    <!-- Timeline -->
+    <line x1="100" y1="200" x2="700" y2="200" stroke="#cccccc" stroke-width="4" />
+    
+    <!-- Timeline Markers -->
+    <circle cx="100" cy="200" r="10" fill="#3366cc" />
+    <circle cx="300" cy="200" r="10" fill="#cc3366" />
+    <circle cx="500" cy="200" r="10" fill="#339933" />
+    <circle cx="700" cy="200" r="10" fill="#ff9900" />
+    
+    <!-- Eager Loading Phase -->
+    <rect x="100" y="100" width="200" height="80" fill="#e6f2ff" stroke="#3366cc" stroke-width="2" rx="5" ry="5" />
+    <text x="200" y="130" font-family="Arial" font-size="18" fill="#3366cc" text-anchor="middle" font-weight="bold">Eager Loading</text>
+    <text x="200" y="155" font-family="Arial" font-size="14" fill="#3366cc" text-anchor="middle">Critical Content (LCP)</text>
+    
+    <!-- Lazy Loading Phase -->
+    <rect x="300" y="100" width="200" height="80" fill="#ffebf3" stroke="#cc3366" stroke-width="2" rx="5" ry="5" />
+    <text x="400" y="130" font-family="Arial" font-size="18" fill="#cc3366" text-anchor="middle" font-weight="bold">Lazy Loading</text>
+    <text x="400" y="155" font-family="Arial" font-size="14" fill="#cc3366" text-anchor="middle">Below-the-fold Content</text>
+    
+    <!-- Delayed Loading Phase -->
+    <rect x="500" y="100" width="200" height="80" fill="#e6ffe6" stroke="#339933" stroke-width="2" rx="5" ry="5" />
+    <text x="600" y="130" font-family="Arial" font-size="18" fill="#339933" text-anchor="middle" font-weight="bold">Delayed Loading</text>
+    <text x="600" y="155" font-family="Arial" font-size="14" fill="#339933" text-anchor="middle">Non-critical Resources</text>
+    
+    <!-- Content Loaded in Each Phase -->
+    <rect x="100" y="230" width="200" height="140" fill="#ffffff" stroke="#3366cc" stroke-width="2" rx="5" ry="5" />
+    <text x="200" y="250" font-family="Arial" font-size="14" fill="#3366cc" text-anchor="middle">First Section</text>
+    <text x="200" y="270" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Hero Image</text>
+    <text x="200" y="290" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Main Heading</text>
+    <text x="200" y="310" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Critical CSS</text>
+    <text x="200" y="330" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Core Scripts</text>
+    <text x="200" y="350" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Essential Functions</text>
+    
+    <rect x="300" y="230" width="200" height="140" fill="#ffffff" stroke="#cc3366" stroke-width="2" rx="5" ry="5" />
+    <text x="400" y="250" font-family="Arial" font-size="14" fill="#cc3366" text-anchor="middle">Remaining Content</text>
+    <text x="400" y="270" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Other Sections</text>
+    <text x="400" y="290" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Header &amp; Footer</text>
+    <text x="400" y="310" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Non-critical CSS</text>
+    <text x="400" y="330" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Images Below Fold</text>
+    <text x="400" y="350" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Additional Fonts</text>
+    
+    <rect x="500" y="230" width="200" height="140" fill="#ffffff" stroke="#339933" stroke-width="2" rx="5" ry="5" />
+    <text x="600" y="250" font-family="Arial" font-size="14" fill="#339933" text-anchor="middle">Optional Resources</text>
+    <text x="600" y="270" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Analytics</text>
+    <text x="600" y="290" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Third-party Scripts</text>
+    <text x="600" y="310" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Social Widgets</text>
+    <text x="600" y="330" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Tracking Tools</text>
+    <text x="600" y="350" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">- Chat Functionality</text>
+    
+    <!-- Time Markers -->
+    <text x="100" y="220" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">Page Load</text>
+    <text x="300" y="220" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">After First Section</text>
+    <text x="500" y="220" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">+3 Seconds</text>
+    <text x="700" y="220" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle">Complete</text>
+    
+    <!-- Main Title -->
+    <text x="400" y="50" font-family="Arial" font-size="24" fill="#333333" text-anchor="middle" font-weight="bold">Edge Delivery Services Loading Phases</text>
+    <text x="400" y="80" font-family="Arial" font-size="18" fill="#666666" text-anchor="middle">E-L-D (Eager-Lazy-Delayed) Pattern</text>
+</svg>

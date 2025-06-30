@@ -1,0 +1,297 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for modern look -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glassmorphism filter -->
+    <filter id="glassmorphism" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.3 0"/>
+    </filter>
+    
+    <!-- Shadow filter -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.15)"/>
+    </filter>
+    
+    <!-- Arrow markers -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="rgba(255,255,255,0.8)" />
+    </marker>
+    
+    <marker id="smallArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.6)" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#primaryGradient)"/>
+  
+  <!-- Background pattern -->
+  <circle cx="100" cy="100" r="40" fill="rgba(255,255,255,0.1)"/>
+  <circle cx="1100" cy="150" r="60" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="200" cy="700" r="50" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="1000" cy="650" r="45" fill="rgba(255,255,255,0.06)"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="bold">
+    Web Components in Adobe Edge Delivery Services
+  </text>
+  
+  <!-- Web Components Foundation (left side) -->
+  <g transform="translate(80, 120)">
+    <rect x="0" y="0" width="200" height="250" rx="15" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="2" filter="url(#dropShadow)"/>
+    
+    <text x="100" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Web Components
+    </text>
+    
+    <!-- Custom Elements -->
+    <rect x="20" y="50" width="160" height="35" rx="8" fill="url(#accentGradient)" opacity="0.8"/>
+    <text x="100" y="72" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Custom Elements
+    </text>
+    
+    <!-- Shadow DOM -->
+    <rect x="20" y="95" width="160" height="35" rx="8" fill="url(#accentGradient)" opacity="0.8"/>
+    <text x="100" y="117" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Shadow DOM
+    </text>
+    
+    <!-- HTML Templates -->
+    <rect x="20" y="140" width="160" height="35" rx="8" fill="url(#accentGradient)" opacity="0.8"/>
+    <text x="100" y="162" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      HTML Templates
+    </text>
+    
+    <!-- ES Modules -->
+    <rect x="20" y="185" width="160" height="35" rx="8" fill="url(#accentGradient)" opacity="0.8"/>
+    <text x="100" y="207" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      ES Modules
+    </text>
+  </g>
+  
+  <!-- Arrow from Web Components to EDS -->
+  <path d="M 300 245 Q 400 245 500 245" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- EDS Block Structure (center) -->
+  <g transform="translate(420, 120)">
+    <rect x="0" y="0" width="240" height="250" rx="15" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.4)" stroke-width="2" filter="url(#dropShadow)"/>
+    
+    <text x="120" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      EDS Block Architecture
+    </text>
+    
+    <!-- Served HTML -->
+    <rect x="20" y="50" width="200" height="60" rx="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="120" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      Served HTML
+    </text>
+    <text x="120" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      &lt;div class="my-block"&gt;
+    </text>
+    <text x="120" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Minimal structure
+    </text>
+    
+    <!-- Transformation arrow -->
+    <path d="M 120 120 L 120 140" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="140" y="135" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      EDS Processing
+    </text>
+    
+    <!-- Rendered HTML -->
+    <rect x="20" y="150" width="200" height="80" rx="8" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="120" y="170" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      Rendered HTML
+    </text>
+    <text x="120" y="185" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="9">
+      &lt;div class="my-block block"
+    </text>
+    <text x="120" y="198" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="9">
+      data-block-name="my-block"
+    </text>
+    <text x="120" y="211" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="9">
+      data-block-status="initialized"&gt;
+    </text>
+    <text x="120" y="224" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="9">
+      Full block structure
+    </text>
+  </g>
+  
+  <!-- Arrow from EDS to Shoelace -->
+  <path d="M 680 245 Q 780 245 880 245" stroke="rgba(255,255,255,0.8)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Shoelace Card Component (right side) -->
+  <g transform="translate(820, 120)">
+    <rect x="0" y="0" width="280" height="250" rx="15" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.5)" stroke-width="2" filter="url(#dropShadow)"/>
+    
+    <text x="140" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">
+      Shoelace Card Component
+    </text>
+    
+    <!-- Glassmorphism effect demo -->
+    <rect x="20" y="50" width="240" height="45" rx="12" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1" filter="url(#glassmorphism)"/>
+    <text x="140" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Advanced Glassmorphism Effects
+    </text>
+    <text x="140" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Multi-layer backdrop blur
+    </text>
+    
+    <!-- Modal system -->
+    <rect x="20" y="105" width="240" height="45" rx="12" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="140" y="125" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Immersive Modal System
+    </text>
+    <text x="140" y="140" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Integrated title headers
+    </text>
+    
+    <!-- Performance features -->
+    <rect x="20" y="160" width="240" height="45" rx="12" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="140" y="180" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      FOUC Elimination
+    </text>
+    <text x="140" y="195" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Image preloading &amp; smooth transitions
+    </text>
+    
+    <!-- AI assistance -->
+    <rect x="20" y="215" width="240" height="25" rx="12" fill="url(#secondaryGradient)" opacity="0.8"/>
+    <text x="140" y="232" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      AI-Assisted Development Ready
+    </text>
+  </g>
+  
+  <!-- Development Workflow (bottom section) -->
+  <g transform="translate(100, 450)">
+    <rect x="0" y="0" width="1000" height="120" rx="15" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.25)" stroke-width="2" filter="url(#dropShadow)"/>
+    
+    <text x="500" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Development Workflow
+    </text>
+    
+    <!-- Counter Example -->
+    <rect x="30" y="50" width="140" height="50" rx="8" fill="url(#accentGradient)" opacity="0.7"/>
+    <text x="100" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      1. Simple Counter
+    </text>
+    <text x="100" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">
+      Basic web component
+    </text>
+    
+    <!-- Library Integration -->
+    <rect x="200" y="50" width="140" height="50" rx="8" fill="url(#accentGradient)" opacity="0.7"/>
+    <text x="270" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      2. Library Integration
+    </text>
+    <text x="270" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">
+      Shoelace components
+    </text>
+    
+    <!-- Testing -->
+    <rect x="370" y="50" width="140" height="50" rx="8" fill="url(#accentGradient)" opacity="0.7"/>
+    <text x="440" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      3. Local Testing
+    </text>
+    <text x="440" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">
+      Debug server
+    </text>
+    
+    <!-- Advanced Features -->
+    <rect x="540" y="50" width="140" height="50" rx="8" fill="url(#accentGradient)" opacity="0.7"/>
+    <text x="610" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      4. Advanced Features
+    </text>
+    <text x="610" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">
+      Glassmorphism &amp; modals
+    </text>
+    
+    <!-- AI Documentation -->
+    <rect x="710" y="50" width="140" height="50" rx="8" fill="url(#secondaryGradient)" opacity="0.8"/>
+    <text x="780" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="600">
+      5. AI Documentation
+    </text>
+    <text x="780" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">
+      Complete guides
+    </text>
+    
+    <!-- Arrows between workflow steps -->
+    <path d="M 175 75 L 195 75" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none" marker-end="url(#smallArrow)"/>
+    <path d="M 345 75 L 365 75" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none" marker-end="url(#smallArrow)"/>
+    <path d="M 515 75 L 535 75" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none" marker-end="url(#smallArrow)"/>
+    <path d="M 685 75 L 705 75" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none" marker-end="url(#smallArrow)"/>
+  </g>
+  
+  <!-- Benefits section -->
+  <g transform="translate(100, 600)">
+    <text x="500" y="30" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Key Benefits
+    </text>
+    
+    <rect x="50" y="50" width="200" height="60" rx="10" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="150" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Native Browser Support
+    </text>
+    <text x="150" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      No framework dependencies
+    </text>
+    <text x="150" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Clean encapsulation
+    </text>
+    
+    <rect x="300" y="50" width="200" height="60" rx="10" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="400" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      EDS Integration
+    </text>
+    <text x="400" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Block-based architecture
+    </text>
+    <text x="400" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Performance optimised
+    </text>
+    
+    <rect x="550" y="50" width="200" height="60" rx="10" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="650" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Developer Experience
+    </text>
+    <text x="650" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      AI-assisted workflows
+    </text>
+    <text x="650" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Local testing server
+    </text>
+    
+    <rect x="800" y="50" width="200" height="60" rx="10" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="900" y="70" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="600">
+      Accessibility First
+    </text>
+    <text x="900" y="85" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      ARIA support built-in
+    </text>
+    <text x="900" y="98" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="10">
+      Keyboard navigation
+    </text>
+  </g>
+  
+  <!-- GitHub link -->
+  <text x="600" y="770" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="14" font-weight="600">
+    Complete implementation: github.com/ddttom/webcomponents-with-eds
+  </text>
+  
+  
+</svg>

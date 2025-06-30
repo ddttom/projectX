@@ -1,0 +1,9 @@
+.vue-slide-builder {
+    width: 100%;
+    min-height: 400px;
+  }
+  
+  .vue-slide-builder #vue-slide-app {
+    width: 100%;
+  }
+  

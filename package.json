@@ -1,0 +1,33 @@
+{
+  "name": "projectX",
+  "private": true,
+  "version": "1.3.0",
+  "type": "module",
+  "description": "ProjectX - Adobe Edge Delivery Services Project",
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:css": "stylelint blocks/**/*.css styles/*.css",
+    "lint": "npm run lint:js && npm run lint:css",
+    "debug": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddttom/projectX.git"
+  },
+  "author": "Tom Cranstoun",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/ddttom/projectX/issues"
+  },
+  "homepage": "https://github.com/ddttom/projectX#readme",
+  "devDependencies": {
+    "@babel/core": "7.23.7",
+    "@babel/eslint-parser": "7.23.3",
+    "chai": "5.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "stylelint": "16.1.0",
+    "stylelint-config-standard": "36.0.0"
+  }
+}

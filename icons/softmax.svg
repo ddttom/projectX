@@ -1,0 +1,206 @@
+<!-- 
+    Softmax Visualization in Language Models
+    
+    This SVG illustrates the softmax function's role in language model token selection:
+    1. Raw logit scores from the model's output layer
+    2. Exponential transformation to make all values positive
+    3. Sum calculation of all exponential values
+    4. Normalization by dividing each value by the sum
+    5. Final probability distribution used for token selection
+    
+    The visualization shows two selection strategies:
+    - Greedy: Always selects the highest probability token
+    - Sampling: Randomly selects from top-k tokens
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+    <!-- Background canvas with light gray fill -->
+    <rect width="800" height="800" fill="#f8f9fa" />
+
+    <!-- Title and context showing where in a sentence we are -->
+    <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Softmax
+        in Language Models:</text>
+
+    <!-- Input context: The incomplete sentence we're trying to complete -->
+    <rect x="40" y="80" width="720" height="40" fill="#e8f4f8" rx="5" ry="5" stroke="#2E5984"
+        stroke-width="1" />
+    <text x="400" y="105" font-family="Arial" font-size="18" text-anchor="middle">"Travel today
+        will be  ____"</text>
+
+    <!-- Step 1: Raw logit scores from the model's output layer -->
+    <!-- These are the unnormalized scores for each possible next token -->
+    <rect x="50" y="150" width="160" height="320" fill="#e0e0e0" rx="10" ry="10" />
+    <text x="130" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Raw Scores</text>
+
+    <!-- Individual token scores with blue background -->
+    <rect x="60" y="170" width="140" height="40" fill="#6495ED" rx="5" ry="5" />
+    <text x="70" y="195" font-family="Arial" font-size="16" text-anchor="start" fill="white">"long"</text>
+    <text x="190" y="195" font-family="Arial" font-size="16" text-anchor="end" fill="white">2.0</text>
+
+    <rect x="60" y="220" width="140" height="40" fill="#6495ED" rx="5" ry="5" />
+    <text x="70" y="245" font-family="Arial" font-size="16" text-anchor="start" fill="white">"short"</text>
+    <text x="190" y="245" font-family="Arial" font-size="16" text-anchor="end" fill="white">1.5</text>
+
+    <rect x="60" y="270" width="140" height="40" fill="#6495ED" rx="5" ry="5" />
+    <text x="70" y="295" font-family="Arial" font-size="16" text-anchor="start" fill="white">"busy"</text>
+    <text x="190" y="295" font-family="Arial" font-size="16" text-anchor="end" fill="white">1.0</text>
+
+    <rect x="60" y="320" width="140" height="40" fill="#6495ED" rx="5" ry="5" />
+    <text x="70" y="345" font-family="Arial" font-size="16" text-anchor="start" fill="white">"exhausting"</text>
+    <text x="190" y="345" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.8</text>
+
+    <rect x="60" y="370" width="140" height="40" fill="#6495ED" rx="5" ry="5" />
+    <text x="70" y="395" font-family="Arial" font-size="16" text-anchor="start" fill="white">"unusual"</text>
+    <text x="190" y="395" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.1</text>
+
+    <!-- Placeholder for additional tokens -->
+    <rect x="60" y="420" width="140" height="40" fill="#6495ED" rx="5" ry="5" opacity="0.7" />
+    <text x="70" y="445" font-family="Arial" font-size="14" text-anchor="start" fill="white">5 more tokens...</text>
+    <text x="190" y="445" font-family="Arial" font-size="14" text-anchor="end" fill="white">&lt; 0</text>
+
+    <!-- Step 2: Exponential transformation (e^x) -->
+    <!-- This ensures all values are positive and enhances differences between scores -->
+    <rect x="290" y="150" width="160" height="320" fill="#e0e0e0" rx="10" ry="10" />
+    <text x="370" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Apply e^x</text>
+
+    <!-- Exponential values for each token -->
+    <rect x="300" y="170" width="140" height="40" fill="#4682B4" rx="5" ry="5" />
+    <text x="310" y="195" font-family="Arial" font-size="16" text-anchor="start" fill="white">"long"</text>
+    <text x="430" y="195" font-family="Arial" font-size="16" text-anchor="end" fill="white">7.39</text>
+
+    <rect x="300" y="220" width="140" height="40" fill="#4682B4" rx="5" ry="5" />
+    <text x="310" y="245" font-family="Arial" font-size="16" text-anchor="start" fill="white">"short"</text>
+    <text x="430" y="245" font-family="Arial" font-size="16" text-anchor="end" fill="white">4.48</text>
+
+    <rect x="300" y="270" width="140" height="40" fill="#4682B4" rx="5" ry="5" />
+    <text x="310" y="295" font-family="Arial" font-size="16" text-anchor="start" fill="white">"busy"</text>
+    <text x="430" y="295" font-family="Arial" font-size="16" text-anchor="end" fill="white">2.72</text>
+
+    <rect x="300" y="320" width="140" height="40" fill="#4682B4" rx="5" ry="5" />
+    <text x="310" y="345" font-family="Arial" font-size="16" text-anchor="start" fill="white">"exhausting"</text>
+    <text x="430" y="345" font-family="Arial" font-size="16" text-anchor="end" fill="white">2.23</text>
+
+    <rect x="300" y="370" width="140" height="40" fill="#4682B4" rx="5" ry="5" />
+    <text x="310" y="395" font-family="Arial" font-size="16" text-anchor="start" fill="white">"unusual"</text>
+    <text x="430" y="395" font-family="Arial" font-size="16" text-anchor="end" fill="white">1.11</text>
+
+    <!-- Placeholder for additional exponential values -->
+    <rect x="300" y="420" width="140" height="40" fill="#4682B4" rx="5" ry="5" opacity="0.7" />
+    <text x="310" y="445" font-family="Arial" font-size="14" text-anchor="start" fill="white">5 more tokens...</text>
+    <text x="430" y="445" font-family="Arial" font-size="14" text-anchor="end" fill="white">&lt; 0.2</text>
+
+    <!-- Arrows from Step 1 to Step 2 -->
+    <path d="M 220 180 L 280 180" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 220 230 L 280 230" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 220 280 L 280 280" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 220 330 L 280 330" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 220 380 L 280 380" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 220 430 L 280 430" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+
+    <!-- Formula for Step 2 -->
+    <text x="250" y="480" font-family="Arial" font-size="14" text-anchor="middle">e^x ensures all
+        values are positive</text>
+
+    <!-- Step 3: Calculate sum of all exponential values -->
+    <!-- This sum will be used as the denominator for normalization -->
+    <rect x="290" y="525" width="160" height="60" fill="#e0e0e0" rx="10" ry="10" />
+    <text x="200" y="560" font-family="Arial" font-size="16" text-anchor="end" font-weight="bold">Sum All Values:</text>
+
+    <!-- Sum box with dark blue background -->
+    <rect x="300" y="535" width="140" height="40" fill="#2E5984" rx="5" ry="5" />
+    <text x="370" y="560" font-family="Arial" font-size="16" text-anchor="middle" fill="white">18.33</text>
+
+    <!-- Arrows to Sum -->
+    <path d="M 370 410 L 370 525" stroke="#666666" stroke-width="2" fill="none" stroke-dasharray="4,4"
+        marker-end="url(#arrowhead-gray)" />
+
+    <!-- Step 4: Final normalized probabilities -->
+    <!-- Each exponential value divided by sum to get proper probability distribution -->
+    <rect x="530" y="150" width="230" height="320" fill="#e0e0e0" rx="10" ry="10" />
+    <text x="645" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Softmax Probabilities</text>
+
+    <!-- Probability values for each token -->
+    <rect x="540" y="170" width="210" height="40" fill="#1A365D" rx="5" ry="5" />
+    <text x="550" y="195" font-family="Arial" font-size="16" text-anchor="start" fill="white">"long"</text>
+    <text x="740" y="195" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.403 (40.3%)</text>
+
+    <rect x="540" y="220" width="210" height="40" fill="#1A365D" rx="5" ry="5" />
+    <text x="550" y="245" font-family="Arial" font-size="16" text-anchor="start" fill="white">"short"</text>
+    <text x="740" y="245" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.244 (24.4%)</text>
+
+    <rect x="540" y="270" width="210" height="40" fill="#1A365D" rx="5" ry="5" />
+    <text x="550" y="295" font-family="Arial" font-size="16" text-anchor="start" fill="white">"busy"</text>
+    <text x="740" y="295" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.148 (14.8%)</text>
+
+    <rect x="540" y="320" width="210" height="40" fill="#1A365D" rx="5" ry="5" />
+    <text x="550" y="345" font-family="Arial" font-size="16" text-anchor="start" fill="white">"exhausting"</text>
+    <text x="740" y="345" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.121 (12.1%)</text>
+
+    <rect x="540" y="370" width="210" height="40" fill="#1A365D" rx="5" ry="5" />
+    <text x="550" y="395" font-family="Arial" font-size="16" text-anchor="start" fill="white">"unusual"</text>
+    <text x="740" y="395" font-family="Arial" font-size="16" text-anchor="end" fill="white">0.060 (6.0%)</text>
+
+    <!-- Placeholder for additional probabilities -->
+    <rect x="540" y="420" width="210" height="40" fill="#1A365D" rx="5" ry="5" opacity="0.7" />
+    <text x="550" y="445" font-family="Arial" font-size="14" text-anchor="start" fill="white">5 more tokens...</text>
+    <text x="740" y="445" font-family="Arial" font-size="14" text-anchor="end" fill="white">&lt; 0.03 (3%)</text>
+
+    <!-- Division lines -->
+    <path d="M 460 180 L 520 180" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 460 230 L 520 230" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 460 280 L 520 280" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 460 330 L 520 330" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 460 380 L 520 380" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+    <path d="M 460 430 L 520 430" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+
+    <!-- Division explanation -->
+    <path d="M 470 550 L 520 400" stroke="#666666" stroke-width="2" fill="none" stroke-dasharray="4,4"
+        marker-end="url(#arrowhead-gray)" />
+    <text x="480" y="505" font-family="Arial" font-size="14" text-anchor="middle">divide each by sum</text>
+
+    <!-- Output generation -->
+    <rect x="530" y="505" width="230" height="100" fill="#e0e0e0" rx="10" ry="10" />
+    <text x="645" y="495" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Word Selection</text>
+
+    <!-- Token selection strategies -->
+    <rect x="540" y="515" width="210" height="80" fill="#f8f9fa" rx="5" ry="5" stroke="#1A365D" stroke-width="1" />
+    <text x="645" y="535" font-family="Arial" font-size="14" text-anchor="middle">Select from distribution:</text>
+    <text x="645" y="555" font-family="Arial" font-size="14" text-anchor="middle">• Greedy (always "long")</text>
+    <text x="645" y="575" font-family="Arial" font-size="14" text-anchor="middle">• Sampling (weighted random)</text>
+
+    <!-- Final output showing the selected token in context -->
+    <rect x="40" y="630" width="720" height="100" fill="#e8f4f8" rx="5" ry="5" stroke="#1A365D" stroke-width="2" />
+    <text x="400" y="655" font-family="Arial" font-size="18" text-anchor="middle">"Travel today will be"</text>
+
+    <!-- Arrow to final text -->
+    <path d="M 645 595 L 645 620" stroke="#333" stroke-width="2" fill="none"
+        marker-end="url(#arrowhead)" />
+
+    <!-- Final formula showing both selection methods and their outcomes -->
+    <text x="260" y="700" font-family="Arial" font-size="16" text-anchor="start" font-style="italic">greedy = argmax(softmax(z)) = "long"</text>
+    <text x="260" y="725" font-family="Arial" font-size="16" text-anchor="start" font-style="italic">sampling = random_choice(top_k(softmax(z), 10)) = "busy"</text>
+
+    <!-- Visual elements for connections -->
+    <defs>
+        <!-- Arrow markers for showing flow between steps -->
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+            refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        <marker id="arrowhead-gray" markerWidth="10" markerHeight="7"
+            refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666666" />
+        </marker>
+    </defs>
+</svg>

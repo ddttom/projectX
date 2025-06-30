@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10" />
+
+    <!-- Title -->
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold"
+        text-anchor="middle" fill="#333">Fundamental Flaws in AI</text>
+
+    <!-- Brain/AI outline with cracks -->
+    <g transform="translate(400, 300)">
+        <!-- Brain shape -->
+        <path d="M0,-120 C150,-120 150,120 0,120 C-150,120 -150,-120 0,-120" fill="#e6e6ff"
+            stroke="#6666cc" stroke-width="3" opacity="0.9" />
+
+        <!-- Circuit patterns -->
+        <path d="M-80,-60 L-30,-40 L-70,-20 L-20,0 L-60,20 L-10,40 L-50,60" fill="none"
+            stroke="#8888dd" stroke-width="2" />
+        <path d="M80,-60 L30,-40 L70,-20 L20,0 L60,20 L10,40 L50,60" fill="none" stroke="#8888dd"
+            stroke-width="2" />
+        <path d="M-50,-90 L0,-80 L50,-90" fill="none" stroke="#8888dd" stroke-width="2" />
+        <path d="M-50,90 L0,80 L50,90" fill="none" stroke="#8888dd" stroke-width="2" />
+
+        <!-- Nodes -->
+        <circle cx="-80" cy="-60" r="5" fill="#6666cc" />
+        <circle cx="-30" cy="-40" r="5" fill="#6666cc" />
+        <circle cx="-70" cy="-20" r="5" fill="#6666cc" />
+        <circle cx="-20" cy="0" r="5" fill="#6666cc" />
+        <circle cx="-60" cy="20" r="5" fill="#6666cc" />
+        <circle cx="-10" cy="40" r="5" fill="#6666cc" />
+        <circle cx="-50" cy="60" r="5" fill="#6666cc" />
+
+        <circle cx="80" cy="-60" r="5" fill="#6666cc" />
+        <circle cx="30" cy="-40" r="5" fill="#6666cc" />
+        <circle cx="70" cy="-20" r="5" fill="#6666cc" />
+        <circle cx="20" cy="0" r="5" fill="#6666cc" />
+        <circle cx="60" cy="20" r="5" fill="#6666cc" />
+        <circle cx="10" cy="40" r="5" fill="#6666cc" />
+        <circle cx="50" cy="60" r="5" fill="#6666cc" />
+
+        <circle cx="-50" cy="-90" r="5" fill="#6666cc" />
+        <circle cx="0" cy="-80" r="5" fill="#6666cc" />
+        <circle cx="50" cy="-90" r="5" fill="#6666cc" />
+
+        <circle cx="-50" cy="90" r="5" fill="#6666cc" />
+        <circle cx="0" cy="80" r="5" fill="#6666cc" />
+        <circle cx="50" cy="90" r="5" fill="#6666cc" />
+
+        <!-- Cracks representing flaws -->
+        <path d="M-100,-50 L-20,30" fill="none" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="8,4" />
+        <path d="M100,-50 L20,30" fill="none" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="8,4" />
+        <path d="M-40,-100 L10,-10" fill="none" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="8,4" />
+        <path d="M-30,100 L20,20" fill="none" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="8,4" />
+        <path d="M60,80 L-10,-20" fill="none" stroke="#e74c3c" stroke-width="4"
+            stroke-dasharray="8,4" />
+    </g>
+
+    <!-- Flaw labels -->
+    <g font-family="Arial, sans-serif" font-weight="bold">
+        <!-- Upper left flaw -->
+        <g transform="translate(180, 160)">
+            <circle cx="0" cy="0" r="50" fill="#e74c3c" opacity="0.2" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#e74c3c" stroke-width="2" />
+            <text x="0" y="5" text-anchor="middle" fill="#333" font-size="15">Terminology</text>
+            <text x="0" y="-12" text-anchor="middle" fill="#333" font-size="15">AI</text>
+        </g>
+
+        <!-- Upper right flaw -->
+        <g transform="translate(620, 160)">
+            <circle cx="0" cy="0" r="50" fill="#e74c3c" opacity="0.2" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#e74c3c" stroke-width="2" />
+            <text x="0" y="5" text-anchor="middle" fill="#333" font-size="15">Hallucination</text>
+        </g>
+
+        <!-- Bottom left flaw -->
+        <g transform="translate(180, 440)">
+            <circle cx="0" cy="0" r="50" fill="#e74c3c" opacity="0.2" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#e74c3c" stroke-width="2" />
+            <text x="0" y="-12" text-anchor="middle" fill="#333" font-size="15">Toxic</text>
+            <text x="0" y="5" text-anchor="middle" fill="#333" font-size="15">Data</text>
+        </g>
+
+        <!-- Bottom right flaw -->
+        <g transform="translate(620, 440)">
+            <circle cx="0" cy="0" r="50" fill="#e74c3c" opacity="0.2" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#e74c3c" stroke-width="2" />
+            <text x="0" y="-12" text-anchor="middle" fill="#333" font-size="15">Memory</text>
+            <text x="0" y="5" text-anchor="middle" fill="#333" font-size="15">Limits</text>
+        </g>
+
+        <!-- Center bottom flaw -->
+        <g transform="translate(400, 480)">
+            <circle cx="0" cy="0" r="50" fill="#e74c3c" opacity="0.2" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#e74c3c" stroke-width="2" />
+            <text x="0" y="-12" text-anchor="middle" fill="#333" font-size="15">Cultural</text>
+            <text x="0" y="5" text-anchor="middle" fill="#333" font-size="15">Bias</text>
+        </g>
+
+        <!-- Center top flaw -->
+        <g transform="translate(400, 120)">
+            <circle cx="0" cy="0" r="50" fill="#e74c3c" opacity="0.2" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#e74c3c" stroke-width="2" />
+            <text x="0" y="-12" text-anchor="middle" fill="#333" font-size="15">Knowledge</text>
+            <text x="0" y="5" text-anchor="middle" fill="#333" font-size="15">Cutoff</text>
+        </g>
+    </g>
+
+    <!-- Connecting lines from flaws to cracks -->
+    <g stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3">
+        <line x1="210" y1="180" x2="270" y2="230" />
+        <line x1="590" y1="180" x2="530" y2="230" />
+        <line x1="210" y1="420" x2="270" y2="360" />
+        <line x1="590" y1="420" x2="530" y2="360" />
+        <line x1="400" y1="160" x2="400" y2="180" />
+        <line x1="400" y1="440" x2="400" y2="420" />
+    </g>
+
+    <!-- Bottom text -->
+    <text x="400" y="560" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+        fill="#555">
+        Hype exceeds real-world capabilities, untested releases to catchup with competitors
+    </text>
+</svg>

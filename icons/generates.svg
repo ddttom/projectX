@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Input sequence -->
+    <rect x="50" y="30" width="200" height="30" rx="5" fill="#ECF0F1" stroke="#3498db"
+        stroke-width="1" />
+    <text x="150" y="50" text-anchor="middle" fill="#34495e" font-size="12">"The capital of France
+        is"</text>
+
+    <!-- Arrow down -->
+    <path d="M200 60 L200 80" stroke="#3498db" stroke-width="1" marker-end="url(#arrow)" />
+
+    <!-- AI prediction box -->
+    <rect x="100" y="80" width="200" height="40" rx="5" fill="#BBDEFB" stroke="#3498db"
+        stroke-width="1" />
+    <text x="200" y="105" text-anchor="middle" fill="#34495e" font-size="14">AI PREDICTION</text>
+
+    <!-- Arrow down -->
+    <path d="M200 120 L200 130" stroke="#3498db" stroke-width="1" marker-end="url(#arrow)" />
+
+    <!-- Probability distribution -->
+    <rect x="50" y="130" width="300" height="60" rx="5" fill="#90CAF9" stroke="#3498db"
+        stroke-width="1" />
+
+    <!-- Probability bars -->
+    <rect x="60" y="145" width="60" height="30" rx="2" fill="#3498db" opacity="0.9" />
+    <text x="90" y="165" text-anchor="middle" fill="white" font-size="10">Paris</text>
+    <text x="90" y="175" text-anchor="middle" fill="white" font-size="8">85%</text>
+
+    <rect x="130" y="150" width="40" height="25" rx="2" fill="#3498db" opacity="0.6" />
+    <text x="150" y="165" text-anchor="middle" fill="white" font-size="10">Lyon</text>
+    <text x="150" y="175" text-anchor="middle" fill="white" font-size="8">10%</text>
+
+    <rect x="180" y="155" width="30" height="20" rx="2" fill="#3498db" opacity="0.4" />
+    <text x="195" y="165" text-anchor="middle" fill="white" font-size="10">Nice</text>
+    <text x="195" y="175" text-anchor="middle" fill="white" font-size="8">3%</text>
+
+    <rect x="220" y="160" width="20" height="15" rx="2" fill="#3498db" opacity="0.2" />
+    <text x="230" y="165" text-anchor="middle" fill="white" font-size="8">located</text>
+    <text x="230" y="175" text-anchor="middle" fill="white" font-size="8">1%</text>
+
+    <rect x="250" y="162" width="40" height="13" rx="2" fill="#3498db" opacity="0.1" />
+    <text x="270" y="170" text-anchor="middle" fill="white" font-size="8">other tokens</text>
+    <text x="270" y="178" text-anchor="middle" fill="white" font-size="6">1% total</text>
+</svg>

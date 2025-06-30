@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa" />
+
+    <!-- Title: Main heading explaining what BERT is -->
+
+    <!-- BERT: Bidirectional Encoder Representations from Transformers -->
+    <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+        text-anchor="middle" fill="#333">
+         It gets a bit more complicated during training
+
+    </text>
+
+    <!-- Input Processing: Shows how BERT handles masked input -->
+    <!-- The [MASK] token is a key feature of BERT's pre-training -->
+    <rect x="100" y="80" width="600" height="50" rx="5" fill="#e3f2fd" stroke="#2196f3"
+        stroke-width="2" />
+    <text x="400" y="110" font-family="Arial, sans-serif" font-size="18" text-anchor="middle"
+        fill="#333">
+        "The [MASK] fox jumps over the lazy dog"
+    </text>
+
+    <!-- Token Embeddings: Initial representation of each word -->
+    <!-- Note the special [MASK] token in purple -->
+    <g>
+        <rect x="120" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="155" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">The</text>
+
+        <rect x="200" y="160" width="70" height="40" rx="5" fill="#e1bee7" stroke="#7b1fa2"
+            stroke-width="1.5" />
+        <text x="235" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">[MASK]</text>
+
+        <rect x="280" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="315" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">fox</text>
+
+        <rect x="360" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="395" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">jumps</text>
+
+        <rect x="440" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="475" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">over</text>
+
+        <rect x="520" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="555" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">the</text>
+
+        <rect x="600" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="635" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">lazy</text>
+
+        <rect x="680" y="160" width="70" height="40" rx="5" fill="#bbdefb" stroke="#1976d2"
+            stroke-width="1.5" />
+        <text x="715" y="183" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">dog</text>
+    </g>
+
+    <!-- BERT Transformer Block: Core processing unit -->
+    <!-- Shows the main components that process the input tokens -->
+    <rect x="100" y="230" width="600" height="200" rx="10" fill="#fff" stroke="#333"
+        stroke-width="2" />
+    <text x="400" y="255" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#333">
+        BERT Transformer Layers
+    </text>
+
+    <!-- Multi-headed Attention: Key innovation showing bidirectional context -->
+    <!-- Arrows indicate how each word attends to all other words in both directions -->
+    <g>
+        <rect x="150" y="270" width="500" height="60" rx="8" fill="#fff3e0" stroke="#ff9800"
+            stroke-width="1.5" />
+        <text x="400" y="305" font-family="Arial, sans-serif" font-size="16" text-anchor="middle"
+            fill="#333">
+            Multi-headed Self-Attention
+        </text>
+
+        <!-- Bidirectional arrows showing information flow in both directions -->
+        <line x1="235" y1="290" x2="315" y2="290" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+        <line x1="315" y1="310" x2="235" y2="310" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+
+        <line x1="315" y1="290" x2="395" y2="290" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+        <line x1="395" y1="310" x2="315" y2="310" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+
+        <line x1="395" y1="290" x2="475" y2="290" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+        <line x1="475" y1="310" x2="395" y2="310" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+
+        <line x1="475" y1="290" x2="555" y2="290" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+        <line x1="555" y1="310" x2="475" y2="310" stroke="#ff5722" stroke-width="2"
+            marker-end="url(#arrowhead)" />
+    </g>
+
+    <!-- Feed Forward Network: Processes each token's representation -->
+    <!-- Applies position-wise transformations to each token independently -->
+    <rect x="150" y="350" width="500" height="60" rx="8" fill="#e8f5e9" stroke="#4caf50"
+        stroke-width="1.5" />
+    <text x="400" y="385" font-family="Arial, sans-serif" font-size="16" text-anchor="middle"
+        fill="#333">
+        Position-wise Feed-Forward Networks
+    </text>
+
+    <!-- Contextual Embeddings: Final output showing predicted word -->
+    <!-- Note how [MASK] is replaced with "quick" using bidirectional context -->
+    <g>
+        <rect x="120" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="155" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">The</text>
+
+        <rect x="200" y="460" width="70" height="40" rx="5" fill="#e1bee7" stroke="#7b1fa2"
+            stroke-width="1.5" />
+        <text x="235" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">quick</text>
+
+        <rect x="280" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="315" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">fox</text>
+
+        <rect x="360" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="395" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">jumps</text>
+
+        <rect x="440" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="475" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">over</text>
+
+        <rect x="520" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="555" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">the</text>
+
+        <rect x="600" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="635" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">lazy</text>
+
+        <rect x="680" y="460" width="70" height="40" rx="5" fill="#c5cae9" stroke="#3f51b5"
+            stroke-width="1.5" />
+        <text x="715" y="483" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+            fill="#333">dog</text>
+    </g>
+
+    <!-- Connections -->
+    <line x1="155" y1="200" x2="155" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="235" y1="200" x2="235" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="315" y1="200" x2="315" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="395" y1="200" x2="395" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="475" y1="200" x2="475" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="555" y1="200" x2="555" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="635" y1="200" x2="635" y2="230" stroke="#333" stroke-width="1" />
+    <line x1="715" y1="200" x2="715" y2="230" stroke="#333" stroke-width="1" />
+
+    <line x1="155" y1="430" x2="155" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="235" y1="430" x2="235" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="315" y1="430" x2="315" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="395" y1="430" x2="395" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="475" y1="430" x2="475" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="555" y1="430" x2="555" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="635" y1="430" x2="635" y2="460" stroke="#333" stroke-width="1" />
+    <line x1="715" y1="430" x2="715" y2="460" stroke="#333" stroke-width="1" />
+
+    <!-- Masked word prediction: Shows BERT's ability to predict masked words -->
+    <!-- Demonstrates how BERT uses full context to predict the masked word -->
+    <path d="M 235 520 L 235 545 L 420 545 L 420 520 L 235 520" fill="#e8eaf6" stroke="#3949ab"
+        stroke-width="1.5" />
+    <text x="327" y="537" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+        fill="#333">
+        Predicts "quick" from context
+    </text>
+
+    <!-- Key Features: Highlighting BERT's main capabilities -->
+    <g>
+        <!-- Bidirectional Context: BERT's key innovation -->
+        <rect x="50" y="520" width="140" height="25" rx="5" fill="#e1f5fe" stroke="#0288d1"
+            stroke-width="1" />
+        <text x="120" y="537" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+            fill="#333">
+            Bidirectional Context
+        </text>
+
+        <!-- Masked Word Prediction: Pre-training objective -->
+        <rect x="450" y="520" width="140" height="25" rx="5" fill="#e1f5fe" stroke="#0288d1"
+            stroke-width="1" />
+        <text x="520" y="537" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+            fill="#333">
+            Masked Word Prediction
+        </text>
+
+        <!-- Deep Architecture: Multiple transformer layers -->
+        <rect x="610" y="520" width="140" height="25" rx="5" fill="#e1f5fe" stroke="#0288d1"
+            stroke-width="1" />
+        <text x="680" y="537" font-family="Arial, sans-serif" font-size="12" text-anchor="middle"
+            fill="#333">
+            Deep Transformer Layers
+        </text>
+    </g>
+
+    <!-- Mathematical Foundation: Core equation behind self-attention -->
+    <!-- Shows how BERT computes attention scores between words -->
+    <!-- The formula Self-Attention(Q,K,V) = softmax(QK^T/√d_k)V breaks down as: -->
+    <!-- Q (Query): Each word's "question" about what information it needs -->
+    <!-- K (Key): Each word's "label" showing what information it offers -->
+    <!-- V (Value): The actual information content being passed between words -->
+    <!-- K^T: Transposed Key matrix allowing all-to-all word comparisons -->
+    <!-- d_k: Dimension of the key vectors -->
+    <!-- √d_k: Scaling factor to keep attention scores well-behaved -->
+    <!-- softmax(): Converts raw scores to percentages (0-100%) -->
+    <!-- Final V multiplication: Weighted combination of values based on attention -->
+    <!-- This mechanism allows BERT to disambiguate context-dependent words -->
+    <rect x="50" y="560" width="700" height="30" rx="5" fill="#f3e5f5" stroke="#8e24aa"
+        stroke-width="1" />
+    <text x="400" y="580" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+        fill="#333">
+        Mathematical Foundation: Self-Attention(Q,K,V) = softmax(QK^T/√d_k)V
+    </text>
+
+    <!-- Arrow marker definition for bidirectional arrows -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ff5722" />
+        </marker>
+    </defs>
+</svg>

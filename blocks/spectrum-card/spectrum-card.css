@@ -1,0 +1,134 @@
+/* Spectrum Card Block Styles */
+.spectrum-card {
+  display: block;
+  margin: 1rem 0;
+}
+
+/* Override any default block styles if needed */
+.spectrum-card sp-card {
+  margin: 0;
+}
+
+/* NUCLEAR APPROACH: Remove ALL possible bullet points */
+/* Target every possible element and pseudo-element */
+.spectrum-card *,
+.spectrum-card *::before,
+.spectrum-card *::after,
+sp-card *,
+sp-card *::before,
+sp-card *::after {
+  list-style: none !important;
+  list-style-type: none !important;
+  list-style-image: none !important;
+  list-style-position: outside !important;
+  content: none !important;
+}
+
+/* Specifically target description slots */
+[slot="description"],
+[slot="description"] *,
+[slot="description"]::before,
+[slot="description"]::after,
+[slot="description"] *::before,
+[slot="description"] *::after {
+  list-style: none !important;
+  list-style-type: none !important;
+  list-style-image: none !important;
+  content: none !important;
+  display: block !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+}
+
+/* Override Spectrum Web Components shadow DOM styles */
+sp-card::part(*) {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+/* Force override ALL pseudo-elements globally within cards */
+.spectrum-card ::before,
+.spectrum-card ::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Target specific Spectrum slotted content */
+sp-card::slotted(*) {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+/* Override any inherited styles from parent elements */
+.spectrum-card,
+.spectrum-card * {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+/* Modal Styles */
+.spectrum-card-modal-overlay {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.spectrum-card-modal {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.spectrum-card-modal-content {
+  /* Custom scrollbar for modal content */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.spectrum-card-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.spectrum-card-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.spectrum-card-modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.spectrum-card-modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive modal styles */
+@media (max-width: 768px) {
+  .spectrum-card-modal {
+    margin: 10px;
+    height: auto !important;
+    min-height: 400px;
+    max-height: 90vh !important;
+  }
+  
+  .spectrum-card-modal h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .spectrum-card-modal p {
+    font-size: 1rem !important;
+  }
+  
+  .spectrum-card-modal > div {
+    padding: 40px 30px !important;
+  }
+}

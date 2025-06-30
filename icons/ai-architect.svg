@@ -1,0 +1,147 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#f8f9fa" />
+
+    <!-- Title -->
+    <text x="400" y="30" font-family="Arial, sans-serif" font-size="32" fill="#2c3e50"
+        font-weight="bold" text-anchor="middle">The AI Content Architect</text>
+
+    <!-- Subtitle -->
+    <text x="400" y="60" font-family="Arial, sans-serif" font-size="18" fill="#7f8c8d"
+        text-anchor="middle">Bridging Technology and Business Value</text>
+
+    <!-- Separation line -->
+    <line x1="50" y1="80" x2="750" y2="80" stroke="#e0e0e0" stroke-width="1" />
+
+    <!-- Central Figure - Architect with Blueprint -->
+    <circle cx="400" cy="200" r="70" fill="#3498db" fill-opacity="0.1" stroke="#2980b9"
+        stroke-width="1.5" />
+
+    <!-- Architect Head -->
+    <circle cx="400" cy="150" r="20" fill="#3498db" fill-opacity="0.2" stroke="#2980b9"
+        stroke-width="1.5" />
+
+    <!-- Architect Body -->
+    <path d="M385,170 L385,220 L415,220 L415,170" fill="#3498db" fill-opacity="0.2" stroke="#2980b9"
+        stroke-width="1.5" />
+
+    <!-- Blueprint -->
+    <rect x="370" y="180" width="60" height="40" fill="#f1c40f" fill-opacity="0.3" stroke="#f39c12"
+        stroke-width="1.5" />
+    <line x1="380" y1="190" x2="420" y2="190" stroke="#2c3e50" stroke-width="0.5" />
+    <line x1="380" y1="200" x2="420" y2="200" stroke="#2c3e50" stroke-width="0.5" />
+    <line x1="380" y1="210" x2="420" y2="210" stroke="#2c3e50" stroke-width="0.5" />
+
+    <!-- Technical Side -->
+    <rect x="100" y="120" width="180" height="200" rx="10" ry="10" fill="#ecf0f1" stroke="#bdc3c7"
+        stroke-width="2" />
+    <text x="190" y="145" font-family="Arial, sans-serif" font-size="18" fill="#2c3e50"
+        font-weight="bold" text-anchor="middle">Technical</text>
+
+    <!-- Business Side -->
+    <rect x="520" y="120" width="180" height="200" rx="10" ry="10" fill="#ecf0f1" stroke="#bdc3c7"
+        stroke-width="2" />
+    <text x="610" y="145" font-family="Arial, sans-serif" font-size="18" fill="#2c3e50"
+        font-weight="bold" text-anchor="middle">Business</text>
+
+    <!-- Technical Elements -->
+    <rect x="120" y="165" width="140" height="25" rx="3" ry="3" fill="#3498db" fill-opacity="0.2"
+        stroke="#2980b9" stroke-width="1" />
+    <text x="190" y="182" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">Data Architecture</text>
+
+    <rect x="120" y="200" width="140" height="25" rx="3" ry="3" fill="#3498db" fill-opacity="0.2"
+        stroke="#2980b9" stroke-width="1" />
+    <text x="190" y="217" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">Model Training</text>
+
+    <rect x="120" y="235" width="140" height="25" rx="3" ry="3" fill="#3498db" fill-opacity="0.2"
+        stroke="#2980b9" stroke-width="1" />
+    <text x="190" y="252" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">Prompt Engineering</text>
+
+    <rect x="120" y="270" width="140" height="25" rx="3" ry="3" fill="#3498db" fill-opacity="0.2"
+        stroke="#2980b9" stroke-width="1" />
+    <text x="190" y="287" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">System Integration</text>
+
+    <!-- Business Elements -->
+    <rect x="540" y="165" width="140" height="25" rx="3" ry="3" fill="#e74c3c" fill-opacity="0.2"
+        stroke="#c0392b" stroke-width="1" />
+    <text x="610" y="182" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">Value Alignment</text>
+
+    <rect x="540" y="200" width="140" height="25" rx="3" ry="3" fill="#e74c3c" fill-opacity="0.2"
+        stroke="#c0392b" stroke-width="1" />
+    <text x="610" y="217" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">Domain Knowledge</text>
+
+    <rect x="540" y="235" width="140" height="25" rx="3" ry="3" fill="#e74c3c" fill-opacity="0.2"
+        stroke="#c0392b" stroke-width="1" />
+    <text x="610" y="252" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">Ethics &amp; Governance</text>
+
+    <rect x="540" y="270" width="140" height="25" rx="3" ry="3" fill="#e74c3c" fill-opacity="0.2"
+        stroke="#c0392b" stroke-width="1" />
+    <text x="610" y="287" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50"
+        text-anchor="middle">User Experience</text>
+
+    <!-- Connection Lines from Technical to Architect -->
+    <path d="M260,177 Q320,177 370,160" fill="none" stroke="#3498db" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+    <path d="M260,212 Q320,212 370,190" fill="none" stroke="#3498db" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+    <path d="M260,247 Q320,247 370,220" fill="none" stroke="#3498db" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+    <path d="M260,282 Q320,282 380,240" fill="none" stroke="#3498db" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+
+    <!-- Connection Lines from Business to Architect -->
+    <path d="M540,177 Q480,177 430,160" fill="none" stroke="#e74c3c" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+    <path d="M540,212 Q480,212 430,190" fill="none" stroke="#e74c3c" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+    <path d="M540,247 Q480,247 430,220" fill="none" stroke="#e74c3c" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+    <path d="M540,282 Q480,282 420,240" fill="none" stroke="#e74c3c" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+
+    <!-- Four Key Functions -->
+    <circle cx="285" cy="330" r="30" fill="#f1c40f" fill-opacity="0.2" stroke="#f39c12"
+        stroke-width="1.5" />
+    <text x="285" y="325" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">Data</text>
+    <text x="285" y="337" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">Preparation</text>
+
+    <circle cx="355" cy="330" r="30" fill="#9b59b6" fill-opacity="0.2" stroke="#8e44ad"
+        stroke-width="1.5" />
+    <text x="355" y="325" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">Guardrails</text>
+    <text x="355" y="337" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">&amp; Guidelines</text>
+
+    <circle cx="425" cy="330" r="30" fill="#2ecc71" fill-opacity="0.2" stroke="#27ae60"
+        stroke-width="1.5" />
+    <text x="425" y="325" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">Value</text>
+    <text x="425" y="337" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">Translation</text>
+
+    <circle cx="495" cy="330" r="30" fill="#e67e22" fill-opacity="0.2" stroke="#d35400"
+        stroke-width="1.5" />
+    <text x="495" y="325" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">Governance</text>
+    <text x="495" y="337" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50"
+        text-anchor="middle">&amp; Ethics</text>
+
+    <!-- Lines from Architect to Functions -->
+    <line x1="385" y1="250" x2="300" y2="305" stroke="#2c3e50" stroke-width="1"
+        stroke-dasharray="3,2" />
+    <line x1="395" y1="250" x2="355" y2="305" stroke="#2c3e50" stroke-width="1"
+        stroke-dasharray="3,2" />
+    <line x1="405" y1="250" x2="425" y2="305" stroke="#2c3e50" stroke-width="1"
+        stroke-dasharray="3,2" />
+    <line x1="415" y1="250" x2="480" y2="305" stroke="#2c3e50" stroke-width="1"
+        stroke-dasharray="3,2" />
+</svg>

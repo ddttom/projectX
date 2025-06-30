@@ -1,0 +1,494 @@
+:root {
+  /* Core colors */
+  --code-expander-button-bg: #4a90e2;
+  --code-expander-button-text: #ffffff;
+  --code-expander-button-border: #3a7bc8;
+  --code-expander-button-hover-bg: #3a7bc8;
+  --code-expander-code-bg: #f8f8f8;
+  --code-expander-code-text: #333;
+  --code-expander-button-focus-outline: #4d90fe;
+  
+  /* Border and structure */
+  --code-expander-pre-border-color: #e1e4e8;
+  --code-expander-pre-border-width: 1px;
+  --code-expander-border-radius: 6px;
+  --code-expander-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  
+  /* Typography */
+  --code-expander-font-size-small: 0.8rem;
+  --code-expander-font-size-normal: 0.9rem;
+  --code-expander-font-size-large: 1rem;
+  --code-expander-font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --code-expander-line-height: 1.5;
+  
+  /* Layout */
+  --code-expander-header-height: 40px;
+  --code-expander-button-width: 80px;
+  
+  /* Modal */
+  --code-expander-modal-bg: rgba(0, 0, 0, 0.5);
+  --code-expander-modal-content-bg: #fff;
+  --code-expander-modal-border: #ccc;
+  --code-expander-input-border: #ddd;
+  --code-expander-input-focus-border: #4a90e2;
+  
+  /* Tooltip */
+  --code-expander-tooltip-bg: #fff;
+  --code-expander-tooltip-border: #ddd;
+  --code-expander-tooltip-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --code-expander-tooltip-text: #333;
+  --code-expander-tooltip-title-bg: #f5f5f5;
+
+  /* Syntax highlighting */
+  --code-expander-css-property: #ff0000;
+  --code-expander-css-value: #0000ff;
+  --code-expander-css-selector: #800000;
+  --code-expander-css-comment: #008000;
+  --code-expander-js-string: #a31515;
+  --code-expander-js-keyword: #0000ff;
+  --code-expander-json-string: #a31515;
+  --code-expander-json-key: #0451a5;
+  --code-expander-json-boolean: #0000ff;
+  --code-expander-json-number: #098658;
+  --code-expander-terminal-command: #000000;
+  --code-expander-terminal-comment: #008000;
+  --code-expander-terminal-output: #000000;
+
+  /* Markdown syntax highlighting */
+  --code-expander-markdown-heading: #0000FF;
+  --code-expander-markdown-list-item: #008000;
+  --code-expander-markdown-blockquote: #808080;
+  --code-expander-markdown-code: #D2691E;
+  --code-expander-markdown-link: #1E90FF;
+
+  --code-expander-json-null: #0000FF;
+}
+
+/* Main wrapper styles */
+.code-expander-wrapper {
+  position: relative;
+  margin: 1.5em 0;
+  border: var(--code-expander-pre-border-width) solid var(--code-expander-pre-border-color);
+  border-radius: var(--code-expander-border-radius);
+  overflow: hidden;
+  box-shadow: var(--code-expander-box-shadow);
+  background-color: var(--code-expander-code-bg);
+}
+
+/* Header bar for buttons */
+.code-expander-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--code-expander-header-height);
+  min-height: var(--code-expander-header-height);
+  padding: 0 0.5rem;
+  background-color: #f1f3f5;
+  border-bottom: 1px solid var(--code-expander-pre-border-color);
+}
+
+/* Language indicator */
+.code-expander-language {
+  font-size: var(--code-expander-font-size-small);
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-left: 0.5rem;
+}
+
+/* Scroll hint in header */
+.code-expander-scroll-hint {
+  font-size: var(--code-expander-font-size-small);
+  color: #888;
+  margin: 0 auto 0 1rem;
+  white-space: nowrap;
+}
+
+/* Button group */
+.code-expander-buttons {
+  display: flex;
+  gap: 0.5rem;
+  height: 100%;
+  align-items: center;
+}
+
+/* Pre and code elements */
+.code-expander-wrapper pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: var(--code-expander-font-family);
+  font-size: 14px;
+  line-height: var(--code-expander-line-height);
+  background-color: var(--code-expander-code-bg);
+  color: var(--code-expander-code-text);
+}
+
+.code-expander-wrapper pre code {
+  display: block;
+  white-space: pre;
+  tab-size: 4;
+}
+
+/* Button styles */
+.code-expander-copy,
+.code-expander-expand-collapse,
+.code-expander-view-raw,
+.code-expander-download,
+.code-expander-info {
+  padding: 0.3em 0.6em;
+  background-color: var(--code-expander-button-bg);
+  color: var(--code-expander-button-text);
+  border: 1px solid var(--code-expander-button-border);
+  border-radius: 3px;
+  font-size: var(--code-expander-font-size-small);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  min-width: var(--code-expander-button-width);
+  text-align: center;
+  height: 28px;
+  line-height: 1;
+}
+
+/* Info button specific styles */
+.code-expander-info {
+  min-width: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code-expander-copy:hover,
+.code-expander-expand-collapse:hover,
+.code-expander-view-raw:hover,
+.code-expander-download:hover,
+.code-expander-info:hover {
+  background-color: var(--code-expander-button-hover-bg);
+}
+
+.code-expander-copy:focus,
+.code-expander-expand-collapse:focus,
+.code-expander-view-raw:focus,
+.code-expander-download:focus,
+.code-expander-info:focus {
+  outline: 2px solid var(--code-expander-button-focus-outline);
+  outline-offset: 2px;
+}
+
+/* Tooltip styles */
+.code-expander-tooltip {
+  position: fixed; /* Changed from absolute to fixed for better positioning */
+  z-index: 100; /* Increased z-index to ensure visibility */
+  width: 300px;
+  max-width: 90%;
+  background-color: var(--code-expander-tooltip-bg);
+  border: 1px solid var(--code-expander-tooltip-border);
+  border-radius: 4px;
+  box-shadow: var(--code-expander-tooltip-shadow);
+  color: var(--code-expander-tooltip-text);
+  font-size: var(--code-expander-font-size-small);
+  display: none;
+  overflow: hidden;
+}
+
+.code-expander-tooltip.active {
+  display: block;
+}
+
+.code-expander-tooltip h3 {
+  margin: 0;
+  padding: 8px 12px;
+  background-color: var(--code-expander-tooltip-title-bg);
+  border-bottom: 1px solid var(--code-expander-tooltip-border);
+  font-size: var(--code-expander-font-size-normal);
+}
+
+.code-expander-tooltip ul {
+  margin: 0;
+  padding: 8px 12px 8px 28px;
+  list-style-type: disc;
+}
+
+.code-expander-tooltip li {
+  margin-bottom: 8px;
+}
+
+.code-expander-tooltip li:last-child {
+  margin-bottom: 0;
+}
+
+/* Collapsible code blocks */
+pre[class^="language-"].collapsible {
+  max-height: 300px;
+  overflow-y: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+pre[class^="language-"].expanded {
+  max-height: none;
+}
+
+/* Raw code view styles */
+.code-expander-raw-view {
+  display: none;
+  position: absolute;
+  top: var(--code-expander-header-height); /* Adjusted to account for header */
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--code-expander-header-height));
+  background-color: var(--code-expander-code-bg);
+  z-index: 3;
+  overflow: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  white-space: pre;
+  font-family: var(--code-expander-font-family);
+  font-size: 14px;
+  line-height: var(--code-expander-line-height);
+}
+
+.code-expander-raw-view.active {
+  display: block;
+}
+
+/* Filename prompt modal styles */
+.code-expander-filename-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--code-expander-modal-bg);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.code-expander-filename-modal-content {
+  background-color: var(--code-expander-modal-content-bg);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+}
+
+.code-expander-filename-modal p {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.code-expander-filename-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid var(--code-expander-input-border);
+  border-radius: 3px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.code-expander-filename-input:focus {
+  outline: none;
+  border-color: var(--code-expander-input-focus-border);
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.code-expander-filename-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.code-expander-filename-download,
+.code-expander-filename-cancel {
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid var(--code-expander-button-border);
+}
+
+.code-expander-filename-download {
+  background-color: var(--code-expander-button-bg);
+  color: var(--code-expander-button-text);
+}
+
+.code-expander-filename-download:hover {
+  background-color: var(--code-expander-button-hover-bg);
+}
+
+.code-expander-filename-cancel {
+  background-color: #f5f5f5;
+  color: #333;
+  border-color: #ccc;
+}
+
+.code-expander-filename-cancel:hover {
+  background-color: #e5e5e5;
+}
+
+/* JavaScript syntax highlighting */
+.language-javascript .keyword { color: var(--code-expander-js-keyword); }
+.language-javascript .string { color: var(--code-expander-js-string); }
+.language-javascript .comment { color: var(--code-expander-css-comment); }
+.language-javascript .boolean { color: var(--code-expander-json-boolean); }
+.language-javascript .number { color: var(--code-expander-json-number); }
+
+/* JSON syntax highlighting */
+.language-json .key { color: var(--code-expander-json-key); }
+.language-json .string { color: var(--code-expander-json-string); }
+.language-json .boolean { color: var(--code-expander-json-boolean); }
+.language-json .number { color: var(--code-expander-json-number); }
+.language-json .null { color: var(--code-expander-json-null); }
+
+/* HTML syntax highlighting */
+.language-html .tag { color: var(--code-expander-css-selector); }
+.language-html .string { color: var(--code-expander-js-string); }
+.language-html .comment { color: var(--code-expander-css-comment); }
+
+/* CSS syntax highlighting */
+.language-css .property { color: var(--code-expander-css-property); }
+.language-css .value { color: var(--code-expander-css-value); }
+
+/* Markdown syntax highlighting */
+.language-markdown .heading { color: var(--code-expander-markdown-heading); font-weight: bold; }
+.language-markdown .list-item { color: var(--code-expander-markdown-list-item); }
+.language-markdown .blockquote { color: var(--code-expander-markdown-blockquote); font-style: italic; }
+.language-markdown .code { color: var(--code-expander-markdown-code); background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+.language-markdown .link { color: var(--code-expander-markdown-link); text-decoration: underline; }
+
+/* Terminal syntax highlighting */
+.language-shell .command { color: var(--code-expander-terminal-command); }
+.language-shell .comment { color: var(--code-expander-terminal-comment); }
+.language-shell .output { color: var(--code-expander-terminal-output); }
+
+/* Python syntax highlighting */
+.language-python .comment { color: #008000; }
+.language-python .string { color: #a31515; font-weight: bold; }
+
+/* General syntax highlighting */
+.comment { color: #6a737d; }
+.string { color: #032f62; }
+.keyword { color: #d73a49; }
+.boolean { color: #005cc5; }
+.number { color: #005cc5; }
+.property { color: #005cc5; }
+.value { color: #032f62; }
+.tag { color: #22863a; }
+.heading { color: #005cc5; }
+.list-item { color: #e36209; }
+.blockquote { color: #6a737d; }
+.code { color: #24292e; background-color: #f6f8fa; }
+.link { color: #032f62; }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .code-expander-wrapper pre {
+    font-size: 12px;
+  }
+  
+  .code-expander-header {
+    flex-wrap: wrap;
+    padding: 0.3rem;
+    height: auto;
+    min-height: var(--code-expander-header-height);
+  }
+  
+  .code-expander-language {
+    width: auto;
+    margin-right: 0.5rem;
+    padding-left: 0;
+  }
+  
+  .code-expander-scroll-hint {
+    display: none; /* Hide on mobile to save space */
+  }
+  
+  .code-expander-buttons {
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  
+  .code-expander-copy,
+  .code-expander-expand-collapse,
+  .code-expander-view-raw,
+  .code-expander-download {
+    font-size: 10px;
+    padding: 0.2em 0.4em;
+    min-width: 60px;
+  }
+  
+  .code-expander-info {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .code-expander-tooltip {
+    width: 250px;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto;
+  }
+  
+  /* Adjust filename modal for mobile */
+  .code-expander-filename-modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .code-expander-filename-input {
+    padding: 6px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .code-expander-wrapper pre {
+    font-size: 11px;
+  }
+  
+  .code-expander-buttons {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  .code-expander-copy,
+  .code-expander-expand-collapse,
+  .code-expander-view-raw,
+  .code-expander-download {
+    font-size: 9px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 50px;
+  }
+  
+  .code-expander-info {
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+  
+  .code-expander-filename-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .code-expander-filename-download,
+  .code-expander-filename-cancel {
+    width: 100%;
+  }
+}

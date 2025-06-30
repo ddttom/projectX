@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#ffffff" rx="10" ry="10" />
+
+    <!-- Title -->
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="26" font-weight="bold"
+        text-anchor="middle" fill="#1a1a1a">BERT Attention Mechanism: Key Terms</text>
+
+    <!-- Main formula at the top -->
+    <rect x="200" y="80" width="400" height="50" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="400" y="112" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4"> Attention(Q, K, V) = softmax(QK<tspan dy="-5"
+            font-size="16">T</tspan><tspan dy="5"> / √d</tspan><tspan dy="3" font-size="14">k</tspan><tspan
+            dy="-3">)V</tspan>
+    </text>
+
+    <!-- First row: Q, K, V -->
+    <rect x="50" y="170" width="220" height="120" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="160" y="200" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">Q (Query)</text>
+    <text x="160" y="230" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333" width="200">
+        <tspan x="160" dy="0">What each word is looking for</tspan>
+        <tspan x="160" dy="25">from other words. Like asking</tspan>
+        <tspan x="160" dy="25">"what information do I need?"</tspan>
+    </text>
+
+    <rect x="290" y="170" width="220" height="120" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="400" y="200" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">K (Key)</text>
+    <text x="400" y="230" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333">
+        <tspan x="400" dy="0">What each word offers to</tspan>
+        <tspan x="400" dy="25">other words. Like labels</tspan>
+        <tspan x="400" dy="25">showing available information.</tspan>
+    </text>
+
+    <rect x="530" y="170" width="220" height="120" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="640" y="200" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">V (Value)</text>
+    <text x="640" y="230" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333">
+        <tspan x="640" dy="0">The actual content that gets</tspan>
+        <tspan x="640" dy="25">passed between words.</tspan>
+        <tspan x="640" dy="25">The information itself.</tspan>
+    </text>
+
+    <!-- Second row: K^T, d_k, softmax -->
+    <rect x="50" y="340" width="220" height="120" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="160" y="370" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">K<tspan dy="-5" font-size="16">T</tspan><tspan dy="5">
+        (Transposed Key)</tspan></text>
+    <text x="160" y="400" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333">
+        <tspan x="160" dy="0">The transposed Key matrix.</tspan>
+        <tspan x="160" dy="25">This allows each word to</tspan>
+        <tspan x="160" dy="25">"see" all other words.</tspan>
+    </text>
+
+    <rect x="290" y="340" width="220" height="120" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="400" y="370" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">d<tspan dy="3" font-size="16">k</tspan><tspan dy="-3">
+        and √d</tspan><tspan dy="3" font-size="16">k</tspan></text>
+    <text x="400" y="400" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333">
+        <tspan x="400" dy="0">Dimensionality of keys and</tspan>
+        <tspan x="400" dy="25">its square root. Keeps values</tspan>
+        <tspan x="400" dy="25">manageable, like a volume knob.</tspan>
+    </text>
+
+    <rect x="530" y="340" width="220" height="120" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="640" y="370" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">softmax()</text>
+    <text x="640" y="400" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333">
+        <tspan x="640" dy="0">Turns raw numbers into</tspan>
+        <tspan x="640" dy="25">percentages (0-100%).</tspan>
+        <tspan x="640" dy="25">Highlights important connections.</tspan>
+    </text>
+
+    <!-- Third row: V multiplication -->
+    <rect x="290" y="500" width="220" height="100" rx="8" ry="8" fill="#f0f7ff" stroke="#4285f4"
+        stroke-width="2" />
+    <text x="400" y="530" font-family="Arial, sans-serif" font-size="20" font-weight="bold"
+        text-anchor="middle" fill="#4285f4">V multiplication</text>
+    <text x="400" y="555" font-family="Arial, sans-serif" font-size="15" text-anchor="middle"
+        fill="#333333">
+        <tspan x="400" dy="0">Uses percentages to mix values</tspan>
+        <tspan x="400" dy="20">from all words, giving more</tspan>
+        <tspan x="400" dy="20">weight to important ones.</tspan>
+    </text>
+
+    <!-- Flow diagram with non-overlapping connections - ALL IN RED -->
+    <!-- Q to K^T connection -->
+    <line x1="110" y1="290" x2="110" y2="340" stroke="#e53935" stroke-width="2.5" />
+    <text x="110" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" text-anchor="middle">Query</text>
+
+    <!-- K to K^T connection -->
+    <line x1="350" y1="290" x2="350" y2="315" stroke="#e53935" stroke-width="2.5" />
+    <line x1="350" y1="315" x2="180" y2="315" stroke="#e53935" stroke-width="2.5" />
+    <line x1="180" y1="315" x2="180" y2="340" stroke="#e53935" stroke-width="2.5" />
+    <text x="265" y="310" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" text-anchor="middle">Key</text>
+
+    <!-- Label for QK^T -->
+    <text x="145" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935">QK<tspan dy="-3" font-size="10">T</tspan></text>
+
+    <!-- K^T to d_k connection -->
+    <line x1="270" y1="400" x2="290" y2="400" stroke="#e53935" stroke-width="2.5" />
+    <text x="280" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" text-anchor="middle">Scale</text>
+
+    <!-- d_k to softmax connection -->
+    <line x1="510" y1="400" x2="530" y2="400" stroke="#e53935" stroke-width="2.5" />
+    <text x="520" y="385" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" text-anchor="middle">Apply</text>
+
+    <!-- softmax to V multiplication -->
+    <line x1="640" y1="460" x2="640" y2="480" stroke="#e53935" stroke-width="2.5" />
+    <line x1="640" y1="480" x2="400" y2="480" stroke="#e53935" stroke-width="2.5" />
+    <line x1="400" y1="480" x2="400" y2="500" stroke="#e53935" stroke-width="2.5" />
+    <text x="520" y="475" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" text-anchor="middle">Attention weights</text>
+
+    <!-- V to V multiplication (completely separate path) -->
+    <line x1="700" y1="290" x2="770" y2="290" stroke="#e53935" stroke-width="2.5"
+        stroke-dasharray="5,3" />
+    <line x1="770" y1="290" x2="770" y2="550" stroke="#e53935" stroke-width="2.5"
+        stroke-dasharray="5,3" />
+    <line x1="770" y1="550" x2="510" y2="550" stroke="#e53935" stroke-width="2.5"
+        stroke-dasharray="5,3" />
+    <text x="750" y="420" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" transform="rotate(90, 750, 420)">Value input</text>
+    <text x="640" y="550" font-family="Arial, sans-serif" font-size="14" font-weight="bold"
+        fill="#e53935" text-anchor="middle">Multiply with</text>
+</svg>

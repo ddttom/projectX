@@ -1,0 +1,5 @@
+sitemaps:
+   example:
+     origin: https://localhost:3000
+     source: /query-index.json
+     destination: /sitemap.xml
