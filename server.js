@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
-const PROXY_HOST = 'https://localhost:3000'; // Update this to your production domain when available
+const PROXY_HOST = 'https://allabout.network';
 
 // MIME type mapping
 const mimeTypes = {
@@ -51,7 +51,6 @@ async function serveLocalFile(filePath, res) {
     res.end(content);
     return true;
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error(`Error serving local file ${filePath}:`, error.message);
     return false;
   }
@@ -80,9 +79,7 @@ async function proxyRequest(url, res) {
     console.log('Proxy response headers:', Object.fromEntries(response.headers.entries()));
 
     if (!response.ok) {
-      // eslint-disable-next-line no-console
       console.error(`Proxy request failed: ${response.status} ${response.statusText}`);
-      // eslint-disable-next-line no-console
       console.error(`Failed URL: ${proxyUrl}`);
       throw new Error(`Proxy request failed: ${response.status} ${response.statusText}`);
     }
@@ -125,9 +122,7 @@ async function proxyRequest(url, res) {
     console.log(`✅ Successfully proxied: ${url}`);
     return true;
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error(`❌ Error proxying request for ${url}:`, error.message);
-    // eslint-disable-next-line no-console
     console.error('Full error:', error);
     return false;
   }
@@ -135,7 +130,7 @@ async function proxyRequest(url, res) {
 
 // Main request handler
 async function handleRequest(req, res) {
-  const url = req.url === '/' ? '/aem.html' : req.url;
+  const url = req.url === '/' ? '/server.html' : req.url;
   const filePath = join(__dirname, url.startsWith('/') ? url.slice(1) : url);
 
   // eslint-disable-next-line no-console
@@ -183,7 +178,7 @@ server.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`🔗 Proxying missing files to: ${PROXY_HOST}`);
   // eslint-disable-next-line no-console
-  console.log(`📄 Main page: http://localhost:${PORT}/aem.html`);
+  console.log(`📄 Main page: http://localhost:${PORT}/server.html`);
 });
 
 // Graceful shutdown
