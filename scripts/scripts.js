@@ -14,7 +14,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-absolute-path */
 
-// Import all ProjectX functions
+// Import all ProjectX functions - avoid duplication by importing utilities
 import {
   buildBlock,
   loadHeader,
@@ -32,21 +32,23 @@ import {
   loadScript,
   toCamelCase,
   loadCSS,
-  decorateMain as projectXDecorateMain,
+  decorateMain,
   loadEager as projectXLoadEager,
   loadLazy as projectXLoadLazy,
   loadDeferred as projectXLoadDeferred,
-  loadPage as projectXLoadPage,
   pluginContext as basePluginContext,
   AUDIENCES as projectXAudiences,
   LCP_BLOCKS as projectXLcpBlocks,
-  buildAutoBlocks
+  buildAutoBlocks,
+  // Import utility functions to avoid duplication
+  loadFonts,
+  autolinkModals
 } from './projectX.js';
 
 // Import external dependencies (maintain original imports)
 import { } from '/plusplus/src/siteConfig.js';
 
-// Configuration constants (maintain original values)
+// Configuration constants (extend rather than duplicate)
 const LCP_BLOCKS = [...projectXLcpBlocks]; // Allow modification
 const AUDIENCES = {
   ...projectXAudiences,
@@ -62,21 +64,11 @@ const pluginContext = {
 };
 
 /**
- * Enhanced decorateMain function with plugin hooks
- * @param {Element} main The main element
- */
-export function decorateMain(main) {
-  // Use ProjectX decorateMain which includes enhanced auto-blocking
-  projectXDecorateMain(main);
-}
-
-/**
  * Enhanced loadEager with experimentation support
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
   window.cmsplus.debug('loadEager');
-  document.documentElement.lang = 'en';
   
   // Add experimentation support early in the eager phase
   if (getMetadata('experiment') ||
@@ -91,22 +83,8 @@ async function loadEager(doc) {
     }
   }
 
-  decorateTemplateAndTheme();
-  const main = doc.querySelector('main');
-  if (main) {
-    decorateMain(main);
-    document.body.classList.add('appear');
-    await waitForLCP(LCP_BLOCKS);
-  }
-
-  try {
-    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-    if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-      loadFonts();
-    }
-  } catch (e) {
-    // do nothing
-  }
+  // Delegate to ProjectX loadEager for core functionality
+  await projectXLoadEager(doc);
 }
 
 /**
@@ -115,21 +93,9 @@ async function loadEager(doc) {
  */
 async function loadLazy(doc) {
   window.cmsplus.debug('loadLazy');
-  const main = doc.querySelector('main');
-  await loadBlocks(main);
-  autolinkModals(doc);
   
-  const { hash } = window.location;
-  const element = hash ? doc.getElementById(hash.substring(1)) : false;
-  if (hash && element) element.scrollIntoView();
-  
-  if (!window.projectX.suppressFrame) {
-    loadHeader(doc.querySelector('header'));
-    loadFooter(doc.querySelector('footer'));
-  }
-
-  loadCSS(`${window.projectX.codeBasePath}/styles/lazy-styles.css`);
-  loadFonts();
+  // Delegate to ProjectX loadLazy for core functionality
+  await projectXLoadLazy(doc);
   
   // Add experimentation support in lazy phase
   if ((getMetadata('experiment') ||
@@ -143,56 +109,32 @@ async function loadLazy(doc) {
       console.warn('ProjectX: Failed to load experimentation plugin in lazy phase:', error);
     }
   }
-
-  // ProjectX: Privacy-first framework with complete RUM removal
 }
 
 /**
- * Enhanced loadDelayed - imports deferred functionality directly
+ * Enhanced loadDelayed - delegates to ProjectX with CMS Plus logging
  */
 function loadDelayed() {
   window.cmsplus.debug('loadDelayed timer start');
-  // Import deferred functionality directly
-  window.setTimeout(() => import('./deferred.js'), 4000);
+  // Delegate to ProjectX loadDeferred
+  projectXLoadDeferred();
 }
 
 /**
- * Load fonts.css and set a session storage flag
- */
-async function loadFonts() {
-  await loadCSS(`${window.projectX.codeBasePath}/styles/fonts.css`);
-  try {
-    if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
-  } catch (e) {
-    // do nothing
-  }
-}
-
-/**
- * Auto-link modals for modal handling
- * @param {Element} element The element to add modal auto-linking to
- */
-function autolinkModals(element) {
-  element.addEventListener('click', async (e) => {
-    const origin = e.target.closest('a');
-
-    if (origin && origin.href && origin.href.includes('/modals/')) {
-      e.preventDefault();
-      try {
-        const { openModal } = await import(`${window.projectX.codeBasePath}/blocks/modal/modal.js`);
-        openModal(origin.href);
-      } catch (error) {
-        console.warn('ProjectX: Failed to load modal:', error);
-      }
-    }
-  });
-}
-
-/**
- * Enhanced loadPage with frame suppression support
+ * Enhanced loadPage with CMS Plus integration
  */
 async function loadPage() {
   window.cmsplus.debug('loadPage');
+  
+  // Initialize CMS Plus compatibility layer
+  window.cmsplus = window.cmsplus || {
+    debug: (message) => {
+      if (window.projectX?.lighthouse || window.location.search.includes('debug=true')) {
+        console.debug(`CMS Plus: ${message}`);
+      }
+    }
+  };
+  
   const urlParams = new URLSearchParams(window.location.search);
   
   // Handle frame suppression for sidekick library
@@ -211,7 +153,7 @@ async function loadPage() {
 
 // Export all functions for backward compatibility
 export {
-  // Core functions from ProjectX
+  // Core functions from ProjectX (re-exported)
   buildBlock,
   loadHeader,
   loadFooter,
@@ -228,6 +170,7 @@ export {
   loadScript,
   toCamelCase,
   loadCSS,
+  decorateMain,
   
   // Enhanced functions with plugin support
   loadEager,
@@ -235,7 +178,7 @@ export {
   loadDelayed,
   loadPage,
   
-  // Utility functions
+  // Utility functions (re-exported from ProjectX)
   loadFonts,
   autolinkModals,
   
@@ -245,5 +188,12 @@ export {
   pluginContext
 };
 
-// Auto-start page loading (maintain original behavior)
-loadPage();
+// Initialize and start page loading (only if not already initialized by ProjectX)
+if (!window.projectX?._scriptsInitialized) {
+  // Mark as initialized to prevent double loading
+  if (!window.projectX) window.projectX = {};
+  window.projectX._scriptsInitialized = true;
+  
+  // Start page loading
+  loadPage();
+}

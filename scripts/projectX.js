@@ -859,6 +859,7 @@ function autoBlockColumns(main) {
     
     if (directDivs.length === 2 || directDivs.length === 3) {
       const hasSubstantialContent = directDivs.every(div => 
+        div.textContent.trim().length > 50 || div.querySelector('img, picture')
       );
       
       if (hasSubstantialContent && !section.querySelector('.block')) {
@@ -1135,8 +1136,10 @@ function init() {
 // Initialize framework
 init();
 
-// Start page loading
-loadPage();
+// Start page loading only if not already started by scripts.js
+if (!window.projectX?._scriptsInitialized) {
+  loadPage();
+}
 
 // ============================================================================
 // EXPORTS FOR BACKWARD COMPATIBILITY
@@ -1187,4 +1190,3 @@ export {
   AUDIENCES,
   LCP_BLOCKS
 };
-        div.textContent.trim().length > 50 || div.querySelector('img, picture')
