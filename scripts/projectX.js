@@ -1185,6 +1185,9 @@ export {
   loadLazy,
   loadDeferred,
   loadPage,
+  // Utility functions
+  loadFonts,
+  autolinkModals,
   // Plugin system
   pluginContext,
   AUDIENCES,
