@@ -18,6 +18,7 @@ export {
   readBlockConfig,
   getMetadata,
   getAllMetadata,
+  fetchPlaceholders,
   
   // CSS and script loading
   loadCSS,

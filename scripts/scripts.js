@@ -123,12 +123,12 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
   
-  if (!window.hlx.suppressFrame) {
+  if (!window.projectX.suppressFrame) {
     loadHeader(doc.querySelector('header'));
     loadFooter(doc.querySelector('footer'));
   }
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  loadCSS(`${window.projectX.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
   
   // Add experimentation support in lazy phase
@@ -144,7 +144,7 @@ async function loadLazy(doc) {
     }
   }
 
-  // RUM tracking removed - ProjectX focuses on privacy and performance
+  // ProjectX: Privacy-first framework with complete RUM removal
 }
 
 /**
@@ -160,7 +160,7 @@ function loadDelayed() {
  * Load fonts.css and set a session storage flag
  */
 async function loadFonts() {
-  await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
+  await loadCSS(`${window.projectX.codeBasePath}/styles/fonts.css`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
@@ -179,7 +179,7 @@ function autolinkModals(element) {
     if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
       try {
-        const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+        const { openModal } = await import(`${window.projectX.codeBasePath}/blocks/modal/modal.js`);
         openModal(origin.href);
       } catch (error) {
         console.warn('ProjectX: Failed to load modal:', error);
@@ -197,7 +197,7 @@ async function loadPage() {
   
   // Handle frame suppression for sidekick library
   if (urlParams.get('suppressFrame') || window.location.pathname.includes('tools/sidekick')) {
-    window.hlx.suppressFrame = true;
+    window.projectX.suppressFrame = true;
     const header = document.body.querySelector('header');
     const footer = document.body.querySelector('footer');
     if (header) header.remove();
