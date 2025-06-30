@@ -1,5 +1,13 @@
-/**
+/*
  * ProjectX Framework - Privacy-First Edge Delivery Services Alternative
+ * Modified by Tom Cranstoun, 2025
+ * 
+ * This file is a modified version of Adobe Edge Delivery Services (EDS)
+ * Original work: Copyright Adobe Systems Incorporated
+ * Modifications: Copyright 2025 Tom Cranstoun
+ * 
+ * Licensed under the Apache License, Version 2.0
+ * 
  * A lightweight JavaScript framework inspired by Adobe EDS with complete RUM removal
  * 
  * Key Features:
@@ -7,10 +15,6 @@
  * - Complete removal of Real User Monitoring for privacy
  * - Enhanced auto-blocking system
  * - 80% performance improvement over standard EDS
- * 
- * @author Tom Cranstoun (@ddttom)
- * @version 1.0.0
- * @license MIT
  */
 
 /* eslint-env browser */

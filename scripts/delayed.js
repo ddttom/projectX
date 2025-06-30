@@ -1,12 +1,15 @@
-/**
- * ProjectX Delayed Loading Proxy
+/*
+ * ProjectX Framework - Delayed Loading Proxy
+ * Modified by Tom Cranstoun, 2025
+ * 
+ * This file is a modified version of Adobe Edge Delivery Services (EDS)
+ * Original work: Copyright Adobe Systems Incorporated
+ * Modifications: Copyright 2025 Tom Cranstoun
+ * 
+ * Licensed under the Apache License, Version 2.0
  * 
  * This file provides backward compatibility for the original delayed.js
  * while leveraging the optimized ProjectX deferred.js functionality.
- * 
- * @author Tom Cranstoun (@ddttom)
- * @version 1.0.0
- * @license MIT
  */
 
 // Import and execute the ProjectX deferred functionality

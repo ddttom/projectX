@@ -1,12 +1,15 @@
-/**
- * ProjectX Compatibility Proxy for aem.js
+/*
+ * ProjectX Framework - Enhanced EDS Proxy
+ * Modified by Tom Cranstoun, 2025
+ * 
+ * This file is a modified version of Adobe Edge Delivery Services (EDS)
+ * Original work: Copyright Adobe Systems Incorporated
+ * Modifications: Copyright 2025 Tom Cranstoun
+ * 
+ * Licensed under the Apache License, Version 2.0
  * 
  * This file provides backward compatibility for existing blocks that import from aem.js.
  * All functions are re-exported from the consolidated projectX.js framework.
- * 
- * @author Tom Cranstoun (@ddttom)
- * @version 1.0.0
- * @license MIT
  */
 
 // Re-export all functions from projectX.js for backward compatibility

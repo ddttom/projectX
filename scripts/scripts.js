@@ -1,13 +1,16 @@
-/**
- * ProjectX Enhanced Scripts Proxy
+/*
+ * ProjectX Framework - Enhanced Scripts Proxy
+ * Modified by Tom Cranstoun, 2025
+ * 
+ * This file is a modified version of Adobe Edge Delivery Services (EDS)
+ * Original work: Copyright Adobe Systems Incorporated
+ * Modifications: Copyright 2025 Tom Cranstoun
+ * 
+ * Licensed under the Apache License, Version 2.0
  * 
  * This file provides full backward compatibility with the original scripts.js
  * while leveraging the optimized ProjectX framework. Includes complete support
  * for experimentation plugins and CMS Plus integration.
- * 
- * @author Tom Cranstoun (@ddttom)
- * @version 1.0.0
- * @license MIT
  */
 
 /* eslint-disable operator-linebreak */

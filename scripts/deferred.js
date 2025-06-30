@@ -1,10 +1,12 @@
-/**
- * ProjectX Deferred Loading Module
- * Handles delayed functionality that doesn't impact initial page performance
+/*
+ * ProjectX Framework - Deferred Loading Module
+ * Created by Tom Cranstoun, 2025
  * 
- * @author Tom Cranstoun (@ddttom)
- * @version 1.0.0
- * @license MIT
+ * Copyright 2025 Tom Cranstoun
+ * 
+ * Licensed under the Apache License, Version 2.0
+ * 
+ * Handles delayed functionality that doesn't impact initial page performance
  */
 
 /* eslint-env browser */
