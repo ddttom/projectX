@@ -82,84 +82,13 @@ async function executeDeferred() {
 async function executeCustomDeferred() {
   debugLog('Executing custom deferred functionality');
   
-  // Example: Analytics initialization (if needed)
-  // await initializeAnalytics();
-  
-  // Example: Third-party widget loading
-  // await loadThirdPartyWidgets();
-  
-  // Example: Background data prefetching
-  // await prefetchBackgroundData();
-  
-  // Example: Service worker registration
-  // await registerServiceWorker();
+  // Add your custom deferred functionality here
+  // Examples: analytics, third-party widgets, background data, service workers
   
   debugLog('Custom deferred functionality completed');
 }
 
-/**
- * Example: Initialize analytics (placeholder)
- */
-async function initializeAnalytics() {
-  debugLog('Initializing analytics (placeholder)');
-  
-  // Add your analytics initialization here
-  // This could be Google Analytics, Adobe Analytics, etc.
-  // Example:
-  // if (window.gtag) {
-  //   gtag('config', 'GA_MEASUREMENT_ID');
-  // }
-}
 
-/**
- * Example: Load third-party widgets (placeholder)
- */
-async function loadThirdPartyWidgets() {
-  debugLog('Loading third-party widgets (placeholder)');
-  
-  // Add third-party widget loading here
-  // This could be chat widgets, social media embeds, etc.
-  // Example:
-  // const chatWidget = document.createElement('script');
-  // chatWidget.src = 'https://widget.example.com/chat.js';
-  // document.head.appendChild(chatWidget);
-}
-
-/**
- * Example: Prefetch background data (placeholder)
- */
-async function prefetchBackgroundData() {
-  debugLog('Prefetching background data (placeholder)');
-  
-  // Add background data prefetching here
-  // This could be API calls for data that might be needed later
-  // Example:
-  // try {
-  //   const response = await fetch('/api/background-data');
-  //   const data = await response.json();
-  //   sessionStorage.setItem('prefetched-data', JSON.stringify(data));
-  // } catch (error) {
-  //   debugLog('Background data prefetch failed', error);
-  // }
-}
-
-/**
- * Example: Register service worker (placeholder)
- */
-async function registerServiceWorker() {
-  debugLog('Registering service worker (placeholder)');
-  
-  // Add service worker registration here
-  // Example:
-  // if ('serviceWorker' in navigator) {
-  //   try {
-  //     await navigator.serviceWorker.register('/sw.js');
-  //     debugLog('Service worker registered successfully');
-  //   } catch (error) {
-  //     debugLog('Service worker registration failed', error);
-  //   }
-  // }
-}
 
 /**
  * Performance monitoring for deferred operations
@@ -199,9 +128,5 @@ monitorDeferredPerformance();
 
 export {
   executeDeferred,
-  executeCustomDeferred,
-  initializeAnalytics,
-  loadThirdPartyWidgets,
-  prefetchBackgroundData,
-  registerServiceWorker
+  executeCustomDeferred
 };

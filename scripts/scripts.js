@@ -148,12 +148,12 @@ async function loadLazy(doc) {
 }
 
 /**
- * Enhanced loadDelayed with proper import path
+ * Enhanced loadDelayed - imports deferred functionality directly
  */
 function loadDelayed() {
   window.cmsplus.debug('loadDelayed timer start');
-  // Use delayed.js instead of deferred.js to match original behavior
-  window.setTimeout(() => import('./delayed.js'), 4000);
+  // Import deferred functionality directly
+  window.setTimeout(() => import('./deferred.js'), 4000);
 }
 
 /**

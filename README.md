@@ -39,7 +39,8 @@ ProjectX maintains 100% compatibility through a sophisticated proxy system:
 | [`scripts/projectX.js`](scripts/projectX.js) | Core consolidated framework | Enhanced API |
 | [`scripts/aem.js`](scripts/aem.js) | Proxy for existing blocks | 100% EDS aem.js API |
 | [`scripts/scripts.js`](scripts/scripts.js) | Enhanced proxy with plugins | 100% EDS scripts.js API + plugins |
-| [`scripts/deferred.js`](scripts/deferred.js) | Deferred functionality | Enhanced performance monitoring |
+| [`scripts/deferred.js`](scripts/deferred.js) | ProjectX deferred functionality | Enhanced performance monitoring |
+| [`scripts/delayed.js`](scripts/delayed.js) | Proxy for delayed.js imports | 100% EDS delayed.js API |
 
 ### How It Works
 
@@ -70,10 +71,10 @@ projectX/
 │   ├── projectX.js         # Core consolidated framework (~30KB)
 │   ├── aem.js             # Backward compatibility proxy
 │   ├── scripts.js         # Enhanced proxy with plugin support
-│   ├── deferred.js        # Optional delayed functionality (~6KB)
+│   ├── deferred.js        # ProjectX deferred functionality (~6KB)
+│   ├── delayed.js         # Proxy for original delayed.js imports
 │   ├── aem.js.original    # Original EDS core (backup)
-│   ├── scripts.js.original # Original EDS orchestration (backup)
-│   └── delayed.js         # Original EDS deferred (backup)
+│   └── scripts.js.original # Original EDS orchestration (backup)
 ├── docs/
 │   └── projectx-architecture.md  # Detailed technical specification
 ├── COMPATIBILITY.md       # Detailed compatibility guide
