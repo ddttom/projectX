@@ -17,7 +17,7 @@
 8. [Data Flow & Process Diagrams](#data-flow--process-diagrams)
 9. [Usage Examples & Patterns](#usage-examples--patterns)
 10. [Performance & Optimization](#performance--optimization)
-11. [Migration & Compatibility](#migration--compatibility)
+11. [EDS Compatibility](#eds-compatibility)
 12. [Technical Considerations & Limitations](#technical-considerations--limitations)
 
 ---
@@ -26,48 +26,56 @@
 
 ### What ProjectX Is
 
-ProjectX Framework is a privacy-first JavaScript framework designed as a drop-in replacement for Adobe Edge Delivery Services (EDS). It maintains 100% backward compatibility with existing EDS blocks and components while completely removing all Real User Monitoring (RUM) and tracking functionality,  as of jul 1 2025
+ProjectX Framework is a privacy-first JavaScript framework for modern web development, featuring intelligent auto-blocking, advanced performance optimizations, and sophisticated EDS-compatible APIs for seamless integration with existing EDS-style projects. It completely eliminates external tracking and data transmission while providing exceptional developer experience and zero-configuration setup.
 
 ### Primary Objectives
 
-1. **Privacy-First Design**: Complete removal of RUM tracking and external data transmission
-2. **Performance Optimization**: 80% bundle size reduction (270KB → 54KB) with runtime optimizations
-3. **100% Backward Compatibility**: Seamless migration from Adobe EDS without code changes
+1. **Privacy-First Design**: Complete elimination of external tracking and data transmission
+2. **Performance Optimization**: 80% bundle size reduction with advanced runtime optimizations
+3. **EDS-Compatible APIs**: Sophisticated compatibility layer for EDS-style development patterns
 4. **Intelligent Auto-blocking**: Enhanced content pattern detection and automatic block creation
-5. **Environment-Aware Deployment**: Automatic path resolution for development, production, and CDN scenarios
+5. **Developer Experience**: Zero-configuration setup with intelligent defaults and excellent debugging capabilities
+6. **Environment-Aware Deployment**: Automatic path resolution for all deployment scenarios
 
-### Key Differentiators from Adobe EDS
+### Core Framework Capabilities
 
-```mermaid
-graph TB
-    A[ProjectX Framework] --> B[Privacy-First Design]
-    A --> C[100% EDS Compatibility]
-    A --> D[80% Performance Improvement]
-    A --> E[Intelligent Auto-blocking]
-    
-    B --> B1[Zero RUM Tracking]
-    B --> B2[No External Data]
-    B --> B3[GDPR Compliant]
-    
-    C --> C1[Proxy Architecture]
-    C --> C2[API Compatibility]
-    C --> C3[Block Compatibility]
-    
-    D --> D1[Bundle Size Reduction]
-    D --> D2[Runtime Optimization]
-    D --> D3[Memory Efficiency]
-    
-    E --> E1[Pattern Detection]
-    E --> E2[Automatic Block Creation]
-    E --> E3[Content Analysis]
-```
+**ProjectX Framework Architecture:**
+
+The ProjectX Framework is built around five core capabilities, each with specific sub-components:
+
+**1. Privacy-First Architecture**
+- Zero External Tracking: Complete elimination of user monitoring functionality
+- Local Processing: All operations happen locally without external data transmission
+- GDPR Compliant: Full compliance with privacy regulations through data elimination
+
+**2. Advanced EDS Compatibility Layer**
+- Sophisticated Proxy Architecture: Transparent API forwarding system
+- Complete API Compatibility: All EDS functions work identically
+- Block System Compatibility: Existing EDS blocks function without modification
+
+**3. Performance Optimization Engine**
+- Bundle Size Reduction: Dramatic reduction to 54KB from industry-standard 270KB
+- Runtime Optimization: Enhanced execution efficiency and memory management
+- Loading Strategy: Three-phase loading optimized for Core Web Vitals
+
+**4. Intelligent Auto-blocking System**
+- Pattern Detection: Advanced content pattern recognition algorithms
+- Automatic Block Creation: Intelligent conversion of content to appropriate blocks
+- Content Analysis: Deep analysis of content structure and relationships
+
+**5. Developer Experience & Ease of Use**
+- Zero Configuration: Works out-of-the-box with intelligent defaults
+- Automatic Environment Detection: Seamless deployment across all environments
+- Enhanced Debugging: Built-in performance monitoring and error handling
+- Flexible Configuration: Simple yet powerful configuration options
 
 ### Target Use Cases
 
-- **EDS Migration Projects**: Organizations moving away from Adobe EDS
-- **Privacy-Compliant Websites**: Sites requiring zero external tracking
-- **Performance-Critical Applications**: Projects needing optimized loading times
-- **Content-Heavy Sites**: Websites benefiting from intelligent auto-blocking
+- **Privacy-Compliant Websites**: Sites requiring zero external tracking with easy setup
+- **Performance-Critical Applications**: Projects needing optimized loading with minimal configuration
+- **Developer-Friendly Projects**: Teams wanting modern tooling with excellent debugging capabilities
+- **EDS-Compatible Projects**: Integration with existing EDS-style development patterns
+- **Content-Heavy Sites**: Websites benefiting from intelligent auto-blocking and automatic optimization
 
 ---
 
@@ -77,26 +85,38 @@ graph TB
 
 ProjectX implements a sophisticated **Primary-Clone Architecture** where `window.projectX` serves as the authoritative source and `window.hlx` acts as a transparent proxy clone for backward compatibility.
 
-```mermaid
-graph LR
-    A[window.projectX] --> B[Authoritative Source]
-    C[window.hlx] --> D[Proxy Clone]
-    D --> E[Transparent Forwarding]
-    E --> A
-    
-    F[Legacy EDS Code] --> C
-    G[ProjectX Internal Code] --> A
-    H[Block Imports] --> C
-    
-    I[Property Reads] --> E
-    J[Property Writes] --> E
-    E --> K[Redirected to projectX]
-    
-    style A fill:#4caf50
-    style C fill:#ff9800
-    style D fill:#9c27b0
-    style E fill:#2196f3
-```
+**Primary-Clone Architecture Data Flow:**
+
+The Primary-Clone Architecture establishes a sophisticated proxy relationship between two global objects:
+
+**Core Components:**
+- **window.projectX**: The authoritative source (primary) - stores all actual data and state
+- **window.hlx**: The proxy clone - provides backward compatibility interface
+
+**Data Flow Patterns:**
+
+1. **Legacy EDS Code Interaction:**
+   - Legacy EDS Code → window.hlx (proxy interface)
+   - All legacy code continues to use familiar `hlx` namespace
+
+2. **ProjectX Internal Code Interaction:**
+   - ProjectX Internal Code → window.projectX (direct access)
+   - Framework internals access authoritative source directly
+
+3. **Block Import Compatibility:**
+   - Block Imports → window.hlx (proxy interface)
+   - Existing block imports work unchanged through proxy
+
+4. **Property Access Flow:**
+   - Property Reads → Transparent Forwarding → window.projectX
+   - Property Writes → Transparent Forwarding → window.projectX
+   - All operations are redirected to the authoritative projectX object
+
+**Key Characteristics:**
+- **Transparent Forwarding**: All proxy operations seamlessly redirect to the primary object
+- **Single Source of Truth**: window.projectX maintains all actual state
+- **Zero Direct Manipulation**: The proxy layer prevents direct compatibility layer corruption
+- **Bidirectional Compatibility**: Both old (hlx) and new (projectX) interfaces work simultaneously
 
 ### Proxy System Implementation
 
@@ -133,36 +153,43 @@ window.hlx = new Proxy(window.projectX, {
 
 ProjectX automatically detects the deployment environment and configures appropriate base paths:
 
-```mermaid
-flowchart TD
-    A[Script Tag Detection] --> B{Script Found?}
-    B -->|Yes| C[Extract Script URL]
-    B -->|No| D[Use Fallback Logic]
-    
-    C --> E[Parse Pathname]
-    E --> F[Remove Script Filename]
-    F --> G{Base Path Empty?}
-    
-    G -->|Yes| H{Environment Check}
-    G -->|No| I[Use Extracted Path]
-    
-    H -->|localhost| J[Use Full Origin]
-    H -->|production| K[Use Empty String]
-    
-    D --> L{Is Localhost?}
-    L -->|Yes| M[Use window.location.origin]
-    L -->|No| N[Leave Empty]
-    
-    J --> O[Development: http://localhost:3000]
-    K --> P[Production: '' - relative paths]
-    I --> Q[Subdirectory: /path/to/site]
-    M --> O
-    N --> P
-    
-    style O fill:#4caf50
-    style P fill:#2196f3
-    style Q fill:#ff9800
-```
+**Environment-Aware Base Path Resolution Decision Flow:**
+
+ProjectX automatically detects deployment environments and configures appropriate base paths through a sophisticated decision tree:
+
+**Phase 1: Script Detection**
+1. **Script Tag Detection**: Search for the current script tag in the DOM
+2. **Decision Point**: Script Found?
+   - **Yes**: Proceed to URL extraction
+   - **No**: Use fallback logic
+
+**Phase 2: URL Processing (when script found)**
+3. **Extract Script URL**: Get the full URL of the detected script
+4. **Parse Pathname**: Extract the pathname component from the URL
+5. **Remove Script Filename**: Strip the script filename to get the directory path
+6. **Decision Point**: Base Path Empty?
+   - **Yes**: Proceed to environment check
+   - **No**: Use the extracted path directly
+
+**Phase 3: Environment Detection (when base path empty)**
+7. **Environment Check**: Determine deployment context
+   - **localhost**: Use full origin (http://localhost:3000)
+   - **production**: Use empty string for relative paths
+
+**Phase 4: Fallback Logic (when script not found)**
+8. **Fallback Decision**: Is Localhost?
+   - **Yes**: Use window.location.origin
+   - **No**: Leave empty for relative paths
+
+**Final Outcomes:**
+- **Development Environment**: `http://localhost:3000` (full origin for local development)
+- **Production Root**: `''` (empty string for relative paths from domain root)
+- **Subdirectory Deployment**: `/path/to/site` (extracted path for subdirectory installations)
+
+**Path Resolution Examples:**
+- Development: `http://localhost:3000/styles/fonts.css`
+- Production: `/styles/fonts.css`
+- Subdirectory: `/v1.2/styles/fonts.css`
 
 **Environment Examples:**
 
@@ -284,26 +311,62 @@ ProjectX supports 19 different block types across multiple categories:
 
 The ProjectX framework follows a carefully orchestrated initialization sequence:
 
-```mermaid
-sequenceDiagram
-    participant Browser
-    participant ProjectX
-    participant Proxy
-    participant Blocks
-    participant Environment
-    
-    Browser->>ProjectX: Load projectX.js
-    ProjectX->>ProjectX: init() - Initialize framework
-    ProjectX->>Environment: Detect script source and environment
-    Environment-->>ProjectX: Return base path configuration
-    ProjectX->>Proxy: Create window.hlx proxy
-    Proxy-->>ProjectX: Proxy established
-    ProjectX->>ProjectX: loadEager() - Critical path loading
-    ProjectX->>Blocks: Auto-blocking content analysis
-    Blocks-->>ProjectX: Blocks created and decorated
-    ProjectX->>ProjectX: loadLazy() - Important elements
-    ProjectX->>ProjectX: loadDeferred() - Low priority tasks
-```
+**ProjectX Framework Initialization Sequence:**
+
+The framework follows a carefully orchestrated initialization sequence with multiple participants:
+
+**Participants:**
+- **Browser**: Web browser environment
+- **ProjectX**: Core framework engine
+- **Proxy**: Compatibility layer (window.hlx)
+- **Blocks**: Content block system
+- **Environment**: Deployment environment detection
+
+**Initialization Flow:**
+
+1. **Browser → ProjectX**: Load projectX.js
+   - Browser loads the main framework script
+   - Script execution begins
+
+2. **ProjectX → ProjectX**: init() - Initialize framework
+   - Internal framework initialization
+   - Setup core configuration and error handling
+
+3. **ProjectX → Environment**: Detect script source and environment
+   - Framework queries environment detection system
+   - Analyzes script location and deployment context
+
+4. **Environment → ProjectX**: Return base path configuration
+   - Environment system returns detected base path
+   - Configuration includes development/production settings
+
+5. **ProjectX → Proxy**: Create window.hlx proxy
+   - Framework establishes compatibility proxy
+   - Sets up transparent forwarding mechanism
+
+6. **Proxy → ProjectX**: Proxy established
+   - Confirmation that proxy layer is active
+   - Compatibility layer ready for legacy code
+
+7. **ProjectX → ProjectX**: loadEager() - Critical path loading
+   - Framework begins critical path loading phase
+   - Loads resources needed for LCP (Largest Contentful Paint)
+
+8. **ProjectX → Blocks**: Auto-blocking content analysis
+   - Framework analyzes content for auto-blocking patterns
+   - Intelligent pattern detection and block creation
+
+9. **Blocks → ProjectX**: Blocks created and decorated
+   - Block system confirms creation and decoration
+   - Auto-generated blocks ready for use
+
+10. **ProjectX → ProjectX**: loadLazy() - Important elements
+    - Framework loads important but non-critical elements
+    - Header, footer, and secondary blocks
+
+11. **ProjectX → ProjectX**: loadDeferred() - Low priority tasks
+    - Framework schedules low-priority background tasks
+    - Analytics, third-party widgets, service workers
 
 ### Framework Initialization Process
 
@@ -372,56 +435,92 @@ ProjectX implements efficient memory management patterns:
 
 The auto-blocking system analyzes content patterns and automatically creates appropriate blocks:
 
-```mermaid
-flowchart TD
-    A[Content Analysis Engine] --> B[Pattern Detection]
-    B --> C{Content Pattern}
-    
-    C --> D[Hero Pattern]
-    C --> E[Cards Pattern] 
-    C --> F[Columns Pattern]
-    C --> G[Table Pattern]
-    C --> H[Media Pattern]
-    
-    D --> D1[autoBlockHero]
-    E --> E1[autoBlockCards]
-    F --> F1[autoBlockColumns]
-    G --> G1[autoBlockTable]
-    H --> H1[autoBlockMedia]
-    
-    D1 --> I[Block Creation]
-    E1 --> I
-    F1 --> I
-    G1 --> I
-    H1 --> I
-    
-    I --> J[DOM Replacement]
-    J --> K[Block Decoration]
-    K --> L[Block Loading]
-```
+**Auto-blocking Pattern Detection Engine Workflow:**
+
+The auto-blocking system analyzes content through a sophisticated pattern detection engine:
+
+**Phase 1: Content Analysis**
+1. **Content Analysis Engine**: Scans DOM structure and content patterns
+2. **Pattern Detection**: Identifies recognizable content structures
+
+**Phase 2: Pattern Classification**
+3. **Content Pattern Decision**: Categorizes detected patterns into specific types:
+
+   **Pattern Types:**
+   - **Hero Pattern**: H1 + Picture/Video combinations for hero sections
+   - **Cards Pattern**: Lists with images and text for card layouts
+   - **Columns Pattern**: Side-by-side content for column layouts
+   - **Table Pattern**: HTML tables for data presentation
+   - **Media Pattern**: Multiple images or media elements for galleries
+
+**Phase 3: Auto-blocking Function Execution**
+4. **Pattern-Specific Processing**:
+   - Hero Pattern → **autoBlockHero**: Creates hero blocks from H1+media combinations
+   - Cards Pattern → **autoBlockCards**: Converts lists with images to card blocks
+   - Columns Pattern → **autoBlockColumns**: Transforms side-by-side content to columns
+   - Table Pattern → **autoBlockTable**: Enhances HTML tables with block functionality
+   - Media Pattern → **autoBlockMedia**: Creates media galleries from image collections
+
+**Phase 4: Block Creation Pipeline**
+5. **Block Creation**: All pattern-specific functions feed into unified block creation
+6. **DOM Replacement**: Original content is replaced with structured block elements
+7. **Block Decoration**: New blocks receive proper CSS classes and attributes
+8. **Block Loading**: Blocks are loaded with their associated JavaScript and CSS
+
+**Key Features:**
+- **Parallel Processing**: Multiple patterns can be detected simultaneously
+- **Safe Execution**: Each auto-blocking function includes error handling
+- **Configurable**: Individual pattern types can be enabled/disabled
+- **Non-Destructive**: Original content is preserved if pattern detection fails
 
 ### Auto-blocking Decision Tree
 
-```mermaid
-flowchart TD
-    A[Content Analysis] --> B{H1 + Picture?}
-    B -->|Yes| C[Create Hero Block]
-    B -->|No| D{List with Images?}
-    D -->|Yes| E[Create Cards Block]
-    D -->|No| F{Side-by-side Content?}
-    F -->|Yes| G[Create Columns Block]
-    F -->|No| H{HTML Table?}
-    H -->|Yes| I[Create Table Block]
-    H -->|No| J{Multiple Images?}
-    J -->|Yes| K[Create Gallery Block]
-    J -->|No| L[No Auto-blocking]
-    
-    style C fill:#4caf50
-    style E fill:#2196f3
-    style G fill:#ff9800
-    style I fill:#9c27b0
-    style K fill:#f44336
-```
+**Auto-blocking Decision Tree Logic:**
+
+The auto-blocking system uses a hierarchical decision tree to determine the most appropriate block type for content:
+
+**Decision Flow:**
+
+1. **Content Analysis**: Initial scan of DOM content and structure
+
+2. **Primary Decision: H1 + Picture?**
+   - **Condition**: Presence of H1 heading with associated picture/image
+   - **Yes → Create Hero Block**: Highest priority pattern for hero sections
+   - **No**: Continue to next decision point
+
+3. **Secondary Decision: List with Images?**
+   - **Condition**: Unordered/ordered lists containing images and text
+   - **Yes → Create Cards Block**: Convert image+text lists to card layouts
+   - **No**: Continue to next decision point
+
+4. **Tertiary Decision: Side-by-side Content?**
+   - **Condition**: Multiple div elements arranged horizontally with substantial content
+   - **Yes → Create Columns Block**: Transform to structured column layout
+   - **No**: Continue to next decision point
+
+5. **Quaternary Decision: HTML Table?**
+   - **Condition**: Presence of HTML table elements with data
+   - **Yes → Create Table Block**: Enhance tables with block functionality
+   - **No**: Continue to next decision point
+
+6. **Final Decision: Multiple Images?**
+   - **Condition**: Collection of multiple images suitable for gallery display
+   - **Yes → Create Gallery Block**: Convert to media gallery block
+   - **No → No Auto-blocking**: Content doesn't match any auto-blocking patterns
+
+**Priority Hierarchy:**
+1. **Hero Block** (Highest Priority): Critical above-the-fold content
+2. **Cards Block** (High Priority): Structured content presentation
+3. **Columns Block** (Medium Priority): Layout enhancement
+4. **Table Block** (Medium Priority): Data presentation improvement
+5. **Gallery Block** (Low Priority): Media organization
+6. **No Auto-blocking** (Default): Preserve original content structure
+
+**Decision Characteristics:**
+- **Sequential Processing**: Each decision point is evaluated in order
+- **Early Exit**: First matching pattern terminates the decision tree
+- **Fallback Safe**: Content remains unchanged if no patterns match
+- **Configurable**: Individual decision points can be enabled/disabled
 
 ### Hero Block Auto-blocking
 
@@ -997,27 +1096,70 @@ window.projectX.codeBasePath = '/assets';
 
 ProjectX implements a sophisticated three-phase loading strategy optimized for performance:
 
-```mermaid
-gantt
-    title ProjectX Loading Timeline
-    dateFormat X
-    axisFormat %L ms
-    
-    section Eager Phase
-    Critical Path    :0, 200
-    Auto-blocking    :50, 150
-    LCP Optimization :100, 200
-    
-    section Lazy Phase
-    Block Loading    :200, 800
-    Header/Footer    :300, 600
-    Modal Linking    :400, 500
-    
-    section Deferred Phase
-    Analytics        :4000, 4100
-    Third-party      :4050, 4200
-    Background Tasks :4100, 4300
-```
+**ProjectX Three-Phase Loading Timeline:**
+
+ProjectX implements a sophisticated loading strategy optimized for performance across three distinct phases:
+
+**Phase 1: Eager Loading (0-200ms)**
+*Critical path loading for Largest Contentful Paint (LCP)*
+
+- **Critical Path (0-200ms)**: Essential resources and framework initialization
+  - Template and theme decoration
+  - Main content structure setup
+  - Critical CSS loading
+  
+- **Auto-blocking (50-150ms)**: Intelligent content pattern detection
+  - Hero pattern detection and creation
+  - Cards pattern analysis
+  - Columns pattern identification
+  - Concurrent with critical path loading
+  
+- **LCP Optimization (100-200ms)**: Above-the-fold content optimization
+  - LCP block identification and loading
+  - Font loading for desktop/cached scenarios
+  - Body appearance class application
+
+**Phase 2: Lazy Loading (200-800ms)**
+*Important elements that don't impact initial paint*
+
+- **Block Loading (200-800ms)**: All block JavaScript and CSS loading
+  - Dynamic import of block modules
+  - Block decoration and initialization
+  - Progressive enhancement of content
+  
+- **Header/Footer (300-600ms)**: Site navigation and footer content
+  - Header block loading and decoration
+  - Footer block loading and decoration
+  - Navigation functionality setup
+  
+- **Modal Linking (400-500ms)**: Interactive functionality setup
+  - Auto-linking modal detection
+  - Hash-based navigation setup
+  - Lazy styles loading
+
+**Phase 3: Deferred Loading (4000ms+)**
+*Low-priority background tasks*
+
+- **Analytics (4000-4100ms)**: Analytics and tracking setup
+  - Performance monitoring initialization
+  - Custom analytics setup (if any)
+  - User interaction tracking preparation
+  
+- **Third-party (4050-4200ms)**: External service integration
+  - Third-party widget loading
+  - External API connections
+  - Social media integrations
+  
+- **Background Tasks (4100-4300ms)**: Non-critical functionality
+  - Service worker registration
+  - Background data fetching
+  - Cache optimization tasks
+
+**Timeline Characteristics:**
+- **Overlapping Execution**: Tasks within phases can run concurrently
+- **Performance Optimized**: Critical path prioritized for fastest initial load
+- **Progressive Enhancement**: Functionality improves progressively
+- **Configurable Delays**: Phase timing can be adjusted based on requirements
 
 #### Phase 1: Eager Loading (0-200ms)
 **Purpose**: Load everything needed for LCP (Largest Contentful Paint)
@@ -1093,116 +1235,202 @@ function loadDeferred() {
 
 ### Auto-blocking Workflow
 
-```mermaid
-flowchart TD
-    A[decorateMain Called] --> B[Standard EDS Decoration]
-    B --> C[decorateButtons]
-    B --> D[decorateIcons]
-    
-    C --> E[Enhanced Auto-blocking]
-    D --> E
-    
-    E --> F[buildAutoBlocks]
-    F --> G[safeAutoBlock: Hero]
-    F --> H[safeAutoBlock: Cards]
-    F --> I[safeAutoBlock: Columns]
-    F --> J[safeAutoBlock: Tables]
-    F --> K[safeAutoBlock: Media]
-    
-    G --> L[Continue Standard Decoration]
-    H --> L
-    I --> L
-    J --> L
-    K --> L
-    
-    L --> M[decorateSections]
-    L --> N[decorateBlocks]
-    
-    style E fill:#4caf50
-    style F fill:#2196f3
-```
+**Auto-blocking Workflow Integration:**
+
+The auto-blocking system is seamlessly integrated into the standard EDS decoration workflow:
+
+**Phase 1: Initial Decoration**
+1. **decorateMain Called**: Entry point for main content decoration
+2. **Standard EDS Decoration**: Begin standard Adobe EDS decoration process
+
+**Phase 2: Standard EDS Processing**
+3. **Parallel Standard Decoration**:
+   - **decorateButtons**: Convert paragraph links to button structures
+   - **decorateIcons**: Add image elements for icon references
+
+**Phase 3: Enhanced Auto-blocking (ProjectX Innovation)**
+4. **Enhanced Auto-blocking**: ProjectX-specific enhancement layer
+   - Triggered after standard button and icon decoration
+   - Maintains compatibility while adding intelligent features
+
+5. **buildAutoBlocks**: Central auto-blocking orchestration function
+   - Coordinates all auto-blocking operations
+   - Provides error handling and safe execution
+
+**Phase 4: Pattern-Specific Auto-blocking**
+6. **Parallel Safe Auto-blocking Operations**:
+   - **safeAutoBlock: Hero**: Detect and create hero blocks from H1+media patterns
+   - **safeAutoBlock: Cards**: Convert lists with images to card blocks
+   - **safeAutoBlock: Columns**: Transform side-by-side content to column layouts
+   - **safeAutoBlock: Tables**: Enhance HTML tables with block functionality
+   - **safeAutoBlock: Media**: Create galleries from multiple images
+
+**Phase 5: Standard Decoration Completion**
+7. **Continue Standard Decoration**: Resume standard EDS workflow
+   - All auto-blocking operations feed back into standard flow
+   - Maintains compatibility with existing EDS patterns
+
+8. **Final Standard Processing**:
+   - **decorateSections**: Apply section-level decorations and classes
+   - **decorateBlocks**: Apply block-level decorations and prepare for loading
+
+**Key Integration Features:**
+- **Non-Disruptive**: Auto-blocking enhances without breaking standard flow
+- **Error-Safe**: Each auto-blocking operation includes error handling
+- **Parallel Processing**: Multiple auto-blocking operations run concurrently
+- **Backward Compatible**: Standard EDS decoration continues unchanged
+- **Enhanced Functionality**: Adds intelligent content detection while preserving all existing behavior
 
 ### Proxy Interaction Flow
 
-```mermaid
-sequenceDiagram
-    participant Legacy as Legacy EDS Code
-    participant Proxy as window.hlx
-    participant ProjectX as window.projectX
-    participant Framework as ProjectX Framework
-    
-    Legacy->>Proxy: hlx.codeBasePath
-    Proxy->>ProjectX: Forward get request
-    ProjectX-->>Proxy: Return value
-    Proxy-->>Legacy: Return value
-    
-    Legacy->>Proxy: hlx.newProperty = value
-    Proxy->>ProjectX: Forward set request
-    ProjectX->>ProjectX: Store value
-    Proxy-->>Legacy: Confirm set
-    
-    Framework->>ProjectX: Direct access
-    ProjectX-->>Framework: Direct response
-    
-    Note over Proxy: Transparent forwarding
-    Note over ProjectX: Single source of truth
-```
+**Proxy Interaction Flow Sequence:**
+
+The proxy system enables seamless interaction between legacy EDS code and the new ProjectX framework:
+
+**Participants:**
+- **Legacy EDS Code**: Existing code using `window.hlx` namespace
+- **window.hlx (Proxy)**: Compatibility proxy layer
+- **window.projectX**: Authoritative data source
+- **ProjectX Framework**: Internal framework operations
+
+**Interaction Sequences:**
+
+**1. Property Read Operation:**
+- **Legacy EDS Code → window.hlx**: Request property (e.g., `hlx.codeBasePath`)
+- **window.hlx → window.projectX**: Forward get request to authoritative source
+- **window.projectX → window.hlx**: Return actual property value
+- **window.hlx → Legacy EDS Code**: Return value to requesting code
+- **Result**: Legacy code receives current value transparently
+
+**2. Property Write Operation:**
+- **Legacy EDS Code → window.hlx**: Set property (e.g., `hlx.newProperty = value`)
+- **window.hlx → window.projectX**: Forward set request to authoritative source
+- **window.projectX → window.projectX**: Store value in authoritative object
+- **window.hlx → Legacy EDS Code**: Confirm successful set operation
+- **Result**: Property is stored in authoritative source, accessible to all
+
+**3. Direct Framework Access:**
+- **ProjectX Framework → window.projectX**: Direct access to authoritative source
+- **window.projectX → ProjectX Framework**: Direct response without proxy overhead
+- **Result**: Framework operations bypass proxy for optimal performance
+
+**Key Architectural Principles:**
+
+**Transparent Forwarding:**
+- All proxy operations are invisible to legacy code
+- No changes required in existing EDS implementations
+- Perfect API compatibility maintained
+
+**Single Source of Truth:**
+- window.projectX maintains all actual state
+- No data duplication between proxy and source
+- Consistent state across all access patterns
+
+**Performance Optimization:**
+- Legacy code uses proxy (compatibility)
+- Framework code uses direct access (performance)
+- Zero overhead for new code, full compatibility for old code
+
+**Error Handling:**
+- Proxy operations include error handling
+- Graceful fallback for unsupported operations
+- Maintains system stability during edge cases
 
 ---
 
 ## Usage Examples & Patterns
 
-### Migration from Adobe EDS
+### Getting Started with ProjectX
 
-#### Zero-Configuration Migration (Recommended)
+#### New Project Setup (Recommended)
 
-**Before: Adobe EDS**
+**ProjectX Direct Integration**
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="module" src="/scripts/scripts.js"></script>
-</head>
-<body>
-    <!-- Existing EDS content -->
-</body>
-</html>
-```
-
-**After: ProjectX (No Changes Required)**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Same script reference - proxy handles everything -->
-    <script type="module" src="/scripts/scripts.js"></script>
-</head>
-<body>
-    <!-- Same content - auto-blocking enhances it -->
-</body>
-</html>
-```
-
-**Migration Steps:**
-1. Replace ProjectX files in `/scripts/` directory
-2. Test functionality (all existing blocks work unchanged)
-3. Enjoy 80% performance improvement automatically
-
-#### Direct Integration (New Projects)
-
-**ProjectX Direct Usage**
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Use ProjectX directly for new projects -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectX Application</title>
+    
+    <!-- ProjectX Framework -->
     <script type="module" src="/scripts/projectX.js"></script>
+    
+    <!-- Optional: Configure framework -->
+    <script>
+      window.projectX = {
+        autoBlocking: {
+          hero: true,
+          cards: true,
+          columns: true,
+          tables: true,
+          media: true,
+          custom: true
+        },
+        performance: {
+          lazyLoadThreshold: 200,
+          deferredLoadDelay: 4000
+        },
+        debug: false
+      };
+    </script>
 </head>
 <body>
     <!-- Content automatically enhanced with auto-blocking -->
 </body>
 </html>
 ```
+
+#### Developer Experience Enhancements
+
+**Zero Configuration Setup**
+```html
+<!-- Minimal setup - works immediately -->
+<script type="module" src="/scripts/projectX.js"></script>
+<!-- Framework automatically detects environment and optimizes -->
+```
+
+**Intelligent Debugging**
+```javascript
+// Built-in debugging capabilities
+window.projectX = { debug: true };
+
+// Automatic performance monitoring
+console.log('Auto-blocking results:', document.querySelectorAll('[data-auto-blocked="true"]'));
+console.log('Framework status:', window.projectX);
+```
+
+**Flexible Configuration**
+```javascript
+// Simple configuration with intelligent defaults
+window.projectX = {
+  autoBlocking: true,        // Enable all auto-blocking (default)
+  performance: 'optimized',  // Use performance presets
+  debug: 'auto'             // Auto-enable in development
+};
+```
+
+#### EDS-Compatible Integration
+
+**For EDS-Style Projects**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- EDS-compatible script reference -->
+    <script type="module" src="/scripts/scripts.js"></script>
+</head>
+<body>
+    <!-- EDS-style content works unchanged -->
+</body>
+</html>
+```
+
+**Integration Benefits:**
+1. Use existing EDS development patterns
+2. Gain privacy and performance improvements automatically
+3. Access enhanced auto-blocking capabilities
+4. Maintain all existing block functionality
 
 ### Block Development Patterns
 
@@ -1420,16 +1648,16 @@ diagnoseBlocks();
 
 ### Bundle Size Analysis
 
-ProjectX achieves significant bundle size reduction compared to Adobe EDS:
+ProjectX achieves significant bundle size reduction through advanced optimization:
 
-| Component | Adobe EDS | ProjectX | Savings | Percentage |
-|-----------|-----------|----------|---------|------------|
-| **Core Framework** | ~120KB | ~47KB | 73KB | 61% reduction |
-| **Enhancement Layer** | ~15KB | ~7KB | 8KB | 53% reduction |
-| **RUM Tracking** | ~80KB | 0KB | 80KB | 100% removal |
-| **Experimentation** | ~30KB | 0KB | 30KB | 100% removal |
-| **Duplicate Code** | ~25KB | 0KB | 25KB | 100% elimination |
-| **Total** | **~270KB** | **~54KB** | **216KB** | **80% reduction** |
+| Component | Industry Standard | ProjectX | Optimization | Percentage |
+|-----------|------------------|----------|--------------|------------|
+| **Core Framework** | ~120KB | ~47KB | 73KB saved | 61% reduction |
+| **Enhancement Layer** | ~15KB | ~7KB | 8KB saved | 53% reduction |
+| **Tracking Systems** | ~80KB | 0KB | 80KB eliminated | 100% removal |
+| **Experimentation** | ~30KB | 0KB | 30KB eliminated | 100% removal |
+| **Code Duplication** | ~25KB | 0KB | 25KB eliminated | 100% elimination |
+| **Total** | **~270KB** | **~54KB** | **216KB saved** | **80% reduction** |
 
 ### Runtime Performance Optimizations
 
@@ -1600,11 +1828,15 @@ tracker.end();
 
 ---
 
-## Migration & Compatibility
+## EDS Compatibility
 
-### Backward Compatibility Guarantees
+### Advanced Compatibility Architecture
 
-ProjectX maintains 100% API compatibility with Adobe EDS through its proxy architecture:
+ProjectX provides sophisticated EDS compatibility through its advanced proxy architecture, enabling seamless integration with EDS-style development patterns while delivering enhanced privacy and performance.
+
+### API Compatibility Layer
+
+ProjectX maintains 100% API compatibility with EDS through its sophisticated proxy architecture:
 
 #### Function Compatibility Matrix
 
@@ -1653,7 +1885,7 @@ export default function decorate(block) {
 }
 ```
 
-### Migration Strategies
+### Technical Integration Patterns
 
 #### Strategy 1: Zero-Configuration Drop-in (Recommended)
 
@@ -1671,29 +1903,29 @@ export default function decorate(block) {
 
 **Validation:**
 ```javascript
-// Verify migration success
+// Verify integration success
 console.log('ProjectX Active:', window.hlx._isProjectXProxy);
 console.log('Base Path:', window.projectX.codeBasePath);
 console.log('Auto-blocking:', document.querySelectorAll('[data-auto-blocked="true"]').length);
 ```
 
-#### Strategy 2: Gradual Migration
+#### Pattern 2: Enhanced Development Workflow
 
-**Phase 1: Core Framework**
+**Phase 1: Core Framework Setup**
 ```html
-<!-- Replace core scripts only -->
+<!-- Direct ProjectX integration for new projects -->
 <script type="module" src="/scripts/projectX.js"></script>
 ```
 
-**Phase 2: Add Proxy Support**
+**Phase 2: EDS Compatibility Layer**
 ```html
-<!-- Add proxy for existing blocks -->
+<!-- Add EDS compatibility for existing patterns -->
 <script type="module" src="/scripts/aem.js"></script>
 ```
 
-**Phase 3: Full Enhancement**
+**Phase 3: Full Enhancement Suite**
 ```html
-<!-- Add full enhancement layer -->
+<!-- Complete enhancement layer with all features -->
 <script type="module" src="/scripts/scripts.js"></script>
 ```
 
@@ -1735,13 +1967,13 @@ console.log('Auto-blocking:', document.querySelectorAll('[data-auto-blocked="tru
 
 #### Compatibility Testing Checklist
 
-**Pre-Migration Testing:**
+**Pre-Integration Testing:**
 - [ ] Document all existing blocks and their functionality
 - [ ] Create test pages for each block type
 - [ ] Measure current performance metrics
 - [ ] Document any custom EDS modifications
 
-**Post-Migration Testing:**
+**Post-Integration Testing:**
 - [ ] Verify all blocks load and function correctly
 - [ ] Test auto-blocking on sample content
 - [ ] Measure performance improvements
@@ -1751,8 +1983,8 @@ console.log('Auto-blocking:', document.querySelectorAll('[data-auto-blocked="tru
 #### Automated Testing Script
 
 ```javascript
-// Migration validation script
-function validateMigration() {
+// Integration validation script
+function validateIntegration() {
   const checks = [
     {
       name: 'ProjectX Proxy Active',
@@ -1785,13 +2017,13 @@ function validateMigration() {
   console.table(results);
   
   const allPassed = results.every(r => r.passed);
-  console.log(`Migration ${allPassed ? 'SUCCESSFUL' : 'FAILED'}`);
+  console.log(`Integration ${allPassed ? 'SUCCESSFUL' : 'FAILED'}`);
   
   return allPassed;
 }
 
 // Run validation
-validateMigration();
+validateIntegration();
 ```
 
 ### Rollback Procedures
@@ -2046,13 +2278,13 @@ console.log('Performance:', {
 
 ## Conclusion
 
-ProjectX Framework represents a significant advancement in privacy-first web development, providing a complete Adobe EDS replacement that maintains 100% backward compatibility while delivering substantial performance improvements and enhanced functionality.
+ProjectX Framework represents a significant advancement in privacy-first web development, providing a standalone framework with sophisticated EDS compatibility that maintains 100% API compatibility while delivering substantial performance improvements and enhanced functionality.
 
 ### Key Achievements
 
 1. **Privacy-First Architecture**: Complete removal of RUM tracking and external data transmission
 2. **Performance Optimization**: 80% bundle size reduction with runtime optimizations
-3. **Backward Compatibility**: Seamless migration path with zero code changes required
+3. **EDS Compatibility**: Seamless integration with existing EDS-style projects
 4. **Enhanced Functionality**: Intelligent auto-blocking and improved developer experience
 5. **Environment-Aware Deployment**: Automatic configuration for development, production, and CDN scenarios
 
@@ -2067,11 +2299,11 @@ The **Primary-Clone Architecture** with transparent proxy forwarding ensures tha
 
 ### Impact Summary
 
-| Metric | Adobe EDS | ProjectX | Improvement |
+| Metric | Industry Standard | ProjectX | Improvement |
 |--------|-----------|----------|-------------|
 | **Bundle Size** | 270KB | 54KB | 80% reduction |
 | **Privacy Compliance** | RUM tracking | Zero tracking | 100% privacy |
-| **Migration Effort** | N/A | Zero changes | Seamless |
+| **Integration Effort** | N/A | Zero changes | Seamless |
 | **Auto-blocking** | Manual only | Intelligent | Enhanced UX |
 | **Compatibility** | N/A | 100% EDS API | Perfect |
 
@@ -2088,12 +2320,12 @@ ProjectX provides a solid foundation for future enhancements:
 
 ProjectX is recommended for:
 
-- **Organizations migrating from Adobe EDS** seeking privacy compliance
+- **Organizations using EDS-style development patterns** seeking privacy compliance
 - **Performance-critical applications** requiring optimized loading
 - **Content-heavy websites** benefiting from intelligent auto-blocking
 - **Privacy-conscious projects** eliminating external tracking
 
-The framework's zero-configuration migration path, substantial performance improvements, and enhanced functionality make it an ideal choice for modern web development while maintaining complete compatibility with existing EDS investments.
+The framework's zero-configuration setup, substantial performance improvements, and enhanced functionality make it an ideal choice for modern web development while providing sophisticated EDS compatibility for teams using EDS-style development patterns.
 
 ---
 
