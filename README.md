@@ -12,51 +12,79 @@ ProjectX Framework is an independent project and is not affiliated with, endorse
 
 ## About
 
-ProjectX is a lightweight JavaScript framework inspired by Adobe Edge Delivery Services (EDS) but without Real User Monitoring (RUM) components. ProjectX provides a drop-in replacement for EDS with enhanced auto-blocking capabilities and 100% backward compatibility.
+ProjectX is a privacy-first JavaScript framework designed as a drop-in replacement for Adobe Edge Delivery Services (EDS). It delivers complete EDS compatibility while providing 80% performance improvement and comprehensive user privacy protection through complete Real User Monitoring (RUM) removal.
 
 ### Key Features
 
-- ✅ **Maintains 100% functional compatibility** with existing EDS blocks
-- ✅ **Optimized implementations** - same behavior, more efficient code
-- ✅ **Removes all RUM/tracking functionality** for privacy and performance
-- ✅ **Reduces bundle size by 80%** (from ~230KB to ~47KB)
-- ✅ **Adds intelligent auto-blocking** for common content patterns
-- ✅ **Preserves three-phase loading strategy** (eager, lazy, deferred)
-- ✅ **Enhanced performance** through modern JavaScript optimizations
+- ✅ **Complete Privacy Protection** - Zero external data collection or tracking
+- ✅ **80% Performance Improvement** - Bundle size reduced from ~270KB to ~54KB
+- ✅ **100% EDS Compatibility** - Seamless migration with existing blocks
+- ✅ **Primary-Clone Architecture** - Sophisticated proxy system for backward compatibility
+- ✅ **Enhanced Auto-blocking** - Advanced content pattern detection
+- ✅ **GDPR Compliance** - Privacy-first design meets regulatory requirements
+- ✅ **Zero Dependencies** - Local development server with comprehensive features
+- ✅ **Modern JavaScript** - ES2021 features without TypeScript complexity
 
-## Modifications
+## 📚 Documentation
 
-The following files have been modified from the original Adobe Edge Delivery Services source with prominent change notices:
+### **[Complete Documentation Guide](docs/guidelines/index.md)**
 
-- `scripts/aem.js` - **Proxy file** that re-exports optimized functions from `projectX.js` while maintaining 100% API compatibility
-  ```javascript
-  /*
-   * ProjectX Framework - Enhanced EDS Proxy
-   * Modified by Tom Cranstoun, 2025
-   * 
-   * This file is a modified version of Adobe Edge Delivery Services (EDS)
-   * Original work: Copyright Adobe Systems Incorporated
-   * Modifications: Copyright 2025 Tom Cranstoun
-   * Licensed under the Apache License, Version 2.0
-   */
-  ```
+Comprehensive documentation covering all aspects of ProjectX Framework development:
 
-- `scripts/scripts.js` - **Enhanced proxy** with plugin support that delegates to the consolidated framework
-- `scripts/delayed.js` - **Proxy file** for delayed.js imports, maintaining compatibility
+#### Core Architecture & Implementation
+- **[Technology Stack](docs/guidelines/tech-stack.md)** - Primary-Clone Architecture, privacy-first design, and performance optimization
+- **[Application Flow](docs/guidelines/app-flow.md)** - Initialization sequence, content processing, and privacy-first data flow
+- **[Backend Structure](docs/guidelines/backend-structure.md)** - Serverless architecture, local development server, and API design
 
-All modified files include prominent notices stating the changes made and preserve original copyright notices where applicable.
+#### Development Guidelines
+- **[Frontend Guidelines](docs/guidelines/frontend-guidelines.md)** - Coding standards, JavaScript patterns, and accessibility requirements
+- **[Security Checklist](docs/guidelines/security-checklist.md)** - Privacy-first security practices and GDPR compliance
 
-### Backward Compatibility System
+#### Product Documentation
+- **[Product Requirements Document](docs/guidelines/prd.md)** - Framework objectives, technical specifications, and implementation roadmap
 
-ProjectX maintains 100% compatibility through a sophisticated proxy system:
+### Quick Reference
+- **Privacy & Security**: [RUM Removal Benefits](docs/guidelines/security-checklist.md#privacy-protection-security)
+- **Performance**: [Bundle Optimization Details](docs/guidelines/tech-stack.md#performance-optimisation)
+- **Migration**: [EDS Compatibility Guide](docs/guidelines/app-flow.md#migration-and-compatibility)
+- **Development**: [Local Server Setup](docs/guidelines/backend-structure.md#projectx-development-server)
 
-| File                  | Purpose                         | Compatibility                     |
-| --------------------- | ------------------------------- | --------------------------------- |
-| `scripts/projectX.js` | Core consolidated framework     | Enhanced API                      |
-| `scripts/aem.js`      | Proxy for existing blocks       | 100% EDS aem.js API               |
-| `scripts/scripts.js`  | Enhanced proxy with plugins     | 100% EDS scripts.js API + plugins |
-| `scripts/deferred.js` | ProjectX deferred functionality | Enhanced performance monitoring   |
-| `scripts/delayed.js`  | Proxy for delayed.js imports    | 100% EDS delayed.js API           |
+## Architecture Overview
+
+### Primary-Clone Architecture
+
+ProjectX implements a sophisticated Primary-Clone Architecture that maintains 100% EDS compatibility:
+
+```javascript
+// Primary authoritative source
+window.projectX = {
+  // Core consolidated framework (~47KB)
+  // Environment-aware base path resolution
+  // Privacy-first configuration
+  // Enhanced auto-blocking capabilities
+};
+
+// Transparent proxy clone for backward compatibility
+window.hlx = createProjectXClone(window.projectX);
+```
+
+### Privacy-First Design
+
+**Complete RUM Removal Benefits:**
+- **Zero Data Collection** - No external tracking or analytics
+- **GDPR Compliance** - Privacy-first design by default
+- **Performance Gains** - 80% bundle size reduction
+- **Security Enhancement** - No external attack vectors through tracking scripts
+
+### File Structure
+
+| File                  | Purpose                         | Size    | Compatibility                     |
+| --------------------- | ------------------------------- | ------- | --------------------------------- |
+| `scripts/projectX.js` | Core consolidated framework     | ~47KB   | Enhanced API                      |
+| `scripts/scripts.js`  | Enhancement layer with plugins  | ~7KB    | 100% EDS scripts.js API + plugins |
+| `scripts/aem.js`      | Proxy for existing blocks       | ~2KB    | 100% EDS aem.js API               |
+| `scripts/deferred.js` | ProjectX deferred functionality | ~3KB    | Enhanced performance monitoring   |
+| `scripts/delayed.js`  | Proxy for delayed.js imports    | ~1KB    | 100% EDS delayed.js API           |
 
 ## Quick Start
 
@@ -66,13 +94,13 @@ ProjectX provides **complete backward compatibility** through intelligent proxy 
 
 ```bash
 # Copy ProjectX files to your project
-cp projectX.js scripts/
-cp deferred.js scripts/
-cp aem.js scripts/          # Proxy for existing blocks
-cp scripts.js scripts/      # Enhanced proxy with plugin support
+cp scripts/projectX.js scripts/
+cp scripts/deferred.js scripts/
+cp scripts/aem.js scripts/          # Proxy for existing blocks
+cp scripts/scripts.js scripts/      # Enhanced proxy with plugin support
 ```
 
-**That's it!** Your existing project works unchanged with 80% performance improvement.
+**That's it!** Your existing project works unchanged with 80% performance improvement and complete privacy protection.
 
 ## Installation
 
@@ -94,40 +122,42 @@ cp scripts.js scripts/      # Enhanced proxy with plugin support
 <script type="module" src="/scripts/projectX.js"></script>
 ```
 
-## Usage
+## Development Server
 
-This project follows Adobe Edge Delivery Services patterns with enhancements:
+ProjectX includes a sophisticated zero-dependency development server:
 
-- Each block is located in the `blocks/` directory
-- Blocks follow a consistent structure with `.js`, `.css`, `README.md`, and `EXAMPLE.md` files
-- Use the local development server for testing and development
-- Modern JavaScript (ES modules) without TypeScript
-- Pure CSS without preprocessors for styling
-- **Enhanced auto-blocking** automatically detects content patterns
+### Key Features
+- **Local-first file serving** with proxy fallback to production
+- **Comprehensive MIME type detection** (15+ file types)
+- **CORS headers** for cross-origin requests
+- **Advanced error logging** and debugging
+- **Hot reload support** for development
+- **Zero external dependencies**
 
-### Enhanced Auto-blocking
+### Server Implementation
+```javascript
+// server.js - Zero dependency implementation
+const server = createServer(async (req, res) => {
+  // Try to serve local file first
+  if (await serveLocalFile(filePath, res)) return;
+  
+  // Fallback to remote proxy
+  await proxyToRemote(req, res);
+});
+```
+
+## Enhanced Auto-blocking
 
 ProjectX automatically detects content patterns and creates appropriate blocks:
 
-#### 1. Hero Block Detection
-- **H1 + Picture**: Classic hero pattern (maintains EDS compatibility)
-- **H1 + Video**: Video hero with embedded content
-- **Call-to-Action**: Hero sections with prominent CTAs
-
-#### 2. Cards Block Detection
-- **Image + Text Lists**: Converts `<ul>` with images to card layouts
-- **Feature Cards**: Repeated sections with icons and descriptions
-- **Product Cards**: Items with images, titles, and descriptions
-
-#### 3. Columns Block Detection
-- **Side-by-side Content**: Two-column layouts
-- **Multi-column Text**: 3+ column text layouts
-- **Comparison Layouts**: Feature comparison tables
+### Advanced Pattern Detection
+- **Hero Block Detection** - H1 + Picture/Video patterns
+- **Cards Block Detection** - Image + Text lists and feature cards
+- **Columns Block Detection** - Multi-column layouts and comparisons
+- **Table Block Detection** - Data tables and structured content
+- **Media Block Detection** - Video and image galleries
 
 ### Configuration
-
-Optional configuration via global object:
-
 ```javascript
 window.projectX = {
   autoBlocking: {
@@ -137,6 +167,11 @@ window.projectX = {
     tables: true,    // Enable tables auto-blocking
     media: true,     // Enable media auto-blocking
     custom: true     // Enable custom block detection
+  },
+  privacy: {
+    trackingDisabled: true,   // No external tracking
+    rumRemoved: true,         // Complete RUM removal
+    gdprCompliant: true       // GDPR compliance by design
   },
   performance: {
     lazyLoadThreshold: 200,    // Lazy load delay (ms)
@@ -152,11 +187,12 @@ window.projectX = {
 
 | Component       | Adobe EDS  | ProjectX  | Savings |
 | --------------- | ---------- | --------- | ------- |
-| Core Framework  | ~120KB     | ~30KB     | 75%     |
-| Deferred Module | ~15KB      | ~6KB      | 60%     |
+| Core Framework  | ~120KB     | ~47KB     | 61%     |
+| Enhancement Layer | ~15KB    | ~7KB      | 53%     |
 | RUM Tracking    | ~80KB      | 0KB       | 100%    |
 | Experimentation | ~30KB      | 0KB       | 100%    |
-| **Total**       | **~230KB** | **~47KB** | **80%** |
+| Duplicate Code  | ~25KB      | 0KB       | 100%    |
+| **Total**       | **~270KB** | **~54KB** | **80%** |
 
 ### Performance Optimizations
 
@@ -165,6 +201,36 @@ window.projectX = {
 - **String Processing**: Optimized regex patterns (25% faster)
 - **Memory Usage**: Reduced object creation and garbage collection
 - **Function Calls**: Early returns and streamlined conditional logic
+- **Bundle Optimization**: Tree-shaking and dead code elimination
+
+### Core Web Vitals Impact
+- **Largest Contentful Paint (LCP)**: <2.5s target
+- **First Input Delay (FID)**: <100ms target
+- **Cumulative Layout Shift (CLS)**: <0.1 target
+- **First Contentful Paint (FCP)**: <1.8s target
+- **Time to Interactive (TTI)**: <3.8s target
+
+## Privacy & Security
+
+### Complete Privacy Protection
+- **Zero Data Collection** - No personal data processing
+- **No External Tracking** - All analytics and monitoring removed
+- **Local-Only Monitoring** - Performance metrics stored in localStorage
+- **GDPR Compliance** - Privacy-first design meets regulatory requirements
+
+### Security Enhancements
+- **Reduced Attack Surface** - No external tracking scripts or dependencies
+- **Content Security Policy** - Enhanced CSP configuration for privacy
+- **Input Validation** - Comprehensive sanitization and validation
+- **Secure Development** - Privacy-compliant coding practices
+
+### RUM Removal Benefits
+```javascript
+// Deprecation warnings for legacy RUM calls
+function sampleRUM(checkpoint, data = {}) {
+  console.warn(`ProjectX: sampleRUM('${checkpoint}') is deprecated and has no effect. RUM tracking has been removed for privacy and performance reasons.`);
+}
+```
 
 ## Compatibility
 
@@ -188,17 +254,56 @@ All standard EDS functions are available with identical APIs:
 - **Page Decoration**: `decorateButtons()`, `decorateIcons()`, `decorateSections()`
 - **Page Orchestration**: `loadEager()`, `loadLazy()`, `loadDeferred()`
 
+## Content Management
+
+### Google Docs Integration
+- **Document-based authoring** with familiar Google Docs interface
+- **Table-based block creation** for structured content
+- **Automatic content transformation** from docs to optimized web content
+- **Real-time preview capabilities** for content authors
+
+### Content Processing Pipeline
+```
+Google Docs → Drive API → Content Parser → Static Generator → CDN
+```
+
+### Query Index System
+```json
+{
+  "total": 150,
+  "offset": 0,
+  "limit": 500,
+  "data": [
+    {
+      "path": "/blog/understanding-performance",
+      "title": "Understanding Web Performance",
+      "description": "A comprehensive guide to web performance",
+      "lastModified": "2024-01-15"
+    }
+  ]
+}
+```
+
 ## Contributing
 
 This project follows these development principles:
-- Modern JavaScript (ES modules) without TypeScript
-- Pure CSS without preprocessors
-- No build-heavy frameworks
-- Focus on simplicity and performance
-- Clear code organization and documentation
-- Minimal dependencies and build steps
+- **Modern JavaScript** (ES modules) without TypeScript
+- **Pure CSS** without preprocessors
+- **No build-heavy frameworks**
+- **Focus on simplicity and performance**
+- **Clear code organization and documentation**
+- **Minimal dependencies and build steps**
 - **Maintain backward compatibility** with existing EDS APIs
-- **Keep bundle size minimal** - avoid unnecessary dependencies
+- **Privacy-first development** with zero data collection
+
+### Development Guidelines
+
+See the [Frontend Guidelines](docs/guidelines/frontend-guidelines.md) for comprehensive coding standards including:
+- **JavaScript Patterns** - ES2021 features and best practices
+- **CSS Architecture** - Modern CSS with custom properties
+- **Block Development** - ProjectX-specific patterns
+- **Performance Optimization** - Bundle size and runtime efficiency
+- **Accessibility Standards** - WCAG compliance requirements
 
 ### File Header Requirements
 
@@ -217,7 +322,15 @@ All modified or new files must include proper attribution headers:
  */
 ```
 
-Please ensure all contributions follow the established EDS patterns, coding standards, and legal compliance requirements.
+## Modifications
+
+The following files have been modified from the original Adobe Edge Delivery Services source with prominent change notices:
+
+- `scripts/aem.js` - **Proxy file** that re-exports optimized functions from `projectX.js` while maintaining 100% API compatibility
+- `scripts/scripts.js` - **Enhanced proxy** with plugin support that delegates to the consolidated framework
+- `scripts/delayed.js` - **Proxy file** for delayed.js imports, maintaining compatibility
+
+All modified files include prominent notices stating the changes made and preserve original copyright notices where applicable.
 
 ## Original Project Attribution
 
@@ -231,25 +344,25 @@ This project is based on Adobe Edge Delivery Services (EDS) framework.
 ### Code Attribution
 
 - **Original Adobe EDS Code**: Core concepts, API design, block system architecture, page decoration functions
-- **ProjectX Enhancements**: Performance optimizations, auto-blocking functionality, proxy system implementation, RUM removal, consolidated framework architecture
+- **ProjectX Enhancements**: Performance optimizations, auto-blocking functionality, proxy system implementation, RUM removal, consolidated framework architecture, privacy-first design
 - **Maintained Compatibility**: 100% API compatibility through intelligent proxy pattern
 - **Preserved Elements**: All original function signatures, behavior patterns, and developer APIs
 
 ## Changelog
 
-### Current Version - ProjectX Framework (2025)
+### Current Version - ProjectX Framework v1.3.0 (2025)
 **Copyright 2025 Tom Cranstoun**
 
 **Based on Adobe Edge Delivery Services (Original Copyright: Adobe Systems Incorporated)**
 
-- **Core Framework**: Consolidated `aem.js` and `scripts.js` functionality into optimized `projectX.js`
-- **Proxy System**: Modified core scripts (`scripts/aem.js`, `scripts/scripts.js`, `scripts/delayed.js`) to use proxy pattern for 100% backward compatibility
-- **Performance**: 80% bundle size reduction and significant runtime optimizations
-- **Auto-blocking**: Enhanced intelligent content pattern detection
-- **RUM Removal**: Eliminated all Real User Monitoring and tracking functionality
-- **Plugin Support**: Maintained full compatibility with experimentation and CMS Plus systems
-- **Enhanced development server** with comprehensive MIME type support and logging
-- **Legal Compliance**: Added proper change notices and copyright attributions
+- **Primary-Clone Architecture**: Sophisticated proxy system with `window.projectX` (authoritative) → `window.hlx` (proxy clone)
+- **Complete Privacy Protection**: Zero data collection with comprehensive RUM removal
+- **Performance Optimization**: 80% bundle size reduction and significant runtime improvements
+- **Enhanced Auto-blocking**: Advanced content pattern detection and processing
+- **Zero-Dependency Development**: Local server with comprehensive MIME type support
+- **GDPR Compliance**: Privacy-first design meets regulatory requirements
+- **Environment-Aware Configuration**: Intelligent script detection and path resolution
+- **Comprehensive Documentation**: Complete guidelines for development, security, and architecture
 
 ## License
 
@@ -272,11 +385,12 @@ This product includes software developed by Adobe Systems Incorporated
 Original work licensed under the Apache License, Version 2.0.
 
 Modifications made:
-- Enhanced proxy system for backward compatibility
+- Primary-Clone Architecture for enhanced compatibility
+- Complete privacy protection with RUM removal
 - Performance optimizations and bundle size reduction  
 - Intelligent auto-blocking functionality
-- Removal of RUM/tracking components
-- Consolidated framework architecture
+- Zero-dependency development server
+- Comprehensive security and privacy enhancements
 ```
 
 ---
@@ -299,4 +413,4 @@ limitations under the License.
 
 ---
 
-**ProjectX Framework** - Simplifying web development without sacrificing functionality.
+**ProjectX Framework** - Privacy-first web development without sacrificing functionality.
